@@ -1,0 +1,1566 @@
+{
+  "description": "Engaging sketch explainer topics for Thrive Richly. These are designed to stop the scroll — counterintuitive insights, money psychology, wealth myths debunked, and 'did you know' financial facts. 1 per day as a freehand sketch Reel.",
+  "topics": [
+    {
+      "id": 1,
+      "title": "Why the Rich Don't Work for Money",
+      "hook": "Here's the secret nobody tells you...",
+      "points": [
+        "Poor people trade TIME for money",
+        "Middle class trade SKILLS for money",
+        "Rich people make MONEY work for THEM",
+        "The difference? Owning ASSETS that generate income while you sleep"
+      ],
+      "sketch": "ladder",
+      "takeaway": "Stop trading hours for dollars. Build something that earns without you.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "title": "The Latte Factor Is a Lie",
+      "hook": "Stop blaming your coffee habit...",
+      "points": [
+        "Skipping $5 lattes saves $1,825/year",
+        "But your rent increase last year? $3,600",
+        "Health insurance increase? $2,400",
+        "The real money leak isn't small pleasures — it's the BIG fixed costs nobody talks about"
+      ],
+      "sketch": "comparison",
+      "takeaway": "Focus on the big wins: negotiate rent, switch insurance, increase income. Keep your coffee.",
+      "category": "Money Myths",
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "title": "How a Penny Doubled Beats $1 Million",
+      "hook": "Would you rather have $1 million today or a penny that doubles every day for 30 days?",
+      "points": [
+        "Day 10: just $5.12",
+        "Day 20: $5,242",
+        "Day 25: $167,772",
+        "Day 30: $5,368,709",
+        "The penny wins by $4.3 MILLION"
+      ],
+      "sketch": "growth",
+      "takeaway": "This is the power of compounding. Small consistent growth beats a big head start.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 4,
+      "title": "The 72-Hour Rule That Saves Thousands",
+      "hook": "Before every big purchase, do THIS...",
+      "points": [
+        "See something you want? Wait 72 hours",
+        "Studies show 70% of impulse purchases are regretted",
+        "After 72 hours, the emotional pull fades",
+        "What's left is logic — and logic saves money"
+      ],
+      "sketch": "timeline",
+      "takeaway": "If you still want it after 3 days, buy it guilt-free. Most times, you won't.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 5,
+      "title": "Why Your Bank Wants You Broke",
+      "hook": "Banks make money when YOU lose money...",
+      "points": [
+        "Overdraft fees: $35 billion/year industry",
+        "Credit card interest: banks earn 15-25% on YOUR debt",
+        "Savings accounts pay you 0.5% while lending your money at 7%",
+        "Banks profit from your financial illiteracy"
+      ],
+      "sketch": "flow",
+      "takeaway": "Understand the game. Banks are businesses, not friends. Use them, don't let them use you.",
+      "category": "Money Myths",
+      "status": "pending"
+    },
+    {
+      "id": 6,
+      "title": "The $10 Million Janitor",
+      "hook": "This man earned minimum wage his entire life...",
+      "points": [
+        "Ronald Read was a janitor and gas station attendant",
+        "He lived frugally and invested consistently",
+        "He never earned more than $50K in a year",
+        "When he died at 92, his portfolio was worth $8 MILLION",
+        "He donated $6M to his local library and hospital"
+      ],
+      "sketch": "growth",
+      "takeaway": "Wealth isn't about income. It's about what you keep and invest. Consistency wins.",
+      "category": "Inspiring Stories",
+      "status": "pending"
+    },
+    {
+      "id": 7,
+      "title": "Rich People Use Debt Differently",
+      "hook": "Debt isn't always bad. Here's the difference...",
+      "points": [
+        "Bad debt: credit cards for shoes, car loans for status",
+        "Good debt: mortgage on rental property, business loans",
+        "Rich people BORROW to buy assets that pay for the debt",
+        "The asset earns MORE than the interest costs"
+      ],
+      "sketch": "comparison",
+      "takeaway": "Debt is a tool. Use it to acquire things that make you money, not things that lose value.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 8,
+      "title": "The 1% Rule of Real Estate",
+      "hook": "One simple test tells you if a property is worth buying...",
+      "points": [
+        "Monthly rent should be at least 1% of purchase price",
+        "$200K property should rent for $2,000+/month",
+        "Below 1%? You're probably losing money",
+        "Above 1%? You've likely found a good deal"
+      ],
+      "sketch": "formula",
+      "takeaway": "Run this test on any rental property before buying. Simple math saves expensive mistakes.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 9,
+      "title": "Why Lottery Winners Go Broke",
+      "hook": "70% of lottery winners are broke within 5 years...",
+      "points": [
+        "Sudden wealth without financial literacy = disaster",
+        "Lifestyle inflation absorbs every dollar instantly",
+        "Friends, family, and scammers drain the rest",
+        "Without money SKILLS, money doesn't stay"
+      ],
+      "sketch": "decline",
+      "takeaway": "Money is a skill, not a number. Learn how to manage it BEFORE you get more of it.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 10,
+      "title": "The 50/30/20 Budget in 60 Seconds",
+      "hook": "The simplest budget that actually works...",
+      "points": [
+        "50% → NEEDS: rent, food, bills, transport",
+        "30% → WANTS: dining, entertainment, shopping",
+        "20% → FUTURE: savings, investments, debt payoff",
+        "If you can only follow one rule, follow this"
+      ],
+      "sketch": "pie",
+      "takeaway": "You don't need a spreadsheet. Just split every paycheck into these three buckets.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 11,
+      "title": "What Inflation Really Looks Like",
+      "hook": "Your money is melting. Here's the proof...",
+      "points": [
+        "$100 in 2000 = $56 in today's purchasing power",
+        "A house that cost $120K in 2000 costs $350K+ now",
+        "Average salary grew 50% but housing grew 190%",
+        "Cash in a bank is LOSING 3-7% of its value every year"
+      ],
+      "sketch": "decline",
+      "takeaway": "Holding cash isn't safe. It's guaranteed loss. Invest to stay ahead of inflation.",
+      "category": "Money Myths",
+      "status": "pending"
+    },
+    {
+      "id": 12,
+      "title": "The Two Pizza Rule for Teams",
+      "hook": "Jeff Bezos has a rule for every meeting...",
+      "points": [
+        "If a team can't be fed with two pizzas, it's too big",
+        "Small teams = faster decisions, less politics",
+        "Amazon was built on small, autonomous teams",
+        "Apply this to your projects: keep it lean"
+      ],
+      "sketch": "circles",
+      "takeaway": "Whether it's a business or a side hustle, small focused teams outperform big bloated ones.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 13,
+      "title": "Why You Should Pay Yourself FIRST",
+      "hook": "Most people save what's left. Rich people save first...",
+      "points": [
+        "Paycheck arrives → 20% auto-transfers to investments",
+        "You budget the remaining 80% for life",
+        "If you wait until month end, there's never anything left",
+        "Automate it. Remove willpower from the equation"
+      ],
+      "sketch": "flow",
+      "takeaway": "Set up an automatic transfer the day after payday. You'll adjust your spending naturally.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 14,
+      "title": "The $1 Million Parking Spot",
+      "hook": "This is what opportunity cost REALLY looks like...",
+      "points": [
+        "You spend $15/day on parking = $5,475/year",
+        "Invested at 10% for 30 years = $986,000",
+        "That parking spot cost you nearly $1 MILLION",
+        "Every daily expense has a hidden future price tag"
+      ],
+      "sketch": "growth",
+      "takeaway": "Not every expense is worth cutting. But understand what each recurring cost truly costs your future.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 15,
+      "title": "The Wealth Ladder Explained",
+      "hook": "There are 5 levels of wealth. Where are you?",
+      "points": [
+        "Level 1: Survival — living paycheck to paycheck",
+        "Level 2: Stability — emergency fund, no bad debt",
+        "Level 3: Accumulation — investing consistently",
+        "Level 4: Independence — investments cover expenses",
+        "Level 5: Abundance — more than you'll ever need"
+      ],
+      "sketch": "ladder",
+      "takeaway": "You can't skip levels. But knowing where you are tells you exactly what to focus on next.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 16,
+      "title": "How Credit Cards Trick Your Brain",
+      "hook": "You spend 12-18% MORE when paying with a card...",
+      "points": [
+        "Cash activates the pain centre in your brain",
+        "Cards remove the emotional 'ouch' of spending",
+        "Contactless and Apple Pay make it even worse",
+        "The easier it is to pay, the more you spend"
+      ],
+      "sketch": "brain",
+      "takeaway": "For discretionary spending, try cash for a month. You'll be shocked at how much less you spend.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 17,
+      "title": "Warren Buffett's #1 Rule",
+      "hook": "The world's greatest investor has two rules...",
+      "points": [
+        "Rule #1: Never lose money",
+        "Rule #2: Never forget Rule #1",
+        "This doesn't mean never take risks",
+        "It means: don't gamble. Don't speculate. Don't invest in what you don't understand",
+        "Protection of capital comes before growth of capital"
+      ],
+      "sketch": "shield",
+      "takeaway": "Before asking 'how much can I make?', ask 'how much can I lose?' That mindset changes everything.",
+      "category": "Investing Wisdom",
+      "status": "pending"
+    },
+    {
+      "id": 18,
+      "title": "The Marshmallow Test for Adults",
+      "hook": "In 1972, Stanford tested kids with marshmallows. The results predict wealth...",
+      "points": [
+        "Kids who waited 15 min for TWO marshmallows had higher incomes decades later",
+        "Delayed gratification = the #1 predictor of financial success",
+        "Every financial decision is a marshmallow test",
+        "Buy the thing now, or invest the money and buy 10 later?"
+      ],
+      "sketch": "timeline",
+      "takeaway": "Train your delayed gratification muscle. It's the single most valuable financial skill you can develop.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 19,
+      "title": "Why Your Car Is Keeping You Poor",
+      "hook": "The average car costs way more than you think...",
+      "points": [
+        "Purchase price is only 40% of the true cost",
+        "Insurance: $1,800/year",
+        "Fuel: $2,400/year",
+        "Depreciation: $3,000+/year (it loses value daily)",
+        "Maintenance, parking, registration: $2,000+/year",
+        "Real cost: $700-900/MONTH"
+      ],
+      "sketch": "stack",
+      "takeaway": "Buy used, maintain well, and drive it for 10+ years. Or calculate if you even need one.",
+      "category": "Money Myths",
+      "status": "pending"
+    },
+    {
+      "id": 20,
+      "title": "The Rule of 72 — Double Your Money",
+      "hook": "The simplest investing math you'll ever learn...",
+      "points": [
+        "Divide 72 by your annual return = years to double",
+        "At 6%: 72 ÷ 6 = 12 years to double",
+        "At 10%: 72 ÷ 10 = 7.2 years to double",
+        "At 2% (savings account): 72 ÷ 2 = 36 years. Yikes."
+      ],
+      "sketch": "formula",
+      "takeaway": "Use this mental shortcut to evaluate any investment instantly. Higher returns = faster doubling.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 21,
+      "title": "The Invisible Tax on Being Poor",
+      "hook": "Being poor is expensive. Here's how...",
+      "points": [
+        "Can't buy in bulk → pay more per item",
+        "Bad credit → higher interest on everything",
+        "Can't afford preventive care → expensive emergencies",
+        "Overdraft fees, late fees, check cashing fees",
+        "No buffer = every setback becomes a crisis"
+      ],
+      "sketch": "cycle",
+      "takeaway": "Breaking out starts with $1,000 saved. That tiny buffer stops the cycle. Start there.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 22,
+      "title": "5 Money Habits of Self-Made Millionaires",
+      "hook": "Studied 177 self-made millionaires. They ALL do these 5 things...",
+      "points": [
+        "1. Automate savings — before spending",
+        "2. Live below their means — always",
+        "3. Multiple income streams — never just one",
+        "4. Read every day — especially about money",
+        "5. Avoid toxic debt — credit cards, car loans"
+      ],
+      "sketch": "checklist",
+      "takeaway": "None of these require high income. They require high discipline. Start with #1 today.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 23,
+      "title": "The Wealth Formula Nobody Teaches",
+      "hook": "Wealth = Income − Spending × Time × Returns",
+      "points": [
+        "INCOME: increase what comes in",
+        "SPENDING: decrease what goes out",
+        "TIME: start as early as possible",
+        "RETURNS: invest wisely to multiply",
+        "All four matter. Most people only focus on income"
+      ],
+      "sketch": "formula",
+      "takeaway": "You can't out-earn bad spending. You can't out-save bad investing. All four levers matter.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 24,
+      "title": "Why Millionaires Drive Old Cars",
+      "hook": "The typical millionaire's car is 4+ years old...",
+      "points": [
+        "86% of luxury cars are owned by non-millionaires",
+        "Actual millionaires buy reliability, not status",
+        "A $50K car depreciates $25K in 3 years",
+        "That $25K invested grows to $170K in 20 years",
+        "Real wealth is invisible"
+      ],
+      "sketch": "comparison",
+      "takeaway": "Looking rich and being rich are opposite strategies. Pick one.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 25,
+      "title": "The 3 Types of Income",
+      "hook": "The rich have all three. Most people have only one...",
+      "points": [
+        "EARNED: salary, wages — traded for time (taxed highest)",
+        "PORTFOLIO: stocks, dividends, capital gains (taxed less)",
+        "PASSIVE: rental income, royalties, business income (taxed least)",
+        "The wealthy build portfolio + passive income streams"
+      ],
+      "sketch": "three_buckets",
+      "takeaway": "Your goal: build at least one non-earned income stream this year. Even $100/month changes everything.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 26,
+      "title": "The Psychology of Sale Prices",
+      "hook": "That 50% off deal? You didn't save money...",
+      "points": [
+        "You SPENT money you wouldn't have otherwise",
+        "Anchoring bias: the 'original' price makes the sale feel like a win",
+        "Stores raise prices before sales so the discount looks bigger",
+        "Saving 50% on something you don't need = 100% wasted"
+      ],
+      "sketch": "brain",
+      "takeaway": "Before buying on sale, ask: would I buy this at FULL price? If no, the discount is irrelevant.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 27,
+      "title": "How to Turn $5 a Day Into $1 Million",
+      "hook": "Sounds impossible. The math says otherwise...",
+      "points": [
+        "$5/day = $150/month = $1,800/year",
+        "Invested at 10% average annual return:",
+        "After 10 years: $31,000",
+        "After 20 years: $114,000",
+        "After 40 years: $1,062,000"
+      ],
+      "sketch": "growth",
+      "takeaway": "You don't need to be rich to build wealth. You need to be consistent. $5 a day. Start now.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 28,
+      "title": "The 10/10/10 Decision Rule",
+      "hook": "Before any financial decision, ask yourself 3 questions...",
+      "points": [
+        "How will I feel about this in 10 MINUTES?",
+        "How will I feel in 10 MONTHS?",
+        "How will I feel in 10 YEARS?",
+        "Impulse buying passes the first test but fails the last two"
+      ],
+      "sketch": "timeline",
+      "takeaway": "Every purchase looks different through long-term eyes. Let your future self make the decision.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 29,
+      "title": "Why Your Salary Is a Trap",
+      "hook": "A high salary can actually keep you poor...",
+      "points": [
+        "Higher salary → higher lifestyle expectations",
+        "Higher lifestyle → higher fixed costs (rent, car, clothes)",
+        "Higher costs → need even more income to keep up",
+        "It's a treadmill. You run faster but stay in the same place"
+      ],
+      "sketch": "cycle",
+      "takeaway": "The real measure of wealth isn't what you earn — it's the gap between what you earn and what you spend.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 30,
+      "title": "The Coffee Shop Test for Business Ideas",
+      "hook": "Before starting any business, ask this one question...",
+      "points": [
+        "Sit in a coffee shop and explain your idea to a stranger",
+        "If they say 'Where can I buy that?' — you have a business",
+        "If they say 'That's cool' — you have a hobby",
+        "If they look confused — go back to the drawing board"
+      ],
+      "sketch": "checklist",
+      "takeaway": "Great businesses solve problems people will PAY to fix. Test early, test often.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 31,
+      "title": "The Iceberg of Wealth",
+      "hook": "You only see 10% of someone's wealth...",
+      "points": [
+        "VISIBLE: car, clothes, house, vacations",
+        "HIDDEN: investments, emergency fund, retirement accounts, zero debt, passive income, financial peace",
+        "Social media shows the tip. Real wealth is below the surface",
+        "Comparing yourself to visible wealth is comparing to an illusion"
+      ],
+      "sketch": "iceberg",
+      "takeaway": "Build the 90% nobody sees. That's where financial freedom actually lives.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 32,
+      "title": "Why Rich People Read So Much",
+      "hook": "88% of wealthy people read 30+ minutes daily...",
+      "points": [
+        "Not novels — biographies, business, self-improvement",
+        "One good idea from a $15 book can be worth $15,000",
+        "Reading compound like money — each book builds on the last",
+        "Warren Buffett reads 500 pages a day. He calls it compound knowledge"
+      ],
+      "sketch": "growth",
+      "takeaway": "Read one book a month about money or business. In 5 years, you'll think completely differently.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 33,
+      "title": "The Subscription Audit",
+      "hook": "The average person wastes $200/month on forgotten subscriptions...",
+      "points": [
+        "Streaming: $15 × 4 services = $60",
+        "Apps, gym, memberships: $80",
+        "Free trials you forgot to cancel: $40+",
+        "Total: $200/month = $2,400/year",
+        "That $2,400 invested for 20 years = $153,000"
+      ],
+      "sketch": "stack",
+      "takeaway": "Right now, open your bank statement. Cancel what you haven't used in 30 days. Do it today.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 34,
+      "title": "The 5 Levels of Financial Freedom",
+      "hook": "Which level are you at right now?",
+      "points": [
+        "Level 1: CLARITY — you know where every dollar goes",
+        "Level 2: SELF-SUFFICIENCY — no reliance on bad debt",
+        "Level 3: BREATHING ROOM — 6 months of expenses saved",
+        "Level 4: STABILITY — investments growing consistently",
+        "Level 5: FREEDOM — passive income covers your life"
+      ],
+      "sketch": "ladder",
+      "takeaway": "Most people are stuck at Level 1. Just knowing your numbers moves you to Level 2.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 35,
+      "title": "The Richest Man in Babylon's Secret",
+      "hook": "Written in 1926. Still the best money advice ever...",
+      "points": [
+        "Pay yourself first: save 10% of everything you earn",
+        "Make your gold multiply: invest what you save",
+        "Guard your treasure: avoid risky schemes",
+        "Make your home a profitable investment",
+        "Ensure a future income: think long term"
+      ],
+      "sketch": "scroll",
+      "takeaway": "2,500-year-old money advice still works because human nature hasn't changed. Start with 10%.",
+      "category": "Investing Wisdom",
+      "status": "pending"
+    },
+    {
+      "id": 36,
+      "title": "How the Rich Pay Less Tax (Legally)",
+      "hook": "It's not about evasion. It's about strategy...",
+      "points": [
+        "Earn income → taxed at 20-40%",
+        "Earn through investments → taxed at 15-20%",
+        "Earn through a business → deduct expenses FIRST, then get taxed",
+        "The tax code rewards investing and business ownership"
+      ],
+      "sketch": "flow",
+      "takeaway": "Learn the tax code. It's written to incentivise certain behaviours. Align your strategy with it.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 37,
+      "title": "The Money Jar System",
+      "hook": "6 jars. Automatic budgeting. Zero effort...",
+      "points": [
+        "55% → NECESSITIES (bills, food, rent)",
+        "10% → PLAY (guilt-free fun money)",
+        "10% → EDUCATION (books, courses, skills)",
+        "10% → LONG-TERM SAVINGS (big purchases, goals)",
+        "10% → FINANCIAL FREEDOM (investments only)",
+        "5% → GIVE (charity, gifts, helping others)"
+      ],
+      "sketch": "jars",
+      "takeaway": "Automate these splits. Every dollar has a job the moment it arrives.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 38,
+      "title": "Why Time Beats Timing",
+      "hook": "Stop trying to time the market. Here's the proof...",
+      "points": [
+        "Investor A: invests $200/month for 30 years, never looks at the market",
+        "Investor B: tries to time perfect entry points, misses 10 best days",
+        "Missing just the 10 best days over 20 years cuts returns by 50%",
+        "A stayed fully invested and came out way ahead"
+      ],
+      "sketch": "comparison",
+      "takeaway": "Time IN the market beats timING the market. Set it up and let it grow.",
+      "category": "Investing Wisdom",
+      "status": "pending"
+    },
+    {
+      "id": 39,
+      "title": "The Real Cost of 'Free' Social Media",
+      "hook": "If you're not paying for the product, YOU are the product...",
+      "points": [
+        "Your attention is sold to advertisers",
+        "Targeted ads manipulate your spending behaviour",
+        "Average person sees 5,000 ads/day — most subconsciously",
+        "Social comparison drives lifestyle inflation",
+        "2 hours of scrolling/day = 30 days/YEAR lost"
+      ],
+      "sketch": "brain",
+      "takeaway": "Audit your screen time. Every hour scrolling is an hour you could spend building wealth.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 40,
+      "title": "The Stranger Test for Spending",
+      "hook": "Try this before your next purchase...",
+      "points": [
+        "You're about to buy a $200 jacket",
+        "A stranger walks up and offers you $200 cash OR the jacket",
+        "If you'd take the cash — you don't really want the jacket",
+        "You want the IDEA of the jacket"
+      ],
+      "sketch": "comparison",
+      "takeaway": "Apply this to every purchase. Would you take the cash equivalent? If yes, don't buy it.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 41,
+      "title": "The 3 Fund Portfolio",
+      "hook": "The simplest investment strategy that beats 90% of professionals...",
+      "points": [
+        "Fund 1: Total US Stock Market Index (growth engine)",
+        "Fund 2: International Stock Index (global diversification)",
+        "Fund 3: Total Bond Index (stability cushion)",
+        "Total expense ratio: under 0.1%. Set it and forget it."
+      ],
+      "sketch": "pie",
+      "takeaway": "Most millionaires don't pick stocks. They buy cheap index funds and wait. Boring builds wealth.",
+      "category": "Investing Wisdom",
+      "status": "pending"
+    },
+    {
+      "id": 42,
+      "title": "What 'Rich' Actually Means",
+      "hook": "Being rich and being wealthy are NOT the same...",
+      "points": [
+        "RICH: high income. Big house, nice car, designer labels",
+        "WEALTHY: high net worth. Investments, freedom, options",
+        "Many rich people are 2 missed paychecks from broke",
+        "Wealthy people can stop working and nothing changes"
+      ],
+      "sketch": "comparison",
+      "takeaway": "Aim for wealthy, not rich. Wealth buys freedom. Rich buys things that need more money to maintain.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 43,
+      "title": "The 1000-Day Rule for Business",
+      "hook": "Most businesses fail because people quit too early...",
+      "points": [
+        "It takes roughly 1,000 days (3 years) to build a real business",
+        "Year 1: confusion, mistakes, barely surviving",
+        "Year 2: finding what works, starting to grow",
+        "Year 3: systems, consistency, real profit",
+        "Most people quit in year 1"
+      ],
+      "sketch": "timeline",
+      "takeaway": "If you're starting something, commit to 1,000 days. That's the real minimum viable timeline.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 44,
+      "title": "The True Cost of Minimum Payments",
+      "hook": "That $3,000 credit card balance? It'll cost you $7,000+...",
+      "points": [
+        "$3,000 balance at 22% interest",
+        "Minimum payment: $60/month",
+        "Time to pay off: 15+ years",
+        "Total paid: $7,200 — more than DOUBLE the original amount",
+        "Banks LOVE minimum payers"
+      ],
+      "sketch": "growth",
+      "takeaway": "Always pay more than the minimum. Even $20 extra per month cuts YEARS off your debt.",
+      "category": "Money Myths",
+      "status": "pending"
+    },
+    {
+      "id": 45,
+      "title": "The Pareto Principle of Money",
+      "hook": "80% of your results come from 20% of your efforts...",
+      "points": [
+        "80% of your spending comes from 20% of categories",
+        "80% of your income could come from 20% of your clients/skills",
+        "80% of your investment returns come from 20% of your holdings",
+        "Find the 20% that matters and double down"
+      ],
+      "sketch": "pie",
+      "takeaway": "Audit everything. Cut the 80% that's wasting time and money. Focus on the vital 20%.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 46,
+      "title": "How Compound Interest Works Against You",
+      "hook": "Compound interest isn't always your friend...",
+      "points": [
+        "On investments: it grows your wealth exponentially",
+        "On debt: it grows what you OWE exponentially",
+        "$10,000 credit card debt at 22% compounding = $27,000 in 5 years if untouched",
+        "Same $10,000 invested at 10% = $16,100",
+        "Compound interest is a weapon — make sure it's pointed the right way"
+      ],
+      "sketch": "comparison",
+      "takeaway": "Pay off high-interest debt BEFORE investing. Getting rid of 22% debt is like earning a 22% return.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 47,
+      "title": "The FIRE Number: How Much to Retire",
+      "hook": "Here's the exact amount you need to never work again...",
+      "points": [
+        "Step 1: Calculate your annual expenses",
+        "Step 2: Multiply by 25",
+        "That's your FIRE number",
+        "Example: $40K/year × 25 = $1,000,000",
+        "At 4% withdrawal rate, you never run out"
+      ],
+      "sketch": "formula",
+      "takeaway": "Calculate YOUR number right now. You can't hit a target you haven't defined.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 48,
+      "title": "Why Elon Musk Sleeps on Factory Floors",
+      "hook": "Extreme? Yes. But there's a lesson here...",
+      "points": [
+        "During crises, Musk slept at Tesla factories",
+        "Not because he had to — because proximity = speed",
+        "The gap between seeing a problem and fixing it was zero",
+        "Success requires abnormal commitment in short bursts"
+      ],
+      "sketch": "timeline",
+      "takeaway": "You don't need to sleep on floors. But are you willing to be uncomfortable to get what you want?",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 49,
+      "title": "The Debt Avalanche vs Debt Snowball",
+      "hook": "Two strategies for crushing debt. Which is right for YOU?",
+      "points": [
+        "AVALANCHE: pay highest interest first (saves the most money)",
+        "SNOWBALL: pay smallest balance first (builds momentum)",
+        "Mathematically, avalanche wins",
+        "Psychologically, snowball has better completion rates",
+        "The best method is the one you'll actually stick with"
+      ],
+      "sketch": "comparison",
+      "takeaway": "If you're analytical, use avalanche. If you need quick wins to stay motivated, use snowball.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 50,
+      "title": "The Money Script Running Your Life",
+      "hook": "Your relationship with money was set before age 7...",
+      "points": [
+        "What your parents said about money became your 'money script'",
+        "'We can't afford that' → scarcity mindset",
+        "'Money is the root of evil' → guilt around earning",
+        "'Rich people are greedy' → self-sabotage when you start earning",
+        "You can't change what you don't recognise"
+      ],
+      "sketch": "brain",
+      "takeaway": "Write down what you believe about money. Challenge every belief. Rewrite the script intentionally.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 51,
+      "title": "How to Negotiate a Raise (Script Included)",
+      "hook": "One conversation can be worth $100K+ over your career...",
+      "points": [
+        "Step 1: Document your wins with numbers",
+        "Step 2: Research market rate for your role",
+        "Step 3: Ask in a meeting, not via email",
+        "Step 4: Say: 'Based on my contributions of [X] and market data, I'd like to discuss adjusting my compensation to [Y]'",
+        "Step 5: Be silent after asking. Let them respond"
+      ],
+      "sketch": "checklist",
+      "takeaway": "Most people never ask. A 10% raise at 30 compounds to $200K+ extra by retirement.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 52,
+      "title": "The 30-Day List Method",
+      "hook": "Want to eliminate impulse buying forever? Do this...",
+      "points": [
+        "Want something? Write it on a list with today's date",
+        "If you still want it after 30 days, buy it",
+        "Most items never get bought — the urge fades",
+        "What remains are things you truly value"
+      ],
+      "sketch": "timeline",
+      "takeaway": "Start a 30-day list today. Keep it in your phone. Your bank account will thank you.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 53,
+      "title": "Why Most People Die with Unspent Money",
+      "hook": "The average person dies with 60% of their savings untouched...",
+      "points": [
+        "People save out of fear, not strategy",
+        "They're scared to spend in retirement",
+        "Result: they sacrifice joy today for money they'll never use",
+        "The goal isn't maximum savings — it's maximum LIFE"
+      ],
+      "sketch": "decline",
+      "takeaway": "Save and invest strategically. But also give yourself permission to enjoy your money while you can.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 54,
+      "title": "The Power of 'No'",
+      "hook": "Every time you say YES to one thing, you say NO to something else...",
+      "points": [
+        "Yes to expensive dinner → no to investing that $100",
+        "Yes to overtime → no to building a side income",
+        "Yes to status car → no to financial freedom for 5 more years",
+        "Your 'no's define your financial future"
+      ],
+      "sketch": "fork",
+      "takeaway": "Get comfortable saying no to good things so you can say yes to GREAT things.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 55,
+      "title": "The 4 Quadrants of Cash Flow",
+      "hook": "Robert Kiyosaki's framework that changed millions of lives...",
+      "points": [
+        "E = Employee: trade time for a paycheck",
+        "S = Self-Employed: own a job, not a business",
+        "B = Business Owner: own a SYSTEM that makes money",
+        "I = Investor: money makes money for you",
+        "Move from left (E/S) to right (B/I)"
+      ],
+      "sketch": "quadrant",
+      "takeaway": "You can stay in E while building B or I on the side. The right side is where freedom lives.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 56,
+      "title": "The Hedonic Treadmill",
+      "hook": "Why more money doesn't make you happier (after a point)...",
+      "points": [
+        "Get a raise → feel great for 2 weeks → back to baseline",
+        "Buy a new car → thrill lasts 3 months → it's just a car",
+        "Income above $75-100K barely increases daily happiness",
+        "We adapt to every new level and want MORE"
+      ],
+      "sketch": "cycle",
+      "takeaway": "Design your life for experiences, relationships, and purpose. Use money as the tool, not the goal.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 57,
+      "title": "Passive Income Streams Ranked",
+      "hook": "Not all passive income is created equal...",
+      "points": [
+        "Tier 1 (easiest): High-yield savings, dividend stocks",
+        "Tier 2 (moderate): Index funds, REITs, peer lending",
+        "Tier 3 (effort then passive): Rental property, digital products, content",
+        "Tier 4 (hardest): Business you can step away from"
+      ],
+      "sketch": "ladder",
+      "takeaway": "Start at Tier 1 today — even a high-yield savings account counts. Build up from there.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 58,
+      "title": "The Biggest Lie About Retirement",
+      "hook": "You don't need a million dollars to retire...",
+      "points": [
+        "The real question isn't 'how much do I need?'",
+        "It's 'how much do I SPEND?'",
+        "Spending $30K/year? You need $750K",
+        "Spending $80K/year? You need $2M",
+        "Cut expenses and your retirement number drops dramatically"
+      ],
+      "sketch": "formula",
+      "takeaway": "Focus on reducing your lifestyle costs AND investing. Both shrink the gap to freedom.",
+      "category": "Money Myths",
+      "status": "pending"
+    },
+    {
+      "id": 59,
+      "title": "Why 'I'll Start Monday' Never Works",
+      "hook": "The best time to start is messy and imperfect...",
+      "points": [
+        "Waiting for the 'right time' is procrastination in disguise",
+        "Perfectionism kills more financial plans than bad strategy",
+        "Investing $50 today beats investing $500 'someday'",
+        "Action creates clarity. Waiting creates more waiting"
+      ],
+      "sketch": "timeline",
+      "takeaway": "Open an investment account today. Put in $10. You just did more than 70% of people ever will.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 60,
+      "title": "The Revenge Spending Trap",
+      "hook": "Had a bad day? Your wallet is about to suffer...",
+      "points": [
+        "Emotional spending is the #1 budget killer",
+        "Stress, boredom, sadness, and even celebration trigger it",
+        "Retail therapy gives a dopamine hit that lasts 20 minutes",
+        "The credit card bill lasts 30 days",
+        "Same dopamine hit: a walk, workout, or calling a friend (free)"
+      ],
+      "sketch": "brain",
+      "takeaway": "Create a list of free mood boosters. When the urge to spend hits, do one of those instead.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 61,
+      "title": "How to Read a Pay Stub",
+      "hook": "Most people never look at this. Here's what you're missing...",
+      "points": [
+        "GROSS PAY: what you earned before deductions",
+        "TAX: federal, state, and local income tax",
+        "SOCIAL SECURITY + MEDICARE: your future safety net contributions",
+        "BENEFITS: health insurance, retirement match",
+        "NET PAY: what hits your bank account — budget from THIS number"
+      ],
+      "sketch": "stack",
+      "takeaway": "Pull up your latest pay stub right now. Understanding where your money goes is step one.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 62,
+      "title": "The 1% Better Rule",
+      "hook": "Improve 1% every day. After a year, you're 37x better...",
+      "points": [
+        "1% daily improvement compounds: 1.01^365 = 37.78",
+        "1% daily decline: 0.99^365 = 0.03",
+        "The gap between improving and declining is ENORMOUS",
+        "Applied to money: save 1% more each month, learn one new concept per week"
+      ],
+      "sketch": "growth",
+      "takeaway": "Don't aim for a financial transformation overnight. Aim for 1% better this week. Repeat forever.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 63,
+      "title": "The Hidden Cost of Keeping Up",
+      "hook": "Keeping up with the Joneses? The Joneses are broke...",
+      "points": [
+        "78% of Americans live paycheck to paycheck",
+        "The neighbour with the BMW? Probably on a 7-year loan",
+        "The friend with designer bags? $15K in credit card debt",
+        "You're comparing yourself to an illusion funded by debt"
+      ],
+      "sketch": "iceberg",
+      "takeaway": "Stop competing in a game where the 'winners' are secretly drowning. Build quiet wealth.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 64,
+      "title": "The Investor's Cheat Code: Rebalancing",
+      "hook": "This simple trick forces you to buy low and sell high...",
+      "points": [
+        "Set target: 70% stocks, 30% bonds",
+        "Stocks surge → now it's 80/20 → sell some stocks, buy bonds",
+        "Stocks crash → now it's 60/40 → sell bonds, buy cheap stocks",
+        "You're automatically buying low and selling high every time you rebalance"
+      ],
+      "sketch": "balance",
+      "takeaway": "Rebalance once a year. It takes 15 minutes and is one of the most powerful investment strategies.",
+      "category": "Investing Wisdom",
+      "status": "pending"
+    },
+    {
+      "id": 65,
+      "title": "The $100 Emergency",
+      "hook": "40% of adults can't cover an unexpected $400 expense...",
+      "points": [
+        "No emergency fund = every surprise becomes a crisis",
+        "One flat tire → credit card → 22% interest → debt spiral",
+        "Start with $100. Then $500. Then $1,000",
+        "Even a small buffer changes everything"
+      ],
+      "sketch": "shield",
+      "takeaway": "Today, open a separate savings account and put $20 in it. That's your emergency fund. Grow it.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 66,
+      "title": "How the Stock Market Actually Works",
+      "hook": "It's simpler than Wall Street wants you to think...",
+      "points": [
+        "Companies need money to grow → they sell tiny pieces (shares)",
+        "You buy shares → you own a piece of that company",
+        "Company grows → your shares become worth more",
+        "Company pays profits → you get dividends",
+        "The stock market is just a marketplace for buying and selling these pieces"
+      ],
+      "sketch": "flow",
+      "takeaway": "You're not gambling. You're buying ownership in real businesses. Think of it that way.",
+      "category": "Investing Wisdom",
+      "status": "pending"
+    },
+    {
+      "id": 67,
+      "title": "The Sunk Cost Fallacy",
+      "hook": "You've already spent the money. Now it's making you spend MORE...",
+      "points": [
+        "You bought a $100 concert ticket but feel sick on the day",
+        "You go anyway because 'I already paid for it'",
+        "The $100 is gone whether you go or not",
+        "Going while sick costs you MORE (health, energy, enjoyment)",
+        "The money is sunk. Make decisions based on what's AHEAD, not behind"
+      ],
+      "sketch": "fork",
+      "takeaway": "Stop throwing good money after bad. If an investment, job, or purchase isn't working — cut it.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 68,
+      "title": "Why Cash Is Not King",
+      "hook": "Your grandparents were wrong about this one...",
+      "points": [
+        "Cash feels safe but loses 3-7% per year to inflation",
+        "$100K in cash today = $74K in purchasing power after 10 years",
+        "Meanwhile, $100K invested at 8% = $215K",
+        "The gap: $141,000 — just for doing nothing vs. investing"
+      ],
+      "sketch": "comparison",
+      "takeaway": "Keep 3-6 months in cash for emergencies. Everything else should be invested and growing.",
+      "category": "Money Myths",
+      "status": "pending"
+    },
+    {
+      "id": 69,
+      "title": "The Side Hustle Math",
+      "hook": "An extra $500/month changes your entire financial life...",
+      "points": [
+        "$500/month extra income invested at 10%:",
+        "After 5 years: $39,000",
+        "After 10 years: $102,000",
+        "After 20 years: $380,000",
+        "A modest side hustle can fund your retirement"
+      ],
+      "sketch": "growth",
+      "takeaway": "You don't need a million-dollar idea. You need $500/month and patience. What skill can you monetise?",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 70,
+      "title": "The Anchoring Effect on Prices",
+      "hook": "The first number you see changes everything you buy...",
+      "points": [
+        "A $5,000 watch next to a $15,000 watch looks like a bargain",
+        "A $50 shirt seems cheap after looking at $200 shirts",
+        "Restaurants put expensive items at the top so everything below looks reasonable",
+        "Your brain judges value RELATIVE to the first price it sees"
+      ],
+      "sketch": "brain",
+      "takeaway": "When shopping, ignore the first price. Ask: what is this worth TO ME? Set your anchor internally.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 71,
+      "title": "The 7 Streams of Income",
+      "hook": "Average millionaire has 7 income streams. Here they are...",
+      "points": [
+        "1. Earned income (salary/wages)",
+        "2. Profit income (business)",
+        "3. Interest income (savings/lending)",
+        "4. Dividend income (stocks)",
+        "5. Rental income (property)",
+        "6. Capital gains (selling investments)",
+        "7. Royalty income (intellectual property)"
+      ],
+      "sketch": "seven_streams",
+      "takeaway": "You don't need all 7 at once. Add one new stream each year. In 5 years, you're transformed.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 72,
+      "title": "Why You Feel Broke Making Good Money",
+      "hook": "You earn more than ever but feel poorer. Here's why...",
+      "points": [
+        "Lifestyle inflation ate your raises",
+        "Social pressure normalised expensive habits",
+        "Subscriptions multiplied quietly in the background",
+        "Your 'needs' expanded to fill your income",
+        "The gap between earning and keeping determines wealth"
+      ],
+      "sketch": "cycle",
+      "takeaway": "The fix: freeze your lifestyle for 1 year. Every raise and bonus goes straight to investments.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 73,
+      "title": "How to Build Credit from Zero",
+      "hook": "No credit history? Here's the exact roadmap...",
+      "points": [
+        "Step 1: Get a secured credit card ($200-500 deposit)",
+        "Step 2: Use it for ONE small recurring bill (e.g., Netflix)",
+        "Step 3: Set up automatic full payment every month",
+        "Step 4: Never use more than 30% of the limit",
+        "Step 5: Wait 6-12 months → apply for a regular card"
+      ],
+      "sketch": "checklist",
+      "takeaway": "Good credit is a financial superpower. Start building it today — even from zero.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 74,
+      "title": "The Wealth Equation Most People Get Wrong",
+      "hook": "High income ≠ wealth. Here's the real equation...",
+      "points": [
+        "WRONG: Wealth = How much you EARN",
+        "RIGHT: Wealth = How much you KEEP",
+        "A doctor earning $300K with $250K in expenses = $50K wealth/year",
+        "A teacher earning $50K with $30K in expenses = $20K wealth/year",
+        "The doctor earns 6x more but only builds 2.5x more wealth"
+      ],
+      "sketch": "comparison",
+      "takeaway": "The gap between income and expenses is ALL that matters. Widen the gap by any means necessary.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 75,
+      "title": "The 24-Hour Income Challenge",
+      "hook": "Can you make $100 in 24 hours outside your job?",
+      "points": [
+        "Sell 5 unused items on Facebook Marketplace",
+        "Do 2 hours of freelance work in your skill area",
+        "Offer a service: cleaning, tutoring, dog walking",
+        "Create and sell a simple digital template",
+        "If you can make $100 once, you can make $100 every week"
+      ],
+      "sketch": "checklist",
+      "takeaway": "Try it this weekend. Proving you can earn outside a job changes your relationship with money forever.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 76,
+      "title": "What Happens When You Die Without a Will",
+      "hook": "If you have ANY assets, you need to hear this...",
+      "points": [
+        "No will = the government decides who gets your money",
+        "Your partner might get NOTHING if you're not married",
+        "Your children's guardian is chosen by a judge, not you",
+        "The process takes months to years and costs thousands",
+        "A basic will costs $100-300 and takes an hour"
+      ],
+      "sketch": "flow",
+      "takeaway": "Write a will this month. It's one of the most important financial moves most people skip.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 77,
+      "title": "The Penny Jar Visualisation",
+      "hook": "Every year you live is a penny removed from a jar...",
+      "points": [
+        "Average lifespan: 80 years = 4,160 weeks",
+        "If you're 30, you have 2,600 weeks left",
+        "Of those, only about 1,000 are your 'prime' working years",
+        "Each week removed can never be put back",
+        "How many of YOUR remaining weeks are going to build your freedom?"
+      ],
+      "sketch": "decline",
+      "takeaway": "Time is your most valuable asset. Don't spend it doing things that don't build the life you want.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 78,
+      "title": "The Monday Morning Test",
+      "hook": "This one question reveals if you're on the right path...",
+      "points": [
+        "How do you feel on Monday morning?",
+        "If the answer is dread — something needs to change",
+        "Financial freedom doesn't mean never working",
+        "It means choosing WHAT you work on",
+        "Build wealth so Monday becomes a choice, not a sentence"
+      ],
+      "sketch": "fork",
+      "takeaway": "Use this feeling as fuel. Every dollar invested buys you one step closer to choosing your Mondays.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 79,
+      "title": "The Insurance Nobody Tells You About",
+      "hook": "Life insurance is boring. But here's why you need it...",
+      "points": [
+        "Term life insurance: cheap, simple, covers a set period",
+        "At age 30, a $500K policy costs ~$25/month",
+        "If you have dependents and you die, they're covered",
+        "If you don't die during the term, you 'lose' the premiums",
+        "But that's like saying you 'lost' money on car insurance you didn't use"
+      ],
+      "sketch": "shield",
+      "takeaway": "If anyone depends on your income, get term life insurance. It's cheap peace of mind.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 80,
+      "title": "Why You Should Date Your Finances",
+      "hook": "Schedule a weekly money date. Seriously...",
+      "points": [
+        "Every week, spend 15 minutes reviewing your finances",
+        "Check bank balances, investment growth, upcoming bills",
+        "Celebrate wins (savings grew, debt shrank)",
+        "Catch problems early (overspending, missed payments)",
+        "Financial awareness = financial confidence"
+      ],
+      "sketch": "checklist",
+      "takeaway": "Put a recurring 15-minute 'money date' in your calendar. Sunday evening works perfectly.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 81,
+      "title": "The Tax Refund Trap",
+      "hook": "Getting a big tax refund? That's YOUR money you lent the government for free...",
+      "points": [
+        "A $3,000 refund = you overpaid $250/month in taxes",
+        "The government held YOUR $250/month earning 0% interest",
+        "If you'd invested that monthly, it'd be worth more",
+        "Adjust your withholding so you break even or get a tiny refund"
+      ],
+      "sketch": "flow",
+      "takeaway": "A tax refund isn't a bonus. It's your own money returned late. Adjust your tax settings.",
+      "category": "Money Myths",
+      "status": "pending"
+    },
+    {
+      "id": 82,
+      "title": "How to Start Investing with $50",
+      "hook": "You don't need thousands to start. You need $50 and 10 minutes...",
+      "points": [
+        "Step 1: Download a brokerage app (Fidelity, Vanguard, etc)",
+        "Step 2: Open an account (10 minutes, free)",
+        "Step 3: Buy a total market index fund (e.g., VTI or VTSAX)",
+        "Step 4: Set up $50/month automatic investment",
+        "Step 5: Don't touch it for 10 years. Just keep adding."
+      ],
+      "sketch": "checklist",
+      "takeaway": "The hardest part is starting. Everything after the first $50 gets easier.",
+      "category": "Investing Wisdom",
+      "status": "pending"
+    },
+    {
+      "id": 83,
+      "title": "The Gratitude Economy",
+      "hook": "The fastest way to feel rich? Change what 'enough' means...",
+      "points": [
+        "If you have a roof, food, and internet — you're richer than 80% of the world",
+        "Gratitude reduces impulse spending by 30% (studies show)",
+        "Happy people make better financial decisions",
+        "Contentment isn't giving up — it's appreciating the base while building more"
+      ],
+      "sketch": "growth",
+      "takeaway": "Start a 1-minute gratitude practice. It sounds soft, but it makes you a better money manager.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 84,
+      "title": "The Business Nobody Talks About: Boring Businesses",
+      "hook": "Forget apps. The most profitable businesses are boring...",
+      "points": [
+        "Laundromats: $200-500K revenue, minimal staff",
+        "Car washes: $500K-$1M revenue, mostly automated",
+        "Self-storage: 90%+ profit margins once full",
+        "Vending machines: $300-500/month per machine, minimal effort",
+        "Boring businesses = consistent cash flow"
+      ],
+      "sketch": "stack",
+      "takeaway": "Sexy businesses get attention. Boring businesses get rich. Look where nobody else is looking.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 85,
+      "title": "The True Cost of a University Degree",
+      "hook": "Is college worth it? The math is complicated...",
+      "points": [
+        "Average student debt: $30,000+",
+        "Interest over repayment period: another $15-25K",
+        "4 years of lost income: $120-200K",
+        "Total true cost: $165-255K",
+        "Only worth it if your career requires it AND the ROI is clear"
+      ],
+      "sketch": "comparison",
+      "takeaway": "Education is always valuable. But a degree isn't always the best return on investment. Run the numbers.",
+      "category": "Money Myths",
+      "status": "pending"
+    },
+    {
+      "id": 86,
+      "title": "The Barefoot Investor's Money Buckets",
+      "hook": "Australia's most popular finance book uses a bucket system...",
+      "points": [
+        "BLOW: 60% for daily expenses + fun",
+        "MOJO: emergency fund — 3 months of expenses",
+        "GROW: 20% — investments and wealth building",
+        "FIRE EXTINGUISHER: 20% — destroy debt first, then invest",
+        "Once debt-free, FIRE EXTINGUISHER becomes more GROW"
+      ],
+      "sketch": "jars",
+      "takeaway": "Simple systems win. Pick a bucket system that resonates and automate it this week.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 87,
+      "title": "Why Your Network = Your Net Worth",
+      "hook": "You are the average of the 5 people you spend the most time with...",
+      "points": [
+        "If your 5 closest friends are broke, you'll stay broke",
+        "If they talk about investing, you'll start investing",
+        "Wealthy circles share opportunities, strategies, and accountability",
+        "You don't need rich friends — you need ambitious friends"
+      ],
+      "sketch": "circles",
+      "takeaway": "Join one community of people who talk about building wealth. Online counts. Your environment shapes you.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 88,
+      "title": "The Power of Saying 'I Can't Afford It' Differently",
+      "hook": "Two phrases. Completely different outcomes...",
+      "points": [
+        "'I can't afford it' = victim mindset. Conversation over.",
+        "'HOW can I afford it?' = creative mindset. Conversation begins.",
+        "One closes your brain. The other opens it.",
+        "Every wealthy person asks 'how' instead of saying 'can't'"
+      ],
+      "sketch": "fork",
+      "takeaway": "Replace 'I can't' with 'How can I?' Watch how different solutions start appearing.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 89,
+      "title": "The Invisible Millionaires",
+      "hook": "80% of millionaires are first-generation. They don't look like you'd expect...",
+      "points": [
+        "Most drive normal cars",
+        "Most live in middle-class neighbourhoods",
+        "Most never earned more than $100K/year",
+        "What they did differently: saved 15-20% consistently for 25+ years",
+        "They got rich slowly and quietly"
+      ],
+      "sketch": "iceberg",
+      "takeaway": "Wealth isn't flashy. It's quiet discipline over decades. You can do exactly what they did.",
+      "category": "Inspiring Stories",
+      "status": "pending"
+    },
+    {
+      "id": 90,
+      "title": "The Financial Order of Operations",
+      "hook": "Do these in ORDER. Skipping steps costs you...",
+      "points": [
+        "Step 1: Budget — know where money goes",
+        "Step 2: Emergency fund — $1,000 starter",
+        "Step 3: Kill high-interest debt (credit cards)",
+        "Step 4: Full emergency fund (3-6 months)",
+        "Step 5: Invest 15%+ of income",
+        "Step 6: Extra debt payoff (mortgage, student loans)",
+        "Step 7: Build wealth aggressively"
+      ],
+      "sketch": "ladder",
+      "takeaway": "Which step are you on? Focus there. Don't jump to step 5 if step 2 isn't done.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 91,
+      "title": "How Billionaires Think About Time",
+      "hook": "They don't manage time. They manage ENERGY...",
+      "points": [
+        "Time is fixed — 24 hours. Energy is variable.",
+        "Billionaires protect their peak hours for highest-value work",
+        "They delegate $20/hour tasks to focus on $1,000/hour thinking",
+        "They say no to 95% of requests",
+        "They invest in health (sleep, exercise) because it multiplies energy"
+      ],
+      "sketch": "flow",
+      "takeaway": "Calculate your hourly rate. Stop doing tasks worth less than that. Delegate, automate, or eliminate.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 92,
+      "title": "The 10X Rule",
+      "hook": "Whatever you think you need to do, multiply it by 10...",
+      "points": [
+        "Think you need 10 clients? Get 100.",
+        "Think you should save $200/month? Save $2,000.",
+        "Think one income stream is enough? Build 10.",
+        "Most people massively UNDERESTIMATE what's required",
+        "10X effort creates 10X results... and 10X safety margin"
+      ],
+      "sketch": "growth",
+      "takeaway": "You're not thinking big enough. Whatever your goal is, add a zero. Then figure out how.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 93,
+      "title": "The Spending Personality Quiz",
+      "hook": "Which money personality are you?",
+      "points": [
+        "THE SAVER: hoards cash, afraid to invest (risk: inflation eats wealth)",
+        "THE SPENDER: lives for today, no buffer (risk: one emergency = crisis)",
+        "THE AVOIDER: ignores money entirely (risk: hidden debt, missed opportunities)",
+        "THE MONK: extreme frugality (risk: burnout, no joy)",
+        "THE STRATEGIST: balanced, intentional, informed (the goal)"
+      ],
+      "sketch": "circles",
+      "takeaway": "Know your type. Then build a system that works WITH your personality, not against it.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 94,
+      "title": "How to Protect Your Wealth",
+      "hook": "Building wealth is hard. KEEPING it is a different skill...",
+      "points": [
+        "Insurance: protect against catastrophic loss",
+        "Diversification: never put everything in one place",
+        "Emergency fund: weather storms without selling investments",
+        "Estate planning: will, power of attorney, beneficiaries",
+        "Financial literacy: the best protection is understanding"
+      ],
+      "sketch": "shield",
+      "takeaway": "Offence builds wealth. Defence keeps it. Make sure you have both.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 95,
+      "title": "The $1 Billion Dollar Napkin Idea",
+      "hook": "The best ideas don't need PowerPoints...",
+      "points": [
+        "Southwest Airlines' entire business model was drawn on a napkin",
+        "3 cities, connected by cheap direct flights",
+        "No frills, low cost, high frequency",
+        "That napkin sketch became a $20 BILLION company",
+        "Simple ideas, executed relentlessly, build empires"
+      ],
+      "sketch": "flow",
+      "takeaway": "Your next big idea doesn't need to be complicated. It needs to be simple, clear, and executed.",
+      "category": "Inspiring Stories",
+      "status": "pending"
+    },
+    {
+      "id": 96,
+      "title": "The 3 Money Conversations Every Couple Must Have",
+      "hook": "Money is the #1 cause of divorce. Here's how to prevent it...",
+      "points": [
+        "Conversation 1: DISCLOSURE — share ALL debts, assets, income openly",
+        "Conversation 2: VALUES — what does money mean to each of you?",
+        "Conversation 3: SYSTEM — joint account? Split? Who manages what?",
+        "Schedule monthly money dates together",
+        "No surprises. No secrets. No judgement."
+      ],
+      "sketch": "checklist",
+      "takeaway": "Have these 3 conversations this month. Financial alignment strengthens relationships.",
+      "category": "Money Hacks",
+      "status": "pending"
+    },
+    {
+      "id": 97,
+      "title": "The Ikigai of Wealth",
+      "hook": "True wealth sits at the intersection of 4 things...",
+      "points": [
+        "What you LOVE doing",
+        "What you're GOOD at",
+        "What the world NEEDS",
+        "What you can be PAID for",
+        "The intersection = your highest-value path"
+      ],
+      "sketch": "venn",
+      "takeaway": "Find work that hits all four circles. That's where both income and fulfilment live together.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 98,
+      "title": "The Final 5% Problem",
+      "hook": "You know 95% of what you need to build wealth. The problem is the last 5%...",
+      "points": [
+        "You know to save. You know to invest. You know to budget.",
+        "The last 5% is DOING it consistently",
+        "Knowledge without action is just entertainment",
+        "The gap between knowing and doing is where most people live",
+        "Systems beat motivation. Automate everything possible."
+      ],
+      "sketch": "comparison",
+      "takeaway": "Stop learning and start doing. Set up ONE automatic investment today. That's worth more than 10 books.",
+      "category": "Success Habits",
+      "status": "pending"
+    },
+    {
+      "id": 99,
+      "title": "The Wealth Timeline",
+      "hook": "Here's what building wealth actually looks like year by year...",
+      "points": [
+        "Year 1-3: Painful. Slow. You question everything.",
+        "Year 3-5: Momentum builds. Habits feel natural.",
+        "Year 5-10: Compound interest kicks in visibly.",
+        "Year 10-20: Growth accelerates dramatically.",
+        "Year 20+: You can't believe you almost gave up in year 2."
+      ],
+      "sketch": "growth",
+      "takeaway": "The first 3 years are the hardest. Push through. Everything on the other side is worth it.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 100,
+      "title": "You Already Have Everything You Need",
+      "hook": "You don't need more money to start building wealth...",
+      "points": [
+        "You need a phone (you're reading this on one)",
+        "You need $10 (to open an investment account)",
+        "You need 15 minutes (to set up automatic investing)",
+        "You need patience (the hardest part)",
+        "Everything else is just optimisation"
+      ],
+      "sketch": "checklist",
+      "takeaway": "The only thing between you and a wealthier future is the decision to start. Make it today.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    }
+  ]
+}
