@@ -382,127 +382,86 @@ function generateFrames(quoteText, author, themeKey, framesDir) {
 }
 
 // ============================================================================
-// AUDIO GENERATION — Ambient motivational pad using FFmpeg synthesis
+// AUDIO GENERATION — Check for custom music or return null
 // ============================================================================
-function generateAudio(duration, outputPath) {
-  // Check for user-provided music files first
+function getCustomMusicPath(duration, outputPath) {
   if (fs.existsSync(MUSIC_DIR)) {
-    const musicFiles = fs.readdirSync(MUSIC_DIR).filter(f => f.endsWith('.mp3') || f.endsWith('.aac') || f.endsWith('.m4a'))
+    const musicFiles = fs.readdirSync(MUSIC_DIR).filter(f => f.endsWith('.mp3') || f.endsWith('.aac') || f.endsWith('.m4a') || f.endsWith('.wav'))
     if (musicFiles.length > 0) {
       const picked = musicFiles[Math.floor(Math.random() * musicFiles.length)]
       const musicPath = path.join(MUSIC_DIR, picked)
       console.log(`  🎵 Using custom music: ${picked}`)
-
-      execSync(`ffmpeg -y -i "${musicPath}" -t ${duration} -af "afade=t=in:d=1.5,afade=t=out:st=${duration - 2}:d=2,volume=0.4" -c:a aac -b:a 128k "${outputPath}"`)
-      return
+      return musicPath
     }
   }
-
-  console.log('  🎵 Generating ambient audio...')
-
-  // First check what encoders are available
-  try {
-    const encoders = execSync('ffmpeg -encoders 2>&1 | grep -E "aac|mp3|vorbis" || true').toString()
-    console.log(`  📋 Available audio encoders: ${encoders.trim().replace(/\n/g, ', ').substring(0, 200)}`)
-  } catch (e) {}
-
-  const fadeOutStart = Math.max(0, duration - 3)
-
-  // Attempt 1: Ambient pad with AAC
-  const filterComplex = `[0]lowpass=f=250,volume=0.12[noise];[1]volume=0.08[a2];[2]volume=0.06[e3];[3]volume=0.05[a3];[4]volume=0.03[cs4];[noise][a2][e3][a3][cs4]amix=inputs=5:duration=longest,aecho=0.8:0.88:500|700:0.25|0.2,lowpass=f=3000,afade=t=in:d=2,afade=t=out:st=${fadeOutStart}:d=3`
-
-  const attempts = [
-    {
-      name: 'ambient pad (aac)',
-      cmd: `ffmpeg -y -f lavfi -i "anoisesrc=c=pink:r=44100:d=${duration}" -f lavfi -i "sine=f=110:d=${duration}" -f lavfi -i "sine=f=164.81:d=${duration}" -f lavfi -i "sine=f=220:d=${duration}" -f lavfi -i "sine=f=277.18:d=${duration}" -filter_complex "${filterComplex}" -t ${duration} -c:a aac -b:a 128k "${outputPath}"`
-    },
-    {
-      name: 'simple tone (aac)',
-      cmd: `ffmpeg -y -f lavfi -i "sine=f=174.61:d=${duration}" -af "volume=0.06,lowpass=f=800,afade=t=in:d=2,afade=t=out:st=${fadeOutStart}:d=3" -t ${duration} -c:a aac -b:a 128k "${outputPath}"`
-    },
-    {
-      name: 'silent (aac)',
-      cmd: `ffmpeg -y -f lavfi -i "anullsrc=r=44100:cl=stereo" -t ${duration} -c:a aac -b:a 128k "${outputPath}"`
-    },
-    {
-      name: 'ambient pad (mp3)',
-      cmd: `ffmpeg -y -f lavfi -i "anoisesrc=c=pink:r=44100:d=${duration}" -f lavfi -i "sine=f=110:d=${duration}" -f lavfi -i "sine=f=164.81:d=${duration}" -f lavfi -i "sine=f=220:d=${duration}" -f lavfi -i "sine=f=277.18:d=${duration}" -filter_complex "${filterComplex}" -t ${duration} -c:a libmp3lame -b:a 128k "${outputPath.replace('.aac', '.mp3')}"`
-    },
-    {
-      name: 'simple tone (mp3)',
-      cmd: `ffmpeg -y -f lavfi -i "sine=f=174.61:d=${duration}" -af "volume=0.06,lowpass=f=800,afade=t=in:d=2,afade=t=out:st=${fadeOutStart}:d=3" -t ${duration} -c:a libmp3lame -b:a 128k "${outputPath.replace('.aac', '.mp3')}"`
-    },
-    {
-      name: 'silent (mp3)',
-      cmd: `ffmpeg -y -f lavfi -i "anullsrc=r=44100:cl=stereo" -t ${duration} -c:a libmp3lame -b:a 128k "${outputPath.replace('.aac', '.mp3')}"`
-    },
-  ]
-
-  for (const attempt of attempts) {
-    try {
-      console.log(`  🔄 Trying: ${attempt.name}...`)
-      const result = execSync(attempt.cmd + ' 2>&1', { maxBuffer: 1024 * 1024 }).toString()
-      // Check if file was created
-      const actualPath = attempt.cmd.includes('.mp3') ? outputPath.replace('.aac', '.mp3') : outputPath
-      if (fs.existsSync(actualPath) && fs.statSync(actualPath).size > 0) {
-        // If we ended up with mp3, update the outputPath reference
-        if (actualPath !== outputPath) {
-          fs.renameSync(actualPath, outputPath)
-        }
-        console.log(`  ✅ Audio generated (${attempt.name})`)
-        return
-      }
-    } catch (err) {
-      const errMsg = err.stderr ? err.stderr.toString() : err.message
-      console.log(`  ⚠️  ${attempt.name} failed: ${errMsg.substring(0, 200)}`)
-    }
-  }
-
-  // Ultimate fallback: generate raw WAV then convert
-  console.log('  🔄 Final fallback: generating WAV...')
-  const wavPath = outputPath.replace('.aac', '.wav')
-  try {
-    execSync(`ffmpeg -y -f lavfi -i "sine=f=174.61:d=${duration}" -af "volume=0.06" -t ${duration} "${wavPath}" 2>&1`)
-    if (fs.existsSync(wavPath)) {
-      fs.renameSync(wavPath, outputPath)
-      console.log('  ✅ Audio generated (WAV fallback)')
-      return
-    }
-  } catch (err) {
-    console.log(`  ❌ WAV fallback failed: ${err.message.substring(0, 200)}`)
-  }
-
-  throw new Error('All audio generation methods failed')
+  console.log('  🎵 No custom music found — video will have silent audio track')
+  return null
 }
 
 // ============================================================================
 // VIDEO ASSEMBLY — Combine frames + audio into MP4
 // ============================================================================
-function assembleVideo(framesDir, audioPath, outputPath, duration) {
+function assembleVideo(framesDir, musicPath, outputPath, duration) {
   console.log('  🎬 Assembling video...')
 
-  // Check if audio file exists
-  const hasAudio = fs.existsSync(audioPath) && fs.statSync(audioPath).size > 0
+  // Log FFmpeg version for debugging
+  try {
+    const ver = execSync('ffmpeg -version 2>&1 | head -1').toString().trim()
+    console.log(`  📋 FFmpeg: ${ver}`)
+  } catch (e) {}
 
   let cmd
-  if (hasAudio) {
-    cmd = `ffmpeg -y -framerate ${FPS} -i "${framesDir}/frame_%05d.jpg" -i "${audioPath}" -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 128k -pix_fmt yuv420p -shortest -movflags +faststart "${outputPath}" 2>&1`
+  if (musicPath) {
+    // Use custom music file
+    const fadeOutStart = Math.max(0, duration - 2)
+    cmd = `ffmpeg -y -framerate ${FPS} -i "${framesDir}/frame_%05d.jpg" -i "${musicPath}" -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 128k -af "afade=t=in:d=1.5,afade=t=out:st=${fadeOutStart}:d=2,volume=0.4" -pix_fmt yuv420p -t ${duration} -movflags +faststart "${outputPath}" 2>&1`
   } else {
-    // No audio — create video with silent audio track (Facebook requires audio)
-    console.log('  ⚠️  No audio file, adding silent track...')
-    cmd = `ffmpeg -y -framerate ${FPS} -i "${framesDir}/frame_%05d.jpg" -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 128k -pix_fmt yuv420p -shortest -movflags +faststart "${outputPath}" 2>&1`
+    // Generate video-only first, then add silent audio
+    const videoOnly = outputPath.replace('.mp4', '_noaudio.mp4')
+
+    // Step 1: Video from frames (no audio)
+    console.log('  🎬 Step 1: Encoding video from frames...')
+    try {
+      execSync(`ffmpeg -y -framerate ${FPS} -i "${framesDir}/frame_%05d.jpg" -c:v libx264 -preset medium -crf 23 -pix_fmt yuv420p -movflags +faststart "${videoOnly}" 2>&1`, { maxBuffer: 5 * 1024 * 1024 })
+    } catch (err) {
+      const errOut = err.stdout ? err.stdout.toString().slice(-500) : err.message.slice(-500)
+      throw new Error(`Video encoding failed: ${errOut}`)
+    }
+
+    if (!fs.existsSync(videoOnly) || fs.statSync(videoOnly).size === 0) {
+      throw new Error('Video file was not created')
+    }
+    console.log(`  ✅ Video encoded: ${(fs.statSync(videoOnly).size / 1024 / 1024).toFixed(1)}MB`)
+
+    // Step 2: Add silent audio track using the video as input
+    console.log('  🎬 Step 2: Adding silent audio track...')
+    try {
+      execSync(`ffmpeg -y -i "${videoOnly}" -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 -c:v copy -c:a aac -shortest -movflags +faststart "${outputPath}" 2>&1`, { maxBuffer: 5 * 1024 * 1024 })
+    } catch (err) {
+      // If adding audio fails, just use the video without audio
+      console.log('  ⚠️  Could not add audio track, using video-only...')
+      fs.copyFileSync(videoOnly, outputPath)
+    }
+
+    // Clean up temp video
+    try { fs.unlinkSync(videoOnly) } catch (e) {}
   }
 
-  try {
-    execSync(cmd, { maxBuffer: 5 * 1024 * 1024 })
-  } catch (err) {
-    const errMsg = err.stderr ? err.stderr.toString() : err.stdout ? err.stdout.toString() : err.message
-    console.log(`  ⚠️  FFmpeg output: ${errMsg.substring(errMsg.length - 500)}`)
-    throw new Error(`Video assembly failed: ${errMsg.substring(0, 200)}`)
+  if (musicPath) {
+    try {
+      execSync(cmd, { maxBuffer: 5 * 1024 * 1024 })
+    } catch (err) {
+      const errOut = err.stdout ? err.stdout.toString().slice(-500) : err.message.slice(-500)
+      throw new Error(`Video assembly failed: ${errOut}`)
+    }
+  }
+
+  if (!fs.existsSync(outputPath) || fs.statSync(outputPath).size === 0) {
+    throw new Error('Final video file was not created')
   }
 
   const stats = fs.statSync(outputPath)
-  console.log(`  ✅ Video assembled: ${path.basename(outputPath)} (${(stats.size / 1024 / 1024).toFixed(1)}MB)`)
+  console.log(`  ✅ Video ready: ${path.basename(outputPath)} (${(stats.size / 1024 / 1024).toFixed(1)}MB)`)
 }
 
 // ============================================================================
@@ -732,13 +691,12 @@ async function main() {
       // Generate frames
       const { totalDuration } = generateFrames(quote.text, quote.author, themeKey, reelFramesDir)
 
-      // Generate audio
-      const audioPath = path.join(TEMP_DIR, `audio-${quote.id}.aac`)
-      generateAudio(totalDuration, audioPath)
+      // Check for custom music
+      const musicPath = getCustomMusicPath(totalDuration, path.join(TEMP_DIR, `audio-${quote.id}.aac`))
 
-      // Assemble video
+      // Assemble video (with music or silent track)
       const videoPath = path.join(TEMP_DIR, `reel-${quote.id}.mp4`)
-      assembleVideo(reelFramesDir, audioPath, videoPath, totalDuration)
+      assembleVideo(reelFramesDir, musicPath, videoPath, totalDuration)
 
       // Generate caption
       const caption = generateReelCaption(quote.text, quote.author)
