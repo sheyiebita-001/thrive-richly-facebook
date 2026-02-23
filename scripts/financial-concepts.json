@@ -1,0 +1,1005 @@
+{
+  "description": "Financial concepts and jargon explainer database for Thrive Richly. Each concept generates a 60-90 second whiteboard-style explainer video.",
+  "concepts": [
+    {
+      "id": 1,
+      "term": "Compound Interest",
+      "category": "Investing Basics",
+      "definition": "Earning interest on your interest. Your money grows faster over time because each year's gains get added to your balance, and then THOSE gains earn returns too.",
+      "example": "You invest $1,000 at 10% annual return. Year 1: $1,100. Year 2: $1,210. Year 10: $2,594. You almost tripled your money without adding a single dollar.",
+      "diagram": "growth_curve",
+      "keyTakeaway": "Start early. Even small amounts become huge with enough time.",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "term": "Inflation",
+      "category": "Economics",
+      "definition": "The silent thief. Inflation means prices rise over time, so your money buys LESS each year. If inflation is 3%, something that costs $100 today will cost $103 next year.",
+      "example": "A coffee that cost $2 in 2010 costs $4 today. Your salary needs to grow faster than inflation or you're actually getting poorer.",
+      "diagram": "shrinking_bar",
+      "keyTakeaway": "Cash sitting in a bank account is quietly losing value. Invest to beat inflation.",
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "term": "Assets vs Liabilities",
+      "category": "Wealth Building",
+      "definition": "Assets put money IN your pocket. Liabilities take money OUT. Rich people buy assets first. The key to wealth is simple: own more assets than liabilities.",
+      "example": "A rental property that pays you $500/month rent = asset. A car that costs you $400/month in payments = liability.",
+      "diagram": "two_columns",
+      "keyTakeaway": "Before any purchase, ask: does this put money in my pocket or take it out?",
+      "status": "pending"
+    },
+    {
+      "id": 4,
+      "term": "Dollar Cost Averaging",
+      "category": "Investing Basics",
+      "definition": "Investing the same amount on a regular schedule, regardless of price. When prices drop, you buy MORE shares. When prices rise, you buy fewer. Over time, this lowers your average cost.",
+      "example": "You invest $200 every month into an index fund. Some months the price is high, some months low. After a year, your average cost per share is lower than if you'd tried to time the market.",
+      "diagram": "bar_chart",
+      "keyTakeaway": "Don't try to time the market. Consistency beats timing every time.",
+      "status": "pending"
+    },
+    {
+      "id": 5,
+      "term": "Emergency Fund",
+      "category": "Money Management",
+      "definition": "Cash set aside for unexpected expenses — job loss, medical bills, car repairs. It's your financial safety net. Without one, a single emergency can spiral into debt.",
+      "example": "You lose your job unexpectedly. With 6 months of expenses saved, you can job hunt without panic. Without it, you're living on credit cards at 20% interest.",
+      "diagram": "shield",
+      "keyTakeaway": "Save 3-6 months of living expenses before you invest a single dollar.",
+      "status": "pending"
+    },
+    {
+      "id": 6,
+      "term": "Net Worth",
+      "category": "Wealth Building",
+      "definition": "Everything you OWN minus everything you OWE. It's the truest measure of wealth — not your salary, not your car, not your clothes. Just assets minus debts.",
+      "example": "You own a house worth $300K, have $50K in investments, and $20K in savings. But you owe $200K on the mortgage and $10K on credit cards. Net worth: $160K.",
+      "diagram": "balance_scale",
+      "keyTakeaway": "Track your net worth monthly. The number matters more than your income.",
+      "status": "pending"
+    },
+    {
+      "id": 7,
+      "term": "Passive Income",
+      "category": "Wealth Building",
+      "definition": "Money that comes in without you actively working for it. It's the holy grail of financial freedom — earning while you sleep, travel, or spend time with family.",
+      "example": "Rental income, dividend stocks, royalties from a book, or a business that runs without you. It takes work upfront but pays you forever.",
+      "diagram": "flow_arrows",
+      "keyTakeaway": "Build at least one source of passive income this year. Future you will be grateful.",
+      "status": "pending"
+    },
+    {
+      "id": 8,
+      "term": "The 50/30/20 Rule",
+      "category": "Budgeting",
+      "definition": "A simple budgeting framework. 50% of your income goes to NEEDS (rent, food, bills). 30% goes to WANTS (entertainment, dining out). 20% goes to SAVINGS and debt repayment.",
+      "example": "You earn $4,000/month. Needs: $2,000. Wants: $1,200. Savings: $800. Simple, flexible, and it actually works.",
+      "diagram": "pie_chart",
+      "keyTakeaway": "If you can't save 20%, start with 10%. Any system beats no system.",
+      "status": "pending"
+    },
+    {
+      "id": 9,
+      "term": "Credit Score",
+      "category": "Money Management",
+      "definition": "A number between 300-850 that tells lenders how trustworthy you are with borrowed money. Higher scores mean lower interest rates on mortgages, loans, and credit cards.",
+      "example": "A 750 credit score could get you a 6% mortgage rate. A 620 score might get you 8%. On a $300K house, that difference costs you over $100K in extra interest.",
+      "diagram": "gauge_meter",
+      "keyTakeaway": "Pay bills on time, keep credit usage below 30%, and never close your oldest card.",
+      "status": "pending"
+    },
+    {
+      "id": 10,
+      "term": "Index Fund",
+      "category": "Investing Basics",
+      "definition": "A single investment that owns a tiny piece of HUNDREDS of companies at once. Instead of picking individual stocks, you buy the entire market. Simple, cheap, and historically outperforms most professional fund managers.",
+      "example": "An S&P 500 index fund owns shares in Apple, Amazon, Google, and 497 other top US companies. One purchase = instant diversification.",
+      "diagram": "grid_boxes",
+      "keyTakeaway": "Warren Buffett's advice to most people: just buy a low-cost index fund.",
+      "status": "pending"
+    },
+    {
+      "id": 11,
+      "term": "Debt-to-Income Ratio",
+      "category": "Money Management",
+      "definition": "The percentage of your monthly income that goes to paying debts. Banks use this to decide if they'll lend to you. Below 36% is good. Above 50% is a red flag.",
+      "example": "You earn $5,000/month and pay $1,500 in debt payments (mortgage, car, student loans). Your DTI is 30% — healthy range.",
+      "diagram": "percentage_bar",
+      "keyTakeaway": "Keep your DTI below 36%. If it's higher, focus on paying down debt before borrowing more.",
+      "status": "pending"
+    },
+    {
+      "id": 12,
+      "term": "Diversification",
+      "category": "Investing Basics",
+      "definition": "Don't put all your eggs in one basket. Spread your investments across different types — stocks, bonds, real estate, international markets. When one drops, others might rise.",
+      "example": "If 100% of your money is in tech stocks and tech crashes 40%, you lose 40%. But if you split between tech, healthcare, real estate, and bonds, the damage is much smaller.",
+      "diagram": "pie_chart",
+      "keyTakeaway": "Diversification is the only free lunch in investing. Use it.",
+      "status": "pending"
+    },
+    {
+      "id": 13,
+      "term": "Bull Market vs Bear Market",
+      "category": "Market Concepts",
+      "definition": "A bull market means prices are rising and confidence is high — the bull charges UP. A bear market means prices are falling 20%+ — the bear swipes DOWN. Both are normal parts of the cycle.",
+      "example": "2009-2020 was a massive bull market. Early 2020 was a bear market. People who panicked and sold missed the recovery. People who held on recovered everything.",
+      "diagram": "up_down_arrows",
+      "keyTakeaway": "Bear markets are when millionaires are made. Stay invested and buy the dip.",
+      "status": "pending"
+    },
+    {
+      "id": 14,
+      "term": "ROI (Return on Investment)",
+      "category": "Investing Basics",
+      "definition": "How much profit you made compared to what you put in. Expressed as a percentage. If you invest $1,000 and get back $1,200, your ROI is 20%.",
+      "example": "You spend $5,000 on a course that helps you get a $15,000 raise. ROI = 200%. You spend $50K on a car that's worth $35K next year. ROI = -30%.",
+      "diagram": "comparison_bars",
+      "keyTakeaway": "Calculate the ROI on everything — education, business, investments, even time spent.",
+      "status": "pending"
+    },
+    {
+      "id": 15,
+      "term": "Opportunity Cost",
+      "category": "Economics",
+      "definition": "What you GIVE UP when you choose one thing over another. Every dollar spent is a dollar that can't be invested. Every hour wasted is an hour that can't build wealth.",
+      "example": "That $5 daily coffee = $1,825/year. Invested at 10% for 30 years = $300,000+. The coffee doesn't cost $5. It costs $300K in future wealth.",
+      "diagram": "fork_path",
+      "keyTakeaway": "Think in opportunity costs. What is this purchase REALLY costing your future self?",
+      "status": "pending"
+    },
+    {
+      "id": 16,
+      "term": "Liquidity",
+      "category": "Money Management",
+      "definition": "How quickly you can turn something into cash without losing value. Cash is the most liquid. A house is illiquid — selling takes months. Stocks are in between.",
+      "example": "You need $10K urgently. Savings account: instant access. Stocks: sell in a day. Real estate: weeks to months. Retirement account: penalties apply.",
+      "diagram": "speed_ranking",
+      "keyTakeaway": "Keep some money in liquid assets. Not everything should be locked up in investments.",
+      "status": "pending"
+    },
+    {
+      "id": 17,
+      "term": "APR vs APY",
+      "category": "Banking",
+      "definition": "APR (Annual Percentage Rate) is the simple interest rate you're charged. APY (Annual Percentage Yield) includes compounding — interest on interest. APY is always the bigger number.",
+      "example": "A savings account says 5% APY — that's what you actually earn. A credit card says 24% APR — but with monthly compounding, you're really paying 26.8%.",
+      "diagram": "two_columns",
+      "keyTakeaway": "When SAVING, look for high APY. When BORROWING, look for low APR.",
+      "status": "pending"
+    },
+    {
+      "id": 18,
+      "term": "Good Debt vs Bad Debt",
+      "category": "Money Management",
+      "definition": "Good debt makes you richer — it's borrowed money used to buy assets or increase your earning power. Bad debt makes you poorer — it's borrowed money spent on things that lose value.",
+      "example": "Good debt: mortgage on a rental property, student loan for a high-earning degree, business loan. Bad debt: credit card debt for clothes, car loan for a luxury car you can't afford.",
+      "diagram": "two_columns",
+      "keyTakeaway": "Use debt as a tool, not a crutch. Borrow to build, never to consume.",
+      "status": "pending"
+    },
+    {
+      "id": 19,
+      "term": "ETF (Exchange-Traded Fund)",
+      "category": "Investing Basics",
+      "definition": "Like a basket of investments you can buy and sell like a single stock. ETFs can hold stocks, bonds, or commodities. They trade throughout the day and usually have very low fees.",
+      "example": "A gold ETF lets you invest in gold without buying physical bars. A tech ETF gives you exposure to all major tech companies in one purchase.",
+      "diagram": "grid_boxes",
+      "keyTakeaway": "ETFs are one of the easiest and cheapest ways to start investing. Low fees, instant diversification.",
+      "status": "pending"
+    },
+    {
+      "id": 20,
+      "term": "Leverage",
+      "category": "Wealth Building",
+      "definition": "Using borrowed money to amplify your returns. It's a multiplier — it makes gains bigger, but it also makes losses bigger. The wealthy use leverage strategically.",
+      "example": "You buy a $200K property with $40K down (5x leverage). If the property rises 10% to $220K, your $40K made $20K — that's a 50% return on YOUR money.",
+      "diagram": "lever_fulcrum",
+      "keyTakeaway": "Leverage is powerful but dangerous. Only use it when the math clearly works in your favour.",
+      "status": "pending"
+    },
+    {
+      "id": 21,
+      "term": "Capital Gains",
+      "category": "Taxes",
+      "definition": "Profit from selling an investment for more than you paid. Short-term gains (held under 1 year) are taxed like regular income. Long-term gains (held over 1 year) get a lower tax rate.",
+      "example": "Buy stock at $1,000, sell at $1,500. Your capital gain is $500. Hold it over a year and you might pay 15% tax ($75). Sell too early and you could pay 30%+ ($150+).",
+      "diagram": "comparison_bars",
+      "keyTakeaway": "Hold investments for at least a year when possible. Patience saves you money on taxes.",
+      "status": "pending"
+    },
+    {
+      "id": 22,
+      "term": "Cash Flow",
+      "category": "Wealth Building",
+      "definition": "Money coming IN minus money going OUT. Positive cash flow means you're earning more than you spend. Negative cash flow means you're bleeding money, no matter how high your income.",
+      "example": "You earn $8,000/month but spend $9,000. Despite a great salary, your cash flow is -$1,000. You're getting poorer every month.",
+      "diagram": "flow_arrows",
+      "keyTakeaway": "Rich people obsess over cash flow. Income means nothing if outflow exceeds inflow.",
+      "status": "pending"
+    },
+    {
+      "id": 23,
+      "term": "Recession",
+      "category": "Economics",
+      "definition": "When the economy shrinks for two consecutive quarters. Businesses slow down, people lose jobs, spending drops. They're scary but temporary — every recession in history has ended.",
+      "example": "During the 2008 recession, the stock market fell 50%. But by 2013 it had fully recovered, and by 2020 it had more than tripled from the bottom.",
+      "diagram": "dip_recovery",
+      "keyTakeaway": "Recessions create the best buying opportunities. Prepare cash reserves so you can invest when others panic.",
+      "status": "pending"
+    },
+    {
+      "id": 24,
+      "term": "Dividend",
+      "category": "Investing Basics",
+      "definition": "A portion of a company's profits paid directly to shareholders — usually quarterly. It's like getting a paycheck just for owning the stock. You get paid whether the stock price goes up or down.",
+      "example": "You own 100 shares of a company that pays $4/share annually in dividends. That's $400/year in passive income, deposited straight into your account.",
+      "diagram": "flow_arrows",
+      "keyTakeaway": "Dividend stocks let you get paid while you wait. Reinvest dividends for exponential growth.",
+      "status": "pending"
+    },
+    {
+      "id": 25,
+      "term": "Lifestyle Inflation",
+      "category": "Money Management",
+      "definition": "When your spending increases every time your income increases. You get a raise and immediately upgrade your car, apartment, and wardrobe. Your bank account never grows despite earning more.",
+      "example": "Earning $50K, saving $500/month. Get a raise to $70K, now saving $500/month but driving a nicer car. The extra $20K disappeared into lifestyle upgrades.",
+      "diagram": "parallel_lines",
+      "keyTakeaway": "When you get a raise, save at least half of the increase before upgrading anything.",
+      "status": "pending"
+    },
+    {
+      "id": 26,
+      "term": "The Rule of 72",
+      "category": "Investing Basics",
+      "definition": "A quick math trick to estimate how long it takes to DOUBLE your money. Divide 72 by your annual return rate. That's how many years until your investment doubles.",
+      "example": "At 8% annual returns: 72 ÷ 8 = 9 years to double. At 12% returns: 72 ÷ 12 = 6 years. At 4% in a savings account: 72 ÷ 4 = 18 years.",
+      "diagram": "comparison_bars",
+      "keyTakeaway": "Use the Rule of 72 to quickly evaluate any investment opportunity.",
+      "status": "pending"
+    },
+    {
+      "id": 27,
+      "term": "Hedge Fund",
+      "category": "Market Concepts",
+      "definition": "A private investment fund for wealthy investors. They use aggressive strategies like short selling, leverage, and derivatives to try to beat the market. High minimum investment, high fees.",
+      "example": "Most hedge funds require $250K-$1M minimum investment and charge '2 and 20' — 2% annual fee plus 20% of profits. Despite this, most underperform simple index funds.",
+      "diagram": "gate_lock",
+      "keyTakeaway": "You don't need a hedge fund to build wealth. Index funds outperform most of them anyway.",
+      "status": "pending"
+    },
+    {
+      "id": 28,
+      "term": "Sinking Fund",
+      "category": "Budgeting",
+      "definition": "Money you set aside each month for a specific future expense. Instead of being surprised by big bills, you save small amounts over time so the money is ready when you need it.",
+      "example": "Christmas costs $1,200/year. A sinking fund saves $100/month starting in January. By December, the money is there — no credit card debt, no stress.",
+      "diagram": "stacking_blocks",
+      "keyTakeaway": "Create sinking funds for holidays, car repairs, insurance, and vacations. Turn big expenses into small monthly saves.",
+      "status": "pending"
+    },
+    {
+      "id": 29,
+      "term": "Equity",
+      "category": "Wealth Building",
+      "definition": "The portion of something you actually OWN — the value minus what you owe. In a home, it's the difference between what it's worth and what's left on the mortgage.",
+      "example": "Your home is worth $400K. You owe $250K on the mortgage. Your equity is $150K — that's real wealth you've built.",
+      "diagram": "stacking_blocks",
+      "keyTakeaway": "Equity is wealth you can access through selling or borrowing against. Build it intentionally.",
+      "status": "pending"
+    },
+    {
+      "id": 30,
+      "term": "Bear Trap",
+      "category": "Market Concepts",
+      "definition": "A fake market decline that tricks investors into selling, right before prices bounce back up. The market dips, panic sellers get out, then the market recovers and they miss the gains.",
+      "example": "Stock drops 15% on bad news. You panic and sell. Next week it rebounds 20%. You locked in your losses while patient investors profited.",
+      "diagram": "dip_recovery",
+      "keyTakeaway": "Don't make financial decisions based on fear. Most dips are temporary.",
+      "status": "pending"
+    },
+    {
+      "id": 31,
+      "term": "Tax-Loss Harvesting",
+      "category": "Taxes",
+      "definition": "Selling losing investments to offset the taxes on your winning investments. You take a loss on paper, reduce your tax bill, and reinvest in something similar.",
+      "example": "You made $5,000 profit on Stock A but lost $3,000 on Stock B. Sell Stock B, and you only pay taxes on $2,000 instead of $5,000.",
+      "diagram": "balance_scale",
+      "keyTakeaway": "Losses aren't always bad. Use them strategically to lower your tax bill.",
+      "status": "pending"
+    },
+    {
+      "id": 32,
+      "term": "Amortisation",
+      "category": "Banking",
+      "definition": "How a loan gets paid off over time in equal instalments. Early payments are mostly interest. Later payments are mostly principal. Understanding this reveals how much you're really paying.",
+      "example": "On a 30-year $300K mortgage, your first payment might be $700 interest and $300 principal. By year 25, it flips to $300 interest and $700 principal.",
+      "diagram": "shifting_bars",
+      "keyTakeaway": "Making extra payments early in a mortgage saves you the most money. Every extra dollar goes to principal.",
+      "status": "pending"
+    },
+    {
+      "id": 33,
+      "term": "Mutual Fund",
+      "category": "Investing Basics",
+      "definition": "A pool of money from many investors, managed by a professional who picks the investments for you. Like a group project where you all pitch in and someone else does the research.",
+      "example": "You invest $1,000 into a mutual fund. That money gets combined with thousands of other investors and spread across 50-100+ stocks chosen by the fund manager.",
+      "diagram": "funnel",
+      "keyTakeaway": "Mutual funds are easy but watch the fees. High fees eat your returns over decades.",
+      "status": "pending"
+    },
+    {
+      "id": 34,
+      "term": "Gross vs Net Income",
+      "category": "Money Management",
+      "definition": "Gross income is what you earn BEFORE taxes and deductions. Net income is what you actually take home. Most people budget based on gross income — that's a mistake.",
+      "example": "Your salary is $60,000 gross. After tax, pension, and insurance, your net take-home is $42,000. Budget based on $3,500/month, not $5,000.",
+      "diagram": "shrinking_bar",
+      "keyTakeaway": "Always budget based on net income. Gross income is a fantasy number.",
+      "status": "pending"
+    },
+    {
+      "id": 35,
+      "term": "Depreciation",
+      "category": "Economics",
+      "definition": "The decrease in value of an asset over time. Cars, electronics, and equipment all lose value the moment you buy them. Understanding depreciation helps you make smarter purchases.",
+      "example": "A new car loses 20% of its value the moment you drive it off the lot. A $40,000 car is worth $32,000 the same day. After 5 years, maybe $16,000.",
+      "diagram": "declining_curve",
+      "keyTakeaway": "Buy depreciating assets used. Let someone else take the biggest hit.",
+      "status": "pending"
+    },
+    {
+      "id": 36,
+      "term": "Portfolio",
+      "category": "Investing Basics",
+      "definition": "Your complete collection of investments — stocks, bonds, real estate, cash, crypto, everything. A well-built portfolio matches your goals, risk tolerance, and time horizon.",
+      "example": "Age 25: 90% stocks, 10% bonds (aggressive). Age 50: 60% stocks, 30% bonds, 10% cash (moderate). Age 70: 30% stocks, 50% bonds, 20% cash (conservative).",
+      "diagram": "pie_chart",
+      "keyTakeaway": "Review your portfolio once a year. Rebalance to stay aligned with your goals.",
+      "status": "pending"
+    },
+    {
+      "id": 37,
+      "term": "Bonds",
+      "category": "Investing Basics",
+      "definition": "A loan YOU make to a government or company. They borrow your money, pay you regular interest, then return your principal at the end. Lower risk than stocks, but lower returns.",
+      "example": "You buy a $10,000 government bond paying 4% for 10 years. You receive $400/year in interest for 10 years, then get your $10,000 back.",
+      "diagram": "timeline",
+      "keyTakeaway": "Bonds add stability to your portfolio. They won't make you rich, but they protect wealth.",
+      "status": "pending"
+    },
+    {
+      "id": 38,
+      "term": "Supply and Demand",
+      "category": "Economics",
+      "definition": "The foundation of all pricing. When supply is low and demand is high, prices go UP. When supply is high and demand is low, prices go DOWN. This drives everything from housing to stocks.",
+      "example": "Few houses for sale + many buyers = bidding wars and rising prices. Too many houses + few buyers = price drops and buyer power.",
+      "diagram": "crossing_lines",
+      "keyTakeaway": "Understanding supply and demand helps you buy low and sell high in any market.",
+      "status": "pending"
+    },
+    {
+      "id": 39,
+      "term": "Power of Compounding Time",
+      "category": "Investing Basics",
+      "definition": "Time is the most powerful factor in building wealth. Starting 10 years earlier matters more than investing 10 times more. The earlier you start, the less work your money has to do.",
+      "example": "Invest $200/month starting at age 25 = $600K by 65. Wait until 35 to start = $225K. Starting 10 years earlier with the SAME amount gives you nearly 3x more.",
+      "diagram": "comparison_bars",
+      "keyTakeaway": "The best time to start investing was 10 years ago. The second best time is today.",
+      "status": "pending"
+    },
+    {
+      "id": 40,
+      "term": "Side Hustle Economics",
+      "category": "Wealth Building",
+      "definition": "Using your free time to create an additional income stream outside your main job. The goal isn't just extra cash — it's building skills, assets, or a business that could replace your salary.",
+      "example": "Freelancing $500/month invested at 10% for 20 years = $380K. That side hustle didn't just give you spending money — it built serious wealth.",
+      "diagram": "growth_curve",
+      "keyTakeaway": "The best side hustles build assets, not just income. Think digital products, content, or a small business.",
+      "status": "pending"
+    },
+    {
+      "id": 41,
+      "term": "Risk Tolerance",
+      "category": "Investing Basics",
+      "definition": "How much financial loss you can handle without panicking and selling. High risk tolerance means you can stomach big drops for bigger potential gains. Low risk tolerance means you need stable, predictable returns.",
+      "example": "Your investments drop 30% in a crash. Do you: A) Buy more at a discount (high risk tolerance), B) Hold steady (moderate), or C) Sell everything (low). Your answer determines your strategy.",
+      "diagram": "gauge_meter",
+      "keyTakeaway": "Be honest about your risk tolerance. The best strategy is one you can stick to when markets crash.",
+      "status": "pending"
+    },
+    {
+      "id": 42,
+      "term": "Principal",
+      "category": "Banking",
+      "definition": "The original amount of money you invested or borrowed — before any interest, gains, or fees. It's your starting number. Everything else is built on top of (or taken from) the principal.",
+      "example": "You invest $10,000 (your principal). After 5 years at 8%, your account holds $14,693. The principal is still $10,000 — the extra $4,693 is your return.",
+      "diagram": "stacking_blocks",
+      "keyTakeaway": "Protect your principal. Gains come and go, but losing your base capital is the real danger.",
+      "status": "pending"
+    },
+    {
+      "id": 43,
+      "term": "Market Capitalisation",
+      "category": "Market Concepts",
+      "definition": "The total value of a company on the stock market. Calculated by multiplying the share price by the number of shares. It tells you how 'big' a company is in financial terms.",
+      "example": "Apple has about 15 billion shares at $175 each. Market cap = $2.6 trillion. That makes it one of the most valuable companies in the world.",
+      "diagram": "size_comparison",
+      "keyTakeaway": "Large cap ($10B+) = stable. Mid cap ($2-10B) = growth potential. Small cap (under $2B) = higher risk, higher reward.",
+      "status": "pending"
+    },
+    {
+      "id": 44,
+      "term": "Recession-Proofing",
+      "category": "Money Management",
+      "definition": "Preparing your finances to survive an economic downturn. This means reducing debt, building an emergency fund, diversifying income, and having investments you won't need to sell in a crisis.",
+      "example": "Before a recession: 6 months emergency fund, low debt, diversified investments, a side income. During the recession: you sleep well while others panic.",
+      "diagram": "shield",
+      "keyTakeaway": "Prepare for recession during good times. When it hits, your preparation becomes your advantage.",
+      "status": "pending"
+    },
+    {
+      "id": 45,
+      "term": "Volatility",
+      "category": "Market Concepts",
+      "definition": "How wildly a price swings up and down. High volatility means big moves in both directions. Low volatility means steady, predictable changes. It's not the same as risk — it's the measure of uncertainty.",
+      "example": "Bitcoin might swing 10% in a day (high volatility). A government bond might move 0.1% (low volatility). Crypto isn't 'risky' because it's crypto — it's risky because it's volatile.",
+      "diagram": "zigzag_line",
+      "keyTakeaway": "Volatility creates opportunity for the prepared and disaster for the impulsive.",
+      "status": "pending"
+    },
+    {
+      "id": 46,
+      "term": "FIRE Movement",
+      "category": "Wealth Building",
+      "definition": "Financial Independence, Retire Early. The idea is to save 50-70% of your income, invest aggressively, and retire decades before 65. You don't need millions — you need 25x your annual expenses.",
+      "example": "You spend $40K/year. FIRE target: $1,000,000 invested. At a 4% withdrawal rate, your investments pay your expenses forever without running out.",
+      "diagram": "milestone_path",
+      "keyTakeaway": "FIRE isn't about retiring — it's about making work optional. Even saving 30% gets you there faster.",
+      "status": "pending"
+    },
+    {
+      "id": 47,
+      "term": "The 4% Rule",
+      "category": "Investing Basics",
+      "definition": "A retirement guideline: you can withdraw 4% of your invested savings each year and likely never run out of money. It determines how much you need to save before you can stop working.",
+      "example": "You want $50K/year in retirement. $50,000 ÷ 0.04 = $1,250,000 needed. Once your portfolio hits $1.25M, you could live off 4% withdrawals indefinitely.",
+      "diagram": "percentage_bar",
+      "keyTakeaway": "Multiply your annual expenses by 25 to find your financial freedom number.",
+      "status": "pending"
+    },
+    {
+      "id": 48,
+      "term": "Yield",
+      "category": "Investing Basics",
+      "definition": "The income return on an investment, shown as a percentage. For stocks, it's dividends. For bonds, it's interest. For property, it's rental income relative to the property value.",
+      "example": "A stock costs $100 and pays $3/year in dividends. The yield is 3%. A property costs $200K and earns $12K/year in rent. The yield is 6%.",
+      "diagram": "comparison_bars",
+      "keyTakeaway": "Don't just focus on price growth. Yield pays you while you wait.",
+      "status": "pending"
+    },
+    {
+      "id": 49,
+      "term": "Dollar Devaluation",
+      "category": "Economics",
+      "definition": "When the purchasing power of your currency drops. Governments can print money, increasing supply, which makes each dollar worth less. Your cash loses buying power even if the number stays the same.",
+      "example": "$100 in 1990 bought what $230 buys today. The same dollar bill in your wallet is worth less every single year. Your money is melting.",
+      "diagram": "shrinking_bar",
+      "keyTakeaway": "Holding only cash is a guaranteed way to lose wealth. Convert cash to assets that grow.",
+      "status": "pending"
+    },
+    {
+      "id": 50,
+      "term": "Short Selling",
+      "category": "Market Concepts",
+      "definition": "Betting that a stock will go DOWN. You borrow shares, sell them at today's price, then buy them back cheaper later and return them. Your profit is the difference. Risky — losses can be unlimited.",
+      "example": "You short a stock at $100. It drops to $70. You buy it back, return the shares, pocket $30 per share. But if it rises to $200, you lose $100 per share.",
+      "diagram": "up_down_arrows",
+      "keyTakeaway": "Short selling is for professionals. If you're learning, stick to buying things you believe will go up.",
+      "status": "pending"
+    },
+    {
+      "id": 51,
+      "term": "Time Value of Money",
+      "category": "Economics",
+      "definition": "A dollar today is worth more than a dollar tomorrow. Why? Because today's dollar can be invested and start earning returns immediately. Waiting has a cost.",
+      "example": "$1,000 invested today at 10% is worth $2,594 in 10 years. $1,000 received in 10 years is still just $1,000. Same amount, wildly different value.",
+      "diagram": "timeline",
+      "keyTakeaway": "Never delay investing or collecting money. Time is literally money.",
+      "status": "pending"
+    },
+    {
+      "id": 52,
+      "term": "Margin",
+      "category": "Market Concepts",
+      "definition": "Borrowing money from your broker to buy more investments than you can afford. It amplifies gains but also amplifies losses. If your investment drops too much, you get a 'margin call' — forced to add cash or sell.",
+      "example": "You have $10K and borrow $10K on margin. Your $20K investment rises 20% = $4K profit (40% return on your money). But a 20% drop = $4K loss, and you still owe the $10K.",
+      "diagram": "lever_fulcrum",
+      "keyTakeaway": "Margin is a tool, not a strategy. Never use margin money you can't afford to lose.",
+      "status": "pending"
+    },
+    {
+      "id": 53,
+      "term": "Wealth Gap",
+      "category": "Economics",
+      "definition": "The growing difference between what the richest and poorest people own. The top 1% own more than the bottom 50% combined. Understanding why helps you get on the right side of it.",
+      "example": "The wealthy own assets (stocks, property, businesses) that grow in value. The poor own liabilities. Asset prices rising faster than wages widens the gap every year.",
+      "diagram": "widening_gap",
+      "keyTakeaway": "The wealth gap is an asset gap. Start buying assets — even small ones — to close your personal gap.",
+      "status": "pending"
+    },
+    {
+      "id": 54,
+      "term": "Pay Yourself First",
+      "category": "Budgeting",
+      "definition": "Before paying any bills, automatically move a set amount into savings and investments. Treat saving like a non-negotiable bill. Whatever's left is what you live on.",
+      "example": "Salary hits your account on the 1st. By the 2nd, 20% has auto-transferred to investments. You budget the remaining 80% for everything else. Saving happens before spending.",
+      "diagram": "flow_arrows",
+      "keyTakeaway": "Automate your savings. If you wait until the end of the month, there's never anything left.",
+      "status": "pending"
+    },
+    {
+      "id": 55,
+      "term": "Collateral",
+      "category": "Banking",
+      "definition": "An asset you pledge as security when borrowing money. If you can't repay the loan, the lender takes the collateral. Your house is collateral on a mortgage. Your car on a car loan.",
+      "example": "You borrow $200K to buy a house. The house IS the collateral. If you stop paying, the bank takes the house through foreclosure.",
+      "diagram": "shield",
+      "keyTakeaway": "Only pledge collateral you understand. Losing your home over a bad business loan is devastating.",
+      "status": "pending"
+    },
+    {
+      "id": 56,
+      "term": "Bear Market Rally",
+      "category": "Market Concepts",
+      "definition": "A temporary price increase during an overall downtrend. The market jumps and people think the crash is over — but it's a fake-out. Prices fall again, trapping optimistic buyers.",
+      "example": "During a crash, the market bounces 8% in a week. 'It's recovering!' people say. Then it drops another 15%. The bounce was just a pause in the decline.",
+      "diagram": "dip_recovery",
+      "keyTakeaway": "Don't confuse a bounce for a recovery. Zoom out and look at the trend before acting.",
+      "status": "pending"
+    },
+    {
+      "id": 57,
+      "term": "Interest Rate",
+      "category": "Banking",
+      "definition": "The price of borrowing money, or the reward for saving it. When rates are high, borrowing is expensive but savings earn more. When rates are low, borrowing is cheap but savings earn almost nothing.",
+      "example": "Central bank raises interest rates to 5%. Your mortgage payment goes up $300/month. But your savings account now pays 4.5% instead of 0.5%.",
+      "diagram": "balance_scale",
+      "keyTakeaway": "High rates = save more, borrow less. Low rates = borrow strategically, invest aggressively.",
+      "status": "pending"
+    },
+    {
+      "id": 58,
+      "term": "Expense Ratio",
+      "category": "Investing Basics",
+      "definition": "The annual fee a fund charges to manage your money, shown as a percentage. It's deducted from your returns automatically. A 1% expense ratio might sound small, but it's huge over decades.",
+      "example": "You invest $100K for 30 years at 8%. With a 0.1% expense ratio: $932K. With a 1% expense ratio: $761K. That 0.9% difference cost you $171,000.",
+      "diagram": "comparison_bars",
+      "keyTakeaway": "Always check expense ratios. Anything over 0.5% should have a very good reason.",
+      "status": "pending"
+    },
+    {
+      "id": 59,
+      "term": "Mortgage",
+      "category": "Banking",
+      "definition": "A loan specifically for buying property. The property itself serves as collateral. Typically 15-30 year terms. It's often the biggest financial commitment you'll ever make.",
+      "example": "Borrow $300K at 6% for 30 years. Monthly payment: $1,799. Total paid over 30 years: $647,515. You paid $347K in interest — more than the house itself.",
+      "diagram": "timeline",
+      "keyTakeaway": "A 15-year mortgage saves you hundreds of thousands in interest vs a 30-year. Consider the trade-off.",
+      "status": "pending"
+    },
+    {
+      "id": 60,
+      "term": "Bankruptcy",
+      "category": "Money Management",
+      "definition": "A legal process that helps people or businesses who can't pay their debts. It can wipe out most debts but destroys your credit for 7-10 years. It's a last resort, not a strategy.",
+      "example": "After a medical emergency, you owe $150K with no way to repay. Bankruptcy can discharge most of that debt, giving you a fresh start — but your credit score drops to the 400s.",
+      "diagram": "reset_button",
+      "keyTakeaway": "Bankruptcy exists for genuine emergencies. Build an emergency fund so you never need it.",
+      "status": "pending"
+    },
+    {
+      "id": 61,
+      "term": "P/E Ratio",
+      "category": "Market Concepts",
+      "definition": "Price-to-Earnings ratio. It tells you how much investors are paying for each dollar of a company's profit. High P/E = expensive (or high growth expected). Low P/E = cheap (or problems expected).",
+      "example": "Stock price: $100. Earnings per share: $5. P/E = 20. Investors are paying $20 for every $1 of earnings. The S&P 500 average is about 15-20.",
+      "diagram": "gauge_meter",
+      "keyTakeaway": "A low P/E isn't always a bargain and a high P/E isn't always expensive. Context matters.",
+      "status": "pending"
+    },
+    {
+      "id": 62,
+      "term": "Liquidity Trap",
+      "category": "Economics",
+      "definition": "When interest rates are so low that people hoard cash instead of investing or spending. The economy stalls because money isn't flowing. Central banks lose their main tool to stimulate growth.",
+      "example": "Interest rates hit 0%. Banks earn nothing on lending, so they're cautious. People save instead of spend. The economy flatlines despite cheap money being everywhere.",
+      "diagram": "stagnant_pool",
+      "keyTakeaway": "In a liquidity trap, holding cash feels safe but is actually costly. Real assets still beat cash.",
+      "status": "pending"
+    },
+    {
+      "id": 63,
+      "term": "Generational Wealth",
+      "category": "Wealth Building",
+      "definition": "Assets and financial knowledge passed from one generation to the next. It's not just about leaving money — it's about teaching your children the financial skills to grow and protect it.",
+      "example": "You build a $500K investment portfolio and teach your kids about investing. They don't touch it, it doubles every 9 years. Two generations later: $8M+.",
+      "diagram": "growth_curve",
+      "keyTakeaway": "The greatest wealth transfer isn't money — it's financial literacy. Teach your children early.",
+      "status": "pending"
+    },
+    {
+      "id": 64,
+      "term": "Refinancing",
+      "category": "Banking",
+      "definition": "Replacing your current loan with a new one — usually at a lower interest rate. It can lower your monthly payments, shorten your loan term, or let you cash out some equity.",
+      "example": "Your mortgage is at 7%. Rates drop to 5%. Refinancing on a $300K loan saves you $400/month or $144K over the life of the loan.",
+      "diagram": "comparison_bars",
+      "keyTakeaway": "Check refinancing options whenever rates drop 1%+ below your current rate. The savings add up fast.",
+      "status": "pending"
+    },
+    {
+      "id": 65,
+      "term": "Penny Stock",
+      "category": "Market Concepts",
+      "definition": "Stocks that trade for under $5 per share, usually from tiny, unproven companies. They're extremely volatile, lightly regulated, and frequently hyped in scams. Most go to zero.",
+      "example": "A penny stock is promoted as 'the next big thing' and jumps from $0.10 to $0.50. You buy in. The promoter sells, and it crashes to $0.02. You lose 96%.",
+      "diagram": "crash_line",
+      "keyTakeaway": "If it sounds too good to be true, it is. Penny stocks are gambling, not investing.",
+      "status": "pending"
+    },
+    {
+      "id": 66,
+      "term": "Cryptocurrency Basics",
+      "category": "Market Concepts",
+      "definition": "Digital money that runs on blockchain technology — no bank needed. Bitcoin was the first, now there are thousands. Highly volatile, potentially revolutionary, and largely unregulated.",
+      "example": "Bitcoin went from $1 in 2011 to $69,000 in 2021, then crashed to $16,000, then recovered above $60,000. High reward, high risk, wild ride.",
+      "diagram": "zigzag_line",
+      "keyTakeaway": "Only invest what you can afford to lose completely. Keep crypto as a small percentage of your portfolio.",
+      "status": "pending"
+    },
+    {
+      "id": 67,
+      "term": "Cost of Living",
+      "category": "Economics",
+      "definition": "The amount of money needed to cover basic expenses in a specific location — housing, food, transport, healthcare. It varies dramatically between cities and countries.",
+      "example": "Living in London costs roughly $4,500/month. The same lifestyle in Lisbon might cost $2,200/month. Same quality of life, half the price.",
+      "diagram": "comparison_bars",
+      "keyTakeaway": "Geographic arbitrage is real. Earning a London salary while living somewhere cheaper accelerates wealth building.",
+      "status": "pending"
+    },
+    {
+      "id": 68,
+      "term": "IPO (Initial Public Offering)",
+      "category": "Market Concepts",
+      "definition": "When a private company sells shares to the public for the first time. It's how companies raise money by going 'public'. Everyone can now buy ownership in the company through the stock market.",
+      "example": "A tech startup grows to $5B valuation. They IPO at $50/share. Day one, the stock jumps to $75. Early investors celebrate. But many IPOs fall below their opening price within a year.",
+      "diagram": "milestone_path",
+      "keyTakeaway": "IPO hype often inflates prices. Wait 6-12 months after an IPO before buying. Let the dust settle.",
+      "status": "pending"
+    },
+    {
+      "id": 69,
+      "term": "GDP (Gross Domestic Product)",
+      "category": "Economics",
+      "definition": "The total value of everything a country produces in a year — goods, services, all of it. It's the main scorecard for an economy's health. Rising GDP = growing economy. Falling GDP = trouble.",
+      "example": "US GDP is about $25 trillion. If it grows 3% in a year, that's $750 billion in new economic activity — more jobs, more business, more opportunity.",
+      "diagram": "growth_curve",
+      "keyTakeaway": "GDP growth generally means a good environment for investing and building wealth. Pay attention to the trend.",
+      "status": "pending"
+    },
+    {
+      "id": 70,
+      "term": "Financial Freedom Number",
+      "category": "Wealth Building",
+      "definition": "The exact amount of invested money needed so that your returns cover all your expenses. Once you hit this number, work becomes optional. It's your personal finish line.",
+      "example": "Your annual expenses: $48,000. Using the 4% rule: $48,000 ÷ 0.04 = $1,200,000. That's your financial freedom number. Every dollar invested brings you closer.",
+      "diagram": "milestone_path",
+      "keyTakeaway": "Calculate your number today. You can't hit a target you haven't defined.",
+      "status": "pending"
+    },
+    {
+      "id": 71,
+      "term": "Hedge",
+      "category": "Investing Basics",
+      "definition": "An investment made to reduce the risk of another investment. It's like insurance for your portfolio. You give up some potential upside to protect against big losses.",
+      "example": "You own $50K in US stocks. You buy a small position in gold as a hedge. If stocks crash, gold often rises — softening the blow to your overall portfolio.",
+      "diagram": "balance_scale",
+      "keyTakeaway": "Smart investors don't just chase gains — they protect against losses too.",
+      "status": "pending"
+    },
+    {
+      "id": 72,
+      "term": "Fiscal Policy",
+      "category": "Economics",
+      "definition": "How a government uses spending and taxes to influence the economy. More spending and lower taxes stimulate growth. Less spending and higher taxes slow things down.",
+      "example": "During a recession, the government cuts taxes and increases infrastructure spending. More money flows into the economy, businesses hire, and recovery begins.",
+      "diagram": "flow_arrows",
+      "keyTakeaway": "Government fiscal decisions directly affect your investments, job market, and purchasing power. Stay informed.",
+      "status": "pending"
+    },
+    {
+      "id": 73,
+      "term": "Escrow",
+      "category": "Banking",
+      "definition": "A neutral third party that holds money during a transaction until both sides fulfil their obligations. Common in property purchases to protect both buyer and seller.",
+      "example": "You're buying a house. Your deposit goes into escrow. If the inspection fails, you get your money back. If everything checks out, the escrow releases funds to the seller.",
+      "diagram": "flow_arrows",
+      "keyTakeaway": "Escrow protects you in big transactions. Never wire money directly to sellers — use escrow.",
+      "status": "pending"
+    },
+    {
+      "id": 74,
+      "term": "Closing Costs",
+      "category": "Banking",
+      "definition": "The fees you pay when finalising a property purchase — legal fees, inspections, title insurance, taxes. They typically add 2-5% on top of the purchase price.",
+      "example": "You buy a $300K house. Closing costs at 3% = $9,000 extra you need on top of your deposit. Many first-time buyers forget to budget for this.",
+      "diagram": "stacking_blocks",
+      "keyTakeaway": "Always factor closing costs into your home buying budget. Ask for estimates upfront.",
+      "status": "pending"
+    },
+    {
+      "id": 75,
+      "term": "Fiduciary",
+      "category": "Money Management",
+      "definition": "A person legally required to act in YOUR best interest — not their own, not their company's. Not all financial advisors are fiduciaries. Some earn commissions recommending products that benefit THEM.",
+      "example": "A fiduciary advisor recommends a low-fee index fund because it's best for you. A non-fiduciary might recommend a high-commission product because it pays them more.",
+      "diagram": "two_columns",
+      "keyTakeaway": "Always ask: are you a fiduciary? If they say no or dodge the question, find someone else.",
+      "status": "pending"
+    },
+    {
+      "id": 76,
+      "term": "Stock Split",
+      "category": "Market Concepts",
+      "definition": "When a company divides its existing shares into more shares. A 2-for-1 split gives you double the shares at half the price. Your total value doesn't change — it just becomes more accessible.",
+      "example": "You own 10 shares at $1,000 each ($10,000 total). After a 10-for-1 split: you own 100 shares at $100 each. Still $10,000 — but easier for new investors to buy in.",
+      "diagram": "splitting_blocks",
+      "keyTakeaway": "Stock splits don't change value. They make expensive stocks more accessible to everyday investors.",
+      "status": "pending"
+    },
+    {
+      "id": 77,
+      "term": "Debt Snowball vs Avalanche",
+      "category": "Money Management",
+      "definition": "Two strategies for paying off debt. Snowball: pay smallest debt first for quick wins and motivation. Avalanche: pay highest-interest debt first to save the most money.",
+      "example": "Snowball: Pay off $500 credit card, then $2K car loan, then $20K student loan. Avalanche: Pay the 22% credit card first, then 8% car loan, then 5% student loan.",
+      "diagram": "two_columns",
+      "keyTakeaway": "Avalanche saves more money. Snowball keeps you motivated. Pick the one you'll actually stick with.",
+      "status": "pending"
+    },
+    {
+      "id": 78,
+      "term": "Blue Chip Stock",
+      "category": "Market Concepts",
+      "definition": "Shares in large, well-established companies with a history of reliable performance and dividends. Think household names that have been around for decades. They're the 'safe bet' of the stock market.",
+      "example": "Apple, Microsoft, Johnson & Johnson, Coca-Cola — these are blue chips. They may not double overnight, but they rarely go to zero.",
+      "diagram": "shield",
+      "keyTakeaway": "Blue chips are the foundation of a solid portfolio. Boring, reliable, and they pay dividends.",
+      "status": "pending"
+    },
+    {
+      "id": 79,
+      "term": "Financial Literacy",
+      "category": "Wealth Building",
+      "definition": "Understanding how money works — earning, saving, investing, borrowing, and protecting it. Schools rarely teach it, which is why most people struggle with money despite earning enough.",
+      "example": "A doctor earning $300K/year with $400K in debt and no investments has low financial literacy. A teacher earning $50K/year with $200K invested and zero debt has high financial literacy.",
+      "diagram": "comparison_bars",
+      "keyTakeaway": "Income doesn't build wealth. Financial literacy does. Never stop learning about money.",
+      "status": "pending"
+    },
+    {
+      "id": 80,
+      "term": "Hedge Against Inflation",
+      "category": "Investing Basics",
+      "definition": "Investments that tend to RISE when inflation rises — protecting your purchasing power. Real estate, commodities, stocks, and inflation-linked bonds all tend to keep pace with or beat inflation.",
+      "example": "Inflation is 5%. Your cash loses 5% in buying power. But your rental property increases in value by 7% and you raise rent by 5%. You came out ahead.",
+      "diagram": "shield",
+      "keyTakeaway": "Hold assets that grow with inflation. Cash and fixed bonds are the biggest losers in inflationary times.",
+      "status": "pending"
+    },
+    {
+      "id": 81,
+      "term": "Mortgage Rate Lock",
+      "category": "Banking",
+      "definition": "A guarantee from your lender that your interest rate won't change between applying and closing on your home. Usually lasts 30-60 days. It protects you if rates rise while you're waiting to close.",
+      "example": "You lock in 5.5% on a Monday. By closing day, rates have risen to 6%. You still get 5.5%. On a $300K mortgage, that saves you $100/month for 30 years.",
+      "diagram": "gate_lock",
+      "keyTakeaway": "Always lock your rate when you're happy with it. Waiting to see if rates drop is a gamble.",
+      "status": "pending"
+    },
+    {
+      "id": 82,
+      "term": "Asset Allocation",
+      "category": "Investing Basics",
+      "definition": "How you divide your money between different investment types — stocks, bonds, real estate, cash. It's the single biggest factor in your investment returns, more than which specific stocks you pick.",
+      "example": "Aggressive: 80% stocks, 15% bonds, 5% cash. Conservative: 40% stocks, 40% bonds, 20% cash. Your allocation should match your age, goals, and risk tolerance.",
+      "diagram": "pie_chart",
+      "keyTakeaway": "Get your asset allocation right first. Individual stock picking matters far less than most people think.",
+      "status": "pending"
+    },
+    {
+      "id": 83,
+      "term": "Real Estate Appreciation",
+      "category": "Wealth Building",
+      "definition": "When property increases in value over time. Historically, real estate appreciates 3-5% per year on average. Combined with leverage (mortgage), this can create massive wealth.",
+      "example": "Buy a $300K house with $60K down. Property appreciates to $400K in 7 years. Your $60K investment gained $100K — a 167% return because of leverage.",
+      "diagram": "growth_curve",
+      "keyTakeaway": "Real estate builds wealth through appreciation AND leverage. But only buy when the numbers make sense.",
+      "status": "pending"
+    },
+    {
+      "id": 84,
+      "term": "Ponzi Scheme",
+      "category": "Money Management",
+      "definition": "A fraud where returns to existing investors are paid using new investors' money — not actual profits. It looks like a great investment until new money dries up, then the whole thing collapses.",
+      "example": "Bernie Madoff ran the biggest Ponzi scheme ever — $65 billion. Investors earned consistent 10-12% returns for decades. When the music stopped in 2008, everything vanished.",
+      "diagram": "pyramid",
+      "keyTakeaway": "If returns are consistently high with zero bad months, it's probably too good to be true. Always verify.",
+      "status": "pending"
+    },
+    {
+      "id": 85,
+      "term": "Negative Equity",
+      "category": "Banking",
+      "definition": "When you owe MORE on something than it's worth. Most common with houses and cars. You're 'underwater' — selling the asset wouldn't even cover what you owe.",
+      "example": "You bought a house for $350K. Market drops and it's now worth $280K. You still owe $320K. You're $40K underwater — you can't sell without paying the difference.",
+      "diagram": "balance_scale",
+      "keyTakeaway": "Avoid negative equity by making larger down payments and not overpaying for assets.",
+      "status": "pending"
+    },
+    {
+      "id": 86,
+      "term": "Equity Release",
+      "category": "Banking",
+      "definition": "Accessing the value locked in your property without selling it. Common methods are remortgaging or a home equity line of credit (HELOC). You borrow against your home's value.",
+      "example": "Your home is worth $400K and you owe $200K. You have $200K in equity. A HELOC lets you borrow up to $160K of that for renovations, investments, or emergencies.",
+      "diagram": "flow_arrows",
+      "keyTakeaway": "Equity release can fund investments, but remember — you're adding debt secured against your home.",
+      "status": "pending"
+    },
+    {
+      "id": 87,
+      "term": "Gearing",
+      "category": "Investing Basics",
+      "definition": "The ratio of borrowed money to your own money in an investment. Higher gearing = more borrowed money = higher potential returns AND higher risk. Also called leverage ratio.",
+      "example": "You invest $20K of your money and borrow $80K. That's 4:1 gearing. A 10% gain on $100K = $10K profit = 50% return on YOUR $20K. But a 10% loss wipes out half your capital.",
+      "diagram": "lever_fulcrum",
+      "keyTakeaway": "Moderate gearing (2:1 to 3:1) can accelerate wealth. Excessive gearing can destroy it overnight.",
+      "status": "pending"
+    },
+    {
+      "id": 88,
+      "term": "Lump Sum vs Regular Investing",
+      "category": "Investing Basics",
+      "definition": "Investing a large amount all at once (lump sum) vs spreading it out over time (regular). Statistically, lump sum wins about 67% of the time because markets trend upward. But regular investing reduces timing risk.",
+      "example": "You inherit $50K. Lump sum: invest it all today. Regular: invest $5K/month for 10 months. If the market drops right after a lump sum, regular investing would have saved you.",
+      "diagram": "comparison_bars",
+      "keyTakeaway": "If you have a lump sum and a long timeline, invest it now. If you're nervous, split it over 3-6 months.",
+      "status": "pending"
+    },
+    {
+      "id": 89,
+      "term": "Crowdfunding",
+      "category": "Investing Basics",
+      "definition": "Many people pooling small amounts to fund a project or business. Can be donation-based (Kickstarter), loan-based (peer lending), or equity-based (you get ownership). It democratises investing.",
+      "example": "A property crowdfunding platform lets you invest $500 in a commercial building alongside 200 other investors. You earn rental income proportional to your share.",
+      "diagram": "funnel",
+      "keyTakeaway": "Crowdfunding opens doors to investments previously only available to the rich. Start small, diversify across projects.",
+      "status": "pending"
+    },
+    {
+      "id": 90,
+      "term": "Frugal vs Cheap",
+      "category": "Money Management",
+      "definition": "Frugal means spending intentionally on what matters and cutting what doesn't. Cheap means spending the least on everything, even when it costs you more long-term. One builds wealth, the other doesn't.",
+      "example": "Frugal: buying quality boots for $200 that last 10 years. Cheap: buying $30 boots every year that fall apart. Over 10 years, cheap costs $300 and frugal costs $200.",
+      "diagram": "comparison_bars",
+      "keyTakeaway": "Be frugal, not cheap. Cut spending on things you don't value, not on quality and experience.",
+      "status": "pending"
+    },
+    {
+      "id": 91,
+      "term": "Salary Negotiation",
+      "category": "Wealth Building",
+      "definition": "Asking for more money when you get a job offer or during a review. Most people never negotiate and leave thousands on the table. A single successful negotiation compounds for your entire career.",
+      "example": "You accept $60K without negotiating. Your colleague negotiates $70K for the same role. Over 20 years with 3% raises, they earn $270K more than you. From one conversation.",
+      "diagram": "growth_curve",
+      "keyTakeaway": "Always negotiate. The worst they can say is no. The best case changes your financial trajectory.",
+      "status": "pending"
+    },
+    {
+      "id": 92,
+      "term": "Tax Bracket",
+      "category": "Taxes",
+      "definition": "Your income is taxed in layers, not all at one rate. Only the money ABOVE each threshold gets the higher rate. People often avoid earning more because they think ALL their income will be taxed higher — it won't.",
+      "example": "You earn $50K. The first $10K is taxed at 10%, next $30K at 22%, final $10K at 24%. Your EFFECTIVE tax rate is about 18% — not the 24% top bracket.",
+      "diagram": "stacking_blocks",
+      "keyTakeaway": "Never turn down a raise because of taxes. You always take home more money by earning more.",
+      "status": "pending"
+    },
+    {
+      "id": 93,
+      "term": "Rent vs Buy",
+      "category": "Wealth Building",
+      "definition": "The biggest financial debate. Buying builds equity but ties up cash and adds costs. Renting keeps you flexible but builds no wealth. The right answer depends on your situation, not general advice.",
+      "example": "In an expensive city, renting and investing the difference often beats buying. In an affordable area with stable prices, buying and building equity usually wins.",
+      "diagram": "two_columns",
+      "keyTakeaway": "Run the numbers for YOUR situation. Neither renting nor buying is always the right answer.",
+      "status": "pending"
+    },
+    {
+      "id": 94,
+      "term": "Emergency vs Opportunity Fund",
+      "category": "Money Management",
+      "definition": "Emergency fund covers disasters (job loss, medical bills). Opportunity fund captures deals (undervalued stocks, business opportunities, property at a discount). Smart people have both.",
+      "example": "Market crashes 30%. Everyone's panicking and selling. You have a $20K opportunity fund ready. You buy quality investments at a massive discount. That's how wealth is built.",
+      "diagram": "two_columns",
+      "keyTakeaway": "Once your emergency fund is solid, start building an opportunity fund. Be ready when deals appear.",
+      "status": "pending"
+    },
+    {
+      "id": 95,
+      "term": "Cognitive Bias in Investing",
+      "category": "Market Concepts",
+      "definition": "Mental shortcuts that cause bad financial decisions. Loss aversion (fearing losses more than valuing gains), confirmation bias (only reading news that supports your view), and herd mentality (buying because everyone else is).",
+      "example": "You hold a losing stock hoping it'll recover (loss aversion) while selling winners too early (fear of losing gains). This is literally the opposite of what makes money.",
+      "diagram": "two_columns",
+      "keyTakeaway": "Your brain is wired to make bad investment decisions. Having a system overrides your emotions.",
+      "status": "pending"
+    },
+    {
+      "id": 96,
+      "term": "Cash Reserve Ratio",
+      "category": "Economics",
+      "definition": "The percentage of deposits banks must keep on hand and NOT lend out. When it's low, banks lend more freely. When it's high, lending tightens. It's one tool central banks use to control money supply.",
+      "example": "The central bank raises the reserve ratio from 10% to 15%. Banks now keep more cash and lend less. Fewer loans means less spending, which can slow inflation.",
+      "diagram": "percentage_bar",
+      "keyTakeaway": "Changes in reserve ratios signal where the economy is heading. They affect loan availability and interest rates.",
+      "status": "pending"
+    },
+    {
+      "id": 97,
+      "term": "Annuity",
+      "category": "Investing Basics",
+      "definition": "A financial product that pays you a fixed income stream, usually in retirement. You pay a lump sum to an insurance company, and they pay you regularly for life. Guaranteed income, but limited flexibility.",
+      "example": "At age 60, you pay $300K for an annuity. It pays you $1,500/month for life. If you live to 90, you collect $540K — a good deal. If you die at 65, you got $90K back.",
+      "diagram": "timeline",
+      "keyTakeaway": "Annuities trade flexibility for security. Only consider them for the portion of income you absolutely need guaranteed.",
+      "status": "pending"
+    },
+    {
+      "id": 98,
+      "term": "Wealth Compounding Effect",
+      "category": "Wealth Building",
+      "definition": "The snowball effect of combining compound interest with additional investing, reinvested dividends, salary growth, and multiple income streams. Each factor multiplies the others. Time does the heavy lifting.",
+      "example": "$500/month invested + 10% returns + 3% annual contribution increase + reinvested dividends. After 30 years: not $180K (what you put in) but over $1.2 million.",
+      "diagram": "growth_curve",
+      "keyTakeaway": "Stack the compounding effects. Invest consistently, reinvest returns, increase contributions. Let time multiply everything.",
+      "status": "pending"
+    },
+    {
+      "id": 99,
+      "term": "Dead Cat Bounce",
+      "category": "Market Concepts",
+      "definition": "A brief recovery in a declining stock or market that's followed by continued decline. Named from the grim idea that even a dead cat will bounce if it falls far enough. It's not a recovery — it's a trap.",
+      "example": "A company announces terrible earnings and drops 40%. Next day it bounces 8% as bargain hunters buy. Then it drops another 25% as the real impact sinks in.",
+      "diagram": "dip_recovery",
+      "keyTakeaway": "Don't catch falling knives. Wait for a clear trend reversal before buying into a crash.",
+      "status": "pending"
+    },
+    {
+      "id": 100,
+      "term": "Financial Independence",
+      "category": "Wealth Building",
+      "definition": "Having enough income from investments and assets to cover your living expenses without needing to work. It doesn't mean never working again — it means working becomes a CHOICE, not a necessity.",
+      "example": "Your investments generate $5,000/month. Your expenses are $4,000/month. You're financially independent. You can work on what you love, not what pays the bills.",
+      "diagram": "milestone_path",
+      "keyTakeaway": "Financial independence isn't about being rich. It's about having enough to live on YOUR terms. Start today.",
+      "status": "pending"
+    }
+  ]
+}
