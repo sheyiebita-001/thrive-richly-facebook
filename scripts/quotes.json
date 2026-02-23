@@ -7213,7 +7213,9 @@
       "category": "Self-Worth & Growth",
       "author": "",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-02-23"
     },
     {
       "id": 899,
@@ -7221,7 +7223,9 @@
       "category": "Discipline & Hustle",
       "author": "",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-02-23"
     },
     {
       "id": 900,
@@ -7229,7 +7233,9 @@
       "category": "Discipline & Hustle",
       "author": "",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-02-23"
     }
   ]
 }
