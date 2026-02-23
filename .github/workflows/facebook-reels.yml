@@ -1,0 +1,62 @@
+name: Daily Facebook Reels
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-reels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install canvas
+
+      - name: Install system fonts (Poppins)
+        run: |
+          mkdir -p ~/.fonts
+          cd ~/.fonts
+          curl -sL "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Bold.ttf" -o Poppins-Bold.ttf
+          curl -sL "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Light.ttf" -o Poppins-Light.ttf
+          curl -sL "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Italic.ttf" -o Poppins-Italic.ttf
+          fc-cache -fv
+
+      - name: Verify FFmpeg
+        run: ffmpeg -version | head -1
+
+      - name: Generate and post Reels
+        env:
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+        run: node scripts/generate-reels.js
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "reel-bot@thriverichly.com"
+          git config --local user.name "Reel Bot"
+          git add -A
+          git commit -m "🎬 Posted Facebook Reels
+
+          Automated daily Reel generation via FFmpeg + Facebook Graph API.
+          Date: $(date -u +%Y-%m-%d)"
+          git push
