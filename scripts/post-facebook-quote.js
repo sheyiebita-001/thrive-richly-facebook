@@ -291,45 +291,28 @@ function generateCaption(quote, author) {
 }
 
 // ============================================================================
-// FACEBOOK POSTING — Graph API photo upload
+// FACEBOOK POSTING — Graph API photo upload using native FormData
 // ============================================================================
 
 async function postPhotoToFacebook(imageBuffer, caption, scheduledTime = null) {
   const url = `https://graph.facebook.com/v25.0/${FB_PAGE_ID}/photos`
 
-  // Build multipart form data manually
-  const boundary = '----FormBoundary' + Date.now().toString(36)
-  const parts = []
+  const formData = new FormData()
+  formData.append('access_token', FB_PAGE_ACCESS_TOKEN)
+  formData.append('message', caption)
 
-  // Access token
-  parts.push(`--${boundary}\r\nContent-Disposition: form-data; name="access_token"\r\n\r\n${FB_PAGE_ACCESS_TOKEN}`)
-
-  // Caption/message
-  parts.push(`--${boundary}\r\nContent-Disposition: form-data; name="message"\r\n\r\n${caption}`)
-
-  // Scheduling (if provided)
   if (scheduledTime) {
     const unixTime = Math.floor(scheduledTime.getTime() / 1000)
-    parts.push(`--${boundary}\r\nContent-Disposition: form-data; name="scheduled_publish_time"\r\n\r\n${unixTime}`)
-    parts.push(`--${boundary}\r\nContent-Disposition: form-data; name="published"\r\n\r\nfalse`)
+    formData.append('scheduled_publish_time', unixTime.toString())
+    formData.append('published', 'false')
   }
 
-  // Image file
-  parts.push(`--${boundary}\r\nContent-Disposition: form-data; name="source"; filename="quote.jpg"\r\nContent-Type: image/jpeg\r\n\r\n`)
-
-  // Assemble body
-  const textParts = parts.join('\r\n') + '\r\n'
-  const textBuffer = Buffer.from(textParts, 'utf-8')
-  const endBuffer = Buffer.from(`\r\n--${boundary}--\r\n`, 'utf-8')
-  const body = Buffer.concat([textBuffer, imageBuffer, endBuffer])
+  const blob = new Blob([imageBuffer], { type: 'image/jpeg' })
+  formData.append('source', blob, 'quote.jpg')
 
   const response = await fetch(url, {
     method: 'POST',
-    headers: {
-      'Content-Type': `multipart/form-data; boundary=${boundary}`,
-      'Content-Length': body.length.toString(),
-    },
-    body,
+    body: formData,
   })
 
   if (!response.ok) {
