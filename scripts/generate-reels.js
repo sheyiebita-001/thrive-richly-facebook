@@ -398,30 +398,81 @@ function generateAudio(duration, outputPath) {
     }
   }
 
-  // Generate ambient audio with FFmpeg synthesis
   console.log('  🎵 Generating ambient audio...')
 
-  // Create a warm ambient pad: layered sine waves + filtered pink noise
-  // A major chord: A2 (110Hz), E3 (164.81Hz), A3 (220Hz), C#4 (277.18Hz)
+  // First check what encoders are available
+  try {
+    const encoders = execSync('ffmpeg -encoders 2>&1 | grep -E "aac|mp3|vorbis" || true').toString()
+    console.log(`  📋 Available audio encoders: ${encoders.trim().replace(/\n/g, ', ').substring(0, 200)}`)
+  } catch (e) {}
+
   const fadeOutStart = Math.max(0, duration - 3)
+
+  // Attempt 1: Ambient pad with AAC
   const filterComplex = `[0]lowpass=f=250,volume=0.12[noise];[1]volume=0.08[a2];[2]volume=0.06[e3];[3]volume=0.05[a3];[4]volume=0.03[cs4];[noise][a2][e3][a3][cs4]amix=inputs=5:duration=longest,aecho=0.8:0.88:500|700:0.25|0.2,lowpass=f=3000,afade=t=in:d=2,afade=t=out:st=${fadeOutStart}:d=3`
 
-  try {
-    execSync(`ffmpeg -y -f lavfi -i "anoisesrc=c=pink:r=44100:d=${duration}" -f lavfi -i "sine=f=110:d=${duration}" -f lavfi -i "sine=f=164.81:d=${duration}" -f lavfi -i "sine=f=220:d=${duration}" -f lavfi -i "sine=f=277.18:d=${duration}" -filter_complex "${filterComplex}" -t ${duration} -c:a aac -b:a 128k "${outputPath}" 2>&1`)
-    console.log('  ✅ Audio generated (ambient pad)')
-  } catch (err) {
-    // Fallback: simple sine tone if complex filter fails
-    console.log('  ⚠️  Complex audio failed, using simple tone...')
+  const attempts = [
+    {
+      name: 'ambient pad (aac)',
+      cmd: `ffmpeg -y -f lavfi -i "anoisesrc=c=pink:r=44100:d=${duration}" -f lavfi -i "sine=f=110:d=${duration}" -f lavfi -i "sine=f=164.81:d=${duration}" -f lavfi -i "sine=f=220:d=${duration}" -f lavfi -i "sine=f=277.18:d=${duration}" -filter_complex "${filterComplex}" -t ${duration} -c:a aac -b:a 128k "${outputPath}"`
+    },
+    {
+      name: 'simple tone (aac)',
+      cmd: `ffmpeg -y -f lavfi -i "sine=f=174.61:d=${duration}" -af "volume=0.06,lowpass=f=800,afade=t=in:d=2,afade=t=out:st=${fadeOutStart}:d=3" -t ${duration} -c:a aac -b:a 128k "${outputPath}"`
+    },
+    {
+      name: 'silent (aac)',
+      cmd: `ffmpeg -y -f lavfi -i "anullsrc=r=44100:cl=stereo" -t ${duration} -c:a aac -b:a 128k "${outputPath}"`
+    },
+    {
+      name: 'ambient pad (mp3)',
+      cmd: `ffmpeg -y -f lavfi -i "anoisesrc=c=pink:r=44100:d=${duration}" -f lavfi -i "sine=f=110:d=${duration}" -f lavfi -i "sine=f=164.81:d=${duration}" -f lavfi -i "sine=f=220:d=${duration}" -f lavfi -i "sine=f=277.18:d=${duration}" -filter_complex "${filterComplex}" -t ${duration} -c:a libmp3lame -b:a 128k "${outputPath.replace('.aac', '.mp3')}"`
+    },
+    {
+      name: 'simple tone (mp3)',
+      cmd: `ffmpeg -y -f lavfi -i "sine=f=174.61:d=${duration}" -af "volume=0.06,lowpass=f=800,afade=t=in:d=2,afade=t=out:st=${fadeOutStart}:d=3" -t ${duration} -c:a libmp3lame -b:a 128k "${outputPath.replace('.aac', '.mp3')}"`
+    },
+    {
+      name: 'silent (mp3)',
+      cmd: `ffmpeg -y -f lavfi -i "anullsrc=r=44100:cl=stereo" -t ${duration} -c:a libmp3lame -b:a 128k "${outputPath.replace('.aac', '.mp3')}"`
+    },
+  ]
+
+  for (const attempt of attempts) {
     try {
-      execSync(`ffmpeg -y -f lavfi -i "sine=f=174.61:d=${duration}" -af "volume=0.06,lowpass=f=800,afade=t=in:d=2,afade=t=out:st=${fadeOutStart}:d=3" -t ${duration} -c:a aac -b:a 128k "${outputPath}" 2>&1`)
-      console.log('  ✅ Audio generated (simple tone)')
-    } catch (err2) {
-      // Last resort: silent audio track
-      console.log('  ⚠️  Tone failed, generating silent audio...')
-      execSync(`ffmpeg -y -f lavfi -i "anullsrc=r=44100:cl=stereo" -t ${duration} -c:a aac -b:a 128k "${outputPath}" 2>&1`)
-      console.log('  ✅ Silent audio generated')
+      console.log(`  🔄 Trying: ${attempt.name}...`)
+      const result = execSync(attempt.cmd + ' 2>&1', { maxBuffer: 1024 * 1024 }).toString()
+      // Check if file was created
+      const actualPath = attempt.cmd.includes('.mp3') ? outputPath.replace('.aac', '.mp3') : outputPath
+      if (fs.existsSync(actualPath) && fs.statSync(actualPath).size > 0) {
+        // If we ended up with mp3, update the outputPath reference
+        if (actualPath !== outputPath) {
+          fs.renameSync(actualPath, outputPath)
+        }
+        console.log(`  ✅ Audio generated (${attempt.name})`)
+        return
+      }
+    } catch (err) {
+      const errMsg = err.stderr ? err.stderr.toString() : err.message
+      console.log(`  ⚠️  ${attempt.name} failed: ${errMsg.substring(0, 200)}`)
     }
   }
+
+  // Ultimate fallback: generate raw WAV then convert
+  console.log('  🔄 Final fallback: generating WAV...')
+  const wavPath = outputPath.replace('.aac', '.wav')
+  try {
+    execSync(`ffmpeg -y -f lavfi -i "sine=f=174.61:d=${duration}" -af "volume=0.06" -t ${duration} "${wavPath}" 2>&1`)
+    if (fs.existsSync(wavPath)) {
+      fs.renameSync(wavPath, outputPath)
+      console.log('  ✅ Audio generated (WAV fallback)')
+      return
+    }
+  } catch (err) {
+    console.log(`  ❌ WAV fallback failed: ${err.message.substring(0, 200)}`)
+  }
+
+  throw new Error('All audio generation methods failed')
 }
 
 // ============================================================================
@@ -430,21 +481,25 @@ function generateAudio(duration, outputPath) {
 function assembleVideo(framesDir, audioPath, outputPath, duration) {
   console.log('  🎬 Assembling video...')
 
-  const cmd = [
-    'ffmpeg -y',
-    `-framerate ${FPS}`,
-    `-i "${framesDir}/frame_%05d.jpg"`,
-    `-i "${audioPath}"`,
-    '-c:v libx264 -preset medium -crf 23',
-    '-c:a aac -b:a 128k',
-    '-pix_fmt yuv420p',
-    '-shortest',
-    '-movflags +faststart',
-    `"${outputPath}"`,
-    '2>&1'
-  ].join(' ')
+  // Check if audio file exists
+  const hasAudio = fs.existsSync(audioPath) && fs.statSync(audioPath).size > 0
 
-  execSync(cmd)
+  let cmd
+  if (hasAudio) {
+    cmd = `ffmpeg -y -framerate ${FPS} -i "${framesDir}/frame_%05d.jpg" -i "${audioPath}" -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 128k -pix_fmt yuv420p -shortest -movflags +faststart "${outputPath}" 2>&1`
+  } else {
+    // No audio — create video with silent audio track (Facebook requires audio)
+    console.log('  ⚠️  No audio file, adding silent track...')
+    cmd = `ffmpeg -y -framerate ${FPS} -i "${framesDir}/frame_%05d.jpg" -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 128k -pix_fmt yuv420p -shortest -movflags +faststart "${outputPath}" 2>&1`
+  }
+
+  try {
+    execSync(cmd, { maxBuffer: 5 * 1024 * 1024 })
+  } catch (err) {
+    const errMsg = err.stderr ? err.stderr.toString() : err.stdout ? err.stdout.toString() : err.message
+    console.log(`  ⚠️  FFmpeg output: ${errMsg.substring(errMsg.length - 500)}`)
+    throw new Error(`Video assembly failed: ${errMsg.substring(0, 200)}`)
+  }
 
   const stats = fs.statSync(outputPath)
   console.log(`  ✅ Video assembled: ${path.basename(outputPath)} (${(stats.size / 1024 / 1024).toFixed(1)}MB)`)
