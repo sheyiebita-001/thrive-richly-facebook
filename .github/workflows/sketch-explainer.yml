@@ -1,0 +1,64 @@
+name: Daily Sketch Explainer
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-sketch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install canvas
+
+      - name: Install system fonts (Poppins)
+        run: |
+          mkdir -p ~/.fonts
+          cd ~/.fonts
+          curl -sL "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Bold.ttf" -o Poppins-Bold.ttf
+          curl -sL "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Light.ttf" -o Poppins-Light.ttf
+          curl -sL "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Italic.ttf" -o Poppins-Italic.ttf
+          fc-cache -fv
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+
+      - name: Generate and post sketch explainer
+        env:
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+        run: node scripts/generate-sketch.js
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "sketch-bot@thriverichly.com"
+          git config --local user.name "Sketch Bot"
+          git add -A
+          git commit -m "✏️ Posted sketch explainer
+
+          Automated daily freehand sketch video.
+          Date: $(date -u +%Y-%m-%d)"
+          git push
