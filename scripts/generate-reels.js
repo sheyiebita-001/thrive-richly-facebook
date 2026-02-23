@@ -393,8 +393,7 @@ function generateAudio(duration, outputPath) {
       const musicPath = path.join(MUSIC_DIR, picked)
       console.log(`  🎵 Using custom music: ${picked}`)
 
-      // Trim/fade the music to fit duration
-      execSync(`ffmpeg -y -i "${musicPath}" -t ${duration} -af "afade=t=in:d=1.5,afade=t=out:st=${duration - 2}:d=2,volume=0.4" -c:a aac -b:a 128k "${outputPath}" 2>/dev/null`)
+      execSync(`ffmpeg -y -i "${musicPath}" -t ${duration} -af "afade=t=in:d=1.5,afade=t=out:st=${duration - 2}:d=2,volume=0.4" -c:a aac -b:a 128k "${outputPath}"`)
       return
     }
   }
@@ -403,33 +402,26 @@ function generateAudio(duration, outputPath) {
   console.log('  🎵 Generating ambient audio...')
 
   // Create a warm ambient pad: layered sine waves + filtered pink noise
-  // Notes: A2 (110Hz), E3 (164.81Hz), A3 (220Hz), C#4 (277.18Hz) = A major chord
-  const cmd = [
-    'ffmpeg -y',
-    `-f lavfi -i "anoisesrc=c=pink:r=44100:d=${duration}"`,
-    `-f lavfi -i "sine=f=110:d=${duration}"`,
-    `-f lavfi -i "sine=f=164.81:d=${duration}"`,
-    `-f lavfi -i "sine=f=220:d=${duration}"`,
-    `-f lavfi -i "sine=f=277.18:d=${duration}"`,
-    '-filter_complex',
-    `"[0]lowpass=f=250,volume=0.12[noise];`,
-    `[1]volume=0.08[a2];`,
-    `[2]volume=0.06[e3];`,
-    `[3]volume=0.05[a3];`,
-    `[4]volume=0.03[cs4];`,
-    `[noise][a2][e3][a3][cs4]amix=inputs=5:duration=longest,`,
-    `aecho=0.8:0.88:500|700:0.25|0.2,`,
-    `lowpass=f=3000,`,
-    `afade=t=in:d=2,`,
-    `afade=t=out:st=${Math.max(0, duration - 3)}:d=3"`,
-    `-t ${duration}`,
-    `-c:a aac -b:a 128k`,
-    `"${outputPath}"`,
-    '2>/dev/null'
-  ].join(' ')
+  // A major chord: A2 (110Hz), E3 (164.81Hz), A3 (220Hz), C#4 (277.18Hz)
+  const fadeOutStart = Math.max(0, duration - 3)
+  const filterComplex = `[0]lowpass=f=250,volume=0.12[noise];[1]volume=0.08[a2];[2]volume=0.06[e3];[3]volume=0.05[a3];[4]volume=0.03[cs4];[noise][a2][e3][a3][cs4]amix=inputs=5:duration=longest,aecho=0.8:0.88:500|700:0.25|0.2,lowpass=f=3000,afade=t=in:d=2,afade=t=out:st=${fadeOutStart}:d=3`
 
-  execSync(cmd)
-  console.log('  ✅ Audio generated')
+  try {
+    execSync(`ffmpeg -y -f lavfi -i "anoisesrc=c=pink:r=44100:d=${duration}" -f lavfi -i "sine=f=110:d=${duration}" -f lavfi -i "sine=f=164.81:d=${duration}" -f lavfi -i "sine=f=220:d=${duration}" -f lavfi -i "sine=f=277.18:d=${duration}" -filter_complex "${filterComplex}" -t ${duration} -c:a aac -b:a 128k "${outputPath}" 2>&1`)
+    console.log('  ✅ Audio generated (ambient pad)')
+  } catch (err) {
+    // Fallback: simple sine tone if complex filter fails
+    console.log('  ⚠️  Complex audio failed, using simple tone...')
+    try {
+      execSync(`ffmpeg -y -f lavfi -i "sine=f=174.61:d=${duration}" -af "volume=0.06,lowpass=f=800,afade=t=in:d=2,afade=t=out:st=${fadeOutStart}:d=3" -t ${duration} -c:a aac -b:a 128k "${outputPath}" 2>&1`)
+      console.log('  ✅ Audio generated (simple tone)')
+    } catch (err2) {
+      // Last resort: silent audio track
+      console.log('  ⚠️  Tone failed, generating silent audio...')
+      execSync(`ffmpeg -y -f lavfi -i "anullsrc=r=44100:cl=stereo" -t ${duration} -c:a aac -b:a 128k "${outputPath}" 2>&1`)
+      console.log('  ✅ Silent audio generated')
+    }
+  }
 }
 
 // ============================================================================
@@ -449,7 +441,7 @@ function assembleVideo(framesDir, audioPath, outputPath, duration) {
     '-shortest',
     '-movflags +faststart',
     `"${outputPath}"`,
-    '2>/dev/null'
+    '2>&1'
   ].join(' ')
 
   execSync(cmd)
