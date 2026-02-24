@@ -1,0 +1,942 @@
+{
+  "description": "Long-form financial empowerment video topics for Thrive Richly. Each topic has a full multi-section script for 5-7 minute doodle-style videos. Posted 2x per week.",
+  "topics": [
+    {
+      "id": 1,
+      "title": "The Complete Guide to Financial Freedom",
+      "hook": "97% of people will never achieve financial freedom. Here's the roadmap most people never see.",
+      "sections": [
+        {
+          "heading": "What Financial Freedom Actually Means",
+          "points": [
+            "It's NOT about being a millionaire — it's when your passive income covers your expenses",
+            "The magic number: when your investments earn more than you spend each month",
+            "Most people think it takes millions. For many, it's closer to £300K-£500K invested"
+          ],
+          "sketch": "formula"
+        },
+        {
+          "heading": "The 5 Levels of Financial Freedom",
+          "points": [
+            "Level 1: CLARITY — You know exactly what you earn, spend, and owe",
+            "Level 2: STABILITY — You have 3-6 months emergency fund saved",
+            "Level 3: DEBT FREE — All consumer debt is eliminated",
+            "Level 4: SECURITY — You're investing 20%+ of your income consistently",
+            "Level 5: FREEDOM — Your investments generate enough to cover your lifestyle"
+          ],
+          "sketch": "ladder"
+        },
+        {
+          "heading": "Why Most People Get Stuck at Level 1",
+          "points": [
+            "68% of people don't know their monthly expenses within £200",
+            "You can't build a map if you don't know where you're starting from",
+            "The 30-minute exercise: track every pound for ONE month and everything changes"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "The Savings Rate Secret",
+          "points": [
+            "Your savings rate matters MORE than your salary",
+            "Someone earning £40K saving 40% builds wealth FASTER than someone earning £100K saving 5%",
+            "Every 10% increase in savings rate cuts YEARS off your timeline to freedom"
+          ],
+          "sketch": "growth"
+        },
+        {
+          "heading": "The Investment Engine",
+          "points": [
+            "Once you're saving, your money needs to WORK — not sit in a bank at 1%",
+            "Index funds: the proven path — Warren Buffett's recommendation for 90% of people",
+            "The Rule of 72: divide 72 by your return rate to find how fast money doubles",
+            "At 8% average returns, your money doubles every 9 years automatically"
+          ],
+          "sketch": "growth"
+        },
+        {
+          "heading": "The Power of Starting TODAY",
+          "points": [
+            "£200/month from age 25 = £520K by 60 at average market returns",
+            "The same £200/month from age 35 = only £220K — you LOST £300K by waiting 10 years",
+            "The best time to start was yesterday. The second best time is right now"
+          ],
+          "sketch": "timeline"
+        },
+        {
+          "heading": "Your 3 Action Steps Tonight",
+          "points": [
+            "Step 1: Calculate your EXACT monthly expenses — every single pound",
+            "Step 2: Set up an automatic transfer of even £50/month to an investment account",
+            "Step 3: Write down your freedom number — the amount where passive income covers expenses"
+          ],
+          "sketch": "checklist"
+        }
+      ],
+      "takeaway": "Financial freedom isn't about earning more — it's about the gap between what you earn and what you spend, invested consistently over time.",
+      "category": "Financial Freedom",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "title": "How Compound Interest Makes You Rich (Or Keeps You Poor)",
+      "hook": "Einstein called it the 8th wonder of the world. Here's how it works FOR you — or AGAINST you.",
+      "sections": [
+        {
+          "heading": "What Compound Interest Actually Is",
+          "points": [
+            "Simple interest: you earn on your original money only",
+            "Compound interest: you earn on your money AND on previous earnings",
+            "It's interest on interest on interest — a snowball rolling downhill"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "The Penny Doubling Experiment",
+          "points": [
+            "Would you rather have £1 million today, or a penny that doubles every day for 30 days?",
+            "Day 10: your penny is only worth £5.12 — the million looks genius",
+            "Day 20: it's worth £5,242 — still nowhere close",
+            "Day 30: £5,368,709 — MORE than 5x the million. That's compounding"
+          ],
+          "sketch": "growth"
+        },
+        {
+          "heading": "The Rule of 72",
+          "points": [
+            "Divide 72 by your interest rate to find how many years until your money doubles",
+            "At 6%: doubles every 12 years. At 8%: every 9 years. At 10%: every 7.2 years",
+            "This simple rule lets you calculate wealth growth in your head instantly"
+          ],
+          "sketch": "formula"
+        },
+        {
+          "heading": "When Compounding Works AGAINST You",
+          "points": [
+            "Credit card debt at 22% APR — your debt doubles every 3.3 years if unpaid",
+            "A £5,000 credit card balance can become £10,000 in just over 3 years",
+            "Payday loans, store credit, buy-now-pay-later — all use compounding against you",
+            "The same force that builds millionaires can also create permanent debt traps"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "The Real Cost of Waiting",
+          "points": [
+            "Investor A starts at 25, invests £3,000/year until 35, then STOPS — total invested: £30,000",
+            "Investor B starts at 35, invests £3,000/year until 65 — total invested: £90,000",
+            "At 65: Investor A has MORE money despite investing £60,000 LESS",
+            "10 early years beat 30 late years. Time is literally money"
+          ],
+          "sketch": "timeline"
+        },
+        {
+          "heading": "How to Harness Compounding Starting Today",
+          "points": [
+            "Automate monthly investments — even £100 matters when compounding kicks in",
+            "NEVER interrupt compounding — don't withdraw, don't panic sell",
+            "Reinvest all dividends — this accelerates the snowball dramatically",
+            "Pay off high-interest debt FIRST — stop compounding working against you"
+          ],
+          "sketch": "checklist"
+        }
+      ],
+      "takeaway": "Compound interest is the most powerful force in finance. Make sure it's working FOR you, not against you. Start early, stay consistent, and let time do the heavy lifting.",
+      "category": "Investing Basics",
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "title": "The Psychology of Money: Why Smart People Make Dumb Financial Decisions",
+      "hook": "Your biggest financial enemy isn't the economy, taxes, or bad luck — it's your own brain.",
+      "sections": [
+        {
+          "heading": "Your Brain Wasn't Built for Money",
+          "points": [
+            "Our brains evolved for survival, not spreadsheets — we're wired for SHORT-TERM thinking",
+            "The same instincts that kept us alive now make us overspend, panic sell, and avoid risk",
+            "Understanding these biases is the first step to beating them"
+          ],
+          "sketch": "brain"
+        },
+        {
+          "heading": "Loss Aversion: Why Losing £100 Hurts More Than Finding £100",
+          "points": [
+            "Studies show losses feel 2-2.5x more painful than equivalent gains feel good",
+            "This makes people hold losing investments too long — hoping to 'break even'",
+            "It also makes people sell winners too early — locking in small gains from fear",
+            "The fix: set rules BEFORE emotions kick in. Decide your exit strategy in advance"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "The Anchoring Effect",
+          "points": [
+            "Your brain latches onto the FIRST number it sees and judges everything relative to it",
+            "A jacket 'reduced' from £200 to £120 feels like a bargain — even if it's worth £80",
+            "Salary negotiations: whoever says a number first sets the anchor",
+            "Retailers exploit this constantly with 'was/now' pricing"
+          ],
+          "sketch": "flow"
+        },
+        {
+          "heading": "Present Bias: Why You Can't Save for Tomorrow",
+          "points": [
+            "Your brain values £100 today far more than £150 next year — even though £150 is obviously more",
+            "This is why we buy lattes instead of investing, upgrade phones instead of saving",
+            "The marshmallow experiment: kids who could delay gratification were wealthier 40 years later",
+            "The hack: automate your savings so your present-biased brain never sees the money"
+          ],
+          "sketch": "timeline"
+        },
+        {
+          "heading": "Social Comparison: The Wealth Killer",
+          "points": [
+            "We judge our wealth relative to people around us, not by absolute numbers",
+            "Social media amplifies this — you're comparing your behind-the-scenes to everyone's highlight reel",
+            "Keeping up with the Joneses is a race with no finish line",
+            "The wealthiest people often look the least wealthy — they optimise for freedom, not appearance"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "The Sunk Cost Fallacy",
+          "points": [
+            "You keep paying for things just because you've already spent money on them",
+            "The gym membership you don't use, the subscription you forgot about, the stock that's tanking",
+            "Past spending should NEVER influence future decisions — that money is gone either way",
+            "Ask: 'Would I buy this again today at this price?' If no, let it go"
+          ],
+          "sketch": "flow"
+        },
+        {
+          "heading": "Rewiring Your Money Brain",
+          "points": [
+            "Step 1: Automate everything — remove daily decision-making from your finances",
+            "Step 2: Create a 24-hour rule — wait a full day before any purchase over £50",
+            "Step 3: Track your spending — awareness alone reduces emotional spending by 20%",
+            "Step 4: Unfollow accounts that trigger comparison — curate your financial environment"
+          ],
+          "sketch": "checklist"
+        }
+      ],
+      "takeaway": "You don't need to be smarter to be wealthier — you need to understand HOW your brain tricks you with money, then build systems that protect you from yourself.",
+      "category": "Money Psychology",
+      "status": "pending"
+    },
+    {
+      "id": 4,
+      "title": "7 Income Streams: How the Wealthy Actually Make Money",
+      "hook": "The average millionaire has 7 streams of income. Most people have one. Let's fix that.",
+      "sections": [
+        {
+          "heading": "Why One Income Stream Is Dangerous",
+          "points": [
+            "If 100% of your income comes from one job, you're one layoff from zero",
+            "A single income is like a table with one leg — it looks fine until it doesn't",
+            "Diversifying income is the single biggest wealth accelerator available to everyone"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "Stream 1: Earned Income (Your Job)",
+          "points": [
+            "Trading time for money — this is where MOST people start and stop",
+            "It's necessary but has a ceiling: there are only so many hours in a day",
+            "Use this to fund the other 6 streams — it's the engine, not the destination"
+          ],
+          "sketch": "flow"
+        },
+        {
+          "heading": "Stream 2: Profit Income (Side Business)",
+          "points": [
+            "Selling a product or service — even part-time — that earns profit above costs",
+            "Examples: freelancing, consulting, e-commerce, digital products",
+            "Start with your existing skills — what do people already ask your help with?",
+            "Even £500/month extra compounds into life-changing wealth over 10 years"
+          ],
+          "sketch": "growth"
+        },
+        {
+          "heading": "Stream 3: Interest Income",
+          "points": [
+            "Money earned from lending your money — savings accounts, bonds, peer-to-peer lending",
+            "The 'safest' passive income but also the lowest return",
+            "Best used for your emergency fund and short-term goals, not long-term wealth building"
+          ],
+          "sketch": "shield"
+        },
+        {
+          "heading": "Stream 4: Dividend Income",
+          "points": [
+            "Companies pay you a share of their profits just for owning their stock",
+            "Dividend aristocrats: companies that have INCREASED dividends for 25+ years straight",
+            "Reinvest dividends and watch compounding accelerate dramatically",
+            "A £200K dividend portfolio at 4% yield = £8,000/year in passive income"
+          ],
+          "sketch": "growth"
+        },
+        {
+          "heading": "Stream 5: Rental Income",
+          "points": [
+            "Property that pays you monthly — residential, commercial, or through REITs",
+            "You don't need to buy a house: REITs let you invest in property from £100",
+            "The key metric: cash flow after ALL expenses including maintenance and vacancies"
+          ],
+          "sketch": "flow"
+        },
+        {
+          "heading": "Stream 6: Capital Gains",
+          "points": [
+            "Buying assets cheap, selling them higher — stocks, property, businesses",
+            "The most powerful stream over decades when combined with compounding",
+            "Index funds have returned 8-10% annually over the last 100 years on average"
+          ],
+          "sketch": "growth"
+        },
+        {
+          "heading": "Stream 7: Royalty/Licensing Income",
+          "points": [
+            "Create something ONCE, get paid forever — books, courses, music, patents, software",
+            "Digital products have near-zero marginal cost — your 1,000th sale is almost pure profit",
+            "This is the ultimate leverage: decouple your income from your time completely"
+          ],
+          "sketch": "timeline"
+        },
+        {
+          "heading": "Building Your Income Streams: The Priority Order",
+          "points": [
+            "Start with earned income — maximise and stabilise it first",
+            "Add a profit stream (side business) — use skills you already have",
+            "Invest consistently for dividend + capital gains income",
+            "Build royalty income over time with digital products or content",
+            "Don't try all 7 at once — add one new stream every 6-12 months"
+          ],
+          "sketch": "ladder"
+        }
+      ],
+      "takeaway": "You don't need all 7 streams tomorrow. Start with what you have, add one stream at a time, and within 3-5 years your income can be unrecognisable.",
+      "category": "Income Streams",
+      "status": "pending"
+    },
+    {
+      "id": 5,
+      "title": "Budgeting for People Who Hate Budgeting",
+      "hook": "If budgeting feels like a diet for your money, you're doing it wrong. Here's the system that actually works.",
+      "sections": [
+        {
+          "heading": "Why Traditional Budgets Fail",
+          "points": [
+            "Tracking every penny is exhausting — 80% of people abandon traditional budgets within 2 months",
+            "Restriction-based budgets feel like punishment — the same reason diets fail",
+            "You don't need a perfect budget. You need a simple SYSTEM"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "The Pay Yourself First Method",
+          "points": [
+            "Most people: earn → spend → save what's left (usually nothing)",
+            "The flip: earn → save/invest FIRST → spend what's left guilt-free",
+            "Automate transfers on payday — your savings happen before you even see the money",
+            "This single change builds more wealth than any spreadsheet ever will"
+          ],
+          "sketch": "flow"
+        },
+        {
+          "heading": "The 50/30/20 Framework",
+          "points": [
+            "50% NEEDS: rent, food, transport, insurance — the non-negotiables",
+            "30% WANTS: dining out, entertainment, subscriptions — the fun stuff",
+            "20% FUTURE: savings, investments, extra debt payments — your wealth engine",
+            "If you can't hit 50/30/20 right away, start with 60/25/15 and adjust over time"
+          ],
+          "sketch": "pie"
+        },
+        {
+          "heading": "The Zero-Based Alternative",
+          "points": [
+            "Give every single pound a JOB before the month begins",
+            "Income minus all planned spending should equal exactly zero",
+            "This doesn't mean you spend everything — saving IS a job for your money",
+            "Best for people who like control and structure"
+          ],
+          "sketch": "checklist"
+        },
+        {
+          "heading": "The 3 Account System",
+          "points": [
+            "Account 1: BILLS — all fixed expenses auto-pay from here",
+            "Account 2: SPENDING — your weekly allowance for everything else",
+            "Account 3: SAVINGS — automatic transfers, don't touch it",
+            "Simple, visual, and you always know exactly where you stand"
+          ],
+          "sketch": "three_buckets"
+        },
+        {
+          "heading": "The Subscription Audit",
+          "points": [
+            "The average person spends £60-120/month on subscriptions they barely use",
+            "Go through your bank statement RIGHT NOW and list every recurring charge",
+            "Cancel anything you haven't actively used in the last 30 days",
+            "That's potentially £720-£1,440 per year redirected to your wealth"
+          ],
+          "sketch": "checklist"
+        },
+        {
+          "heading": "Your Setup Plan: 30 Minutes Tonight",
+          "points": [
+            "Step 1: Open your banking app and find your total monthly income",
+            "Step 2: List your 5 biggest expenses — these are your 80/20",
+            "Step 3: Set up one automatic transfer to savings — even £25 works",
+            "Step 4: Schedule a 15-minute weekly money check-in — same day, same time"
+          ],
+          "sketch": "checklist"
+        }
+      ],
+      "takeaway": "The best budget is the one you actually follow. Keep it simple, automate everything, and spend guilt-free knowing your future is already funded.",
+      "category": "Budgeting",
+      "status": "pending"
+    },
+    {
+      "id": 6,
+      "title": "Debt Freedom: The Step-by-Step Escape Plan",
+      "hook": "UK household debt averages over £65,000. Here's the exact plan to eliminate yours — faster than you think.",
+      "sections": [
+        {
+          "heading": "The True Cost of Debt",
+          "points": [
+            "A £10,000 credit card at 22% with minimum payments takes 25+ YEARS to clear",
+            "You'd pay over £15,000 in INTEREST ALONE — 1.5x the original amount",
+            "Debt doesn't just cost money — it costs sleep, relationships, and mental health"
+          ],
+          "sketch": "growth"
+        },
+        {
+          "heading": "The Debt Avalanche vs Debt Snowball",
+          "points": [
+            "AVALANCHE: Pay highest interest rate first — saves the most money mathematically",
+            "SNOWBALL: Pay smallest balance first — builds momentum and quick wins",
+            "The science: snowball works better for MOST people because motivation matters more than maths",
+            "Pick the one that gets you started. The worst method is the one you quit"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "The Debt Snowball In Action",
+          "points": [
+            "List ALL debts from smallest balance to largest — ignore interest rates",
+            "Pay minimums on everything except the smallest debt",
+            "Attack the smallest with every spare penny until it's GONE",
+            "Roll that payment into the next smallest debt — your 'snowball' grows each time",
+            "Each win releases dopamine and builds the confidence to keep going"
+          ],
+          "sketch": "ladder"
+        },
+        {
+          "heading": "Finding Extra Money to Throw at Debt",
+          "points": [
+            "The subscription audit: cancel unused memberships (average saving: £80/month)",
+            "Sell 20 things you haven't used in 6 months — declutter AND generate cash",
+            "Take on a short-term side hustle: dog walking, tutoring, freelancing",
+            "Redirect ALL windfalls: tax refunds, bonuses, gifts — straight to debt"
+          ],
+          "sketch": "checklist"
+        },
+        {
+          "heading": "The Debt-Free Mindset Shift",
+          "points": [
+            "Stop thinking of debt payments as a bill — think of them as buying back your FREEDOM",
+            "Every extra pound paid is a step closer to financial independence",
+            "Visualise your debt-free date — put it on your wall, your phone, your mirror",
+            "Track your progress weekly — watching the number drop is addictive in the best way"
+          ],
+          "sketch": "timeline"
+        },
+        {
+          "heading": "Staying Debt Free Forever",
+          "points": [
+            "Build a £1,000 emergency fund BEFORE aggressive debt payoff — this prevents relapse",
+            "After debt is gone: redirect those exact payments into investments — same money, new destination",
+            "Use the 24-hour rule for all purchases over £50 — impulse spending creates new debt",
+            "If you can't pay cash for it (except a house), you can't afford it. Period"
+          ],
+          "sketch": "shield"
+        }
+      ],
+      "takeaway": "Debt freedom isn't about willpower — it's about having a system, building momentum, and remembering that every pound paid is buying your freedom back.",
+      "category": "Debt Freedom",
+      "status": "pending"
+    },
+    {
+      "id": 7,
+      "title": "Investing for Complete Beginners: Start With £50",
+      "hook": "You don't need thousands to start investing. Here's everything you need to know to begin with just £50.",
+      "sections": [
+        {
+          "heading": "Why You MUST Invest (Not Just Save)",
+          "points": [
+            "Inflation eats 2-4% of your savings every year — your money LOSES value sitting in a bank",
+            "£10,000 in a savings account today will buy £7,400 worth of goods in 10 years at 3% inflation",
+            "Investing is not gambling — it's putting your money to work so it grows faster than inflation"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "Stocks, Bonds, and Funds: The Simple Version",
+          "points": [
+            "A STOCK is owning a tiny piece of a company — you share in its profits and growth",
+            "A BOND is lending money to a government or company — they pay you interest",
+            "A FUND bundles hundreds of stocks or bonds together — instant diversification",
+            "Index funds track the entire market — no need to pick individual winners"
+          ],
+          "sketch": "three_buckets"
+        },
+        {
+          "heading": "Why Index Funds Win",
+          "points": [
+            "90% of professional fund managers FAIL to beat a simple index fund over 15 years",
+            "Warren Buffett's advice: put 90% in a low-cost S&P 500 index fund",
+            "Fees matter enormously: a 1% fee vs 0.1% fee costs you £100,000+ over 30 years",
+            "Set it, forget it, and let time do the work"
+          ],
+          "sketch": "growth"
+        },
+        {
+          "heading": "How to Actually Start: Step by Step",
+          "points": [
+            "Step 1: Open a Stocks & Shares ISA — your gains are TAX-FREE up to £20,000/year",
+            "Step 2: Choose a platform — Vanguard, Trading 212, or Freetrade for beginners",
+            "Step 3: Pick a global index fund — FTSE Global All Cap or S&P 500 tracker",
+            "Step 4: Set up a monthly direct debit — even £50 gets you started",
+            "Step 5: DON'T look at it daily. Check quarterly at most"
+          ],
+          "sketch": "ladder"
+        },
+        {
+          "heading": "The Biggest Beginner Mistakes",
+          "points": [
+            "Trying to TIME the market — time IN the market beats timing the market, every time",
+            "Checking your portfolio daily — this leads to panic selling during normal dips",
+            "Chasing hot stocks and crypto — most 'hot tips' lose money for retail investors",
+            "Waiting for the 'perfect' time — the best time was yesterday, the next best is today"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "What to Expect: Real Returns",
+          "points": [
+            "The stock market averages 8-10% per year over long periods — but NOT every year",
+            "Some years you'll be up 20%. Some years you'll be down 30%. This is NORMAL",
+            "The key: keep investing through the dips — you're buying shares 'on sale'",
+            "Over 20+ years, the market has ALWAYS recovered and grown — patience is the edge"
+          ],
+          "sketch": "growth"
+        },
+        {
+          "heading": "Your First Investment Plan",
+          "points": [
+            "Tonight: research ISA platforms and open one — takes 10 minutes",
+            "This week: set up a £50 monthly investment into a global index fund",
+            "This month: increase your investment by redirecting one expense you can cut",
+            "This year: aim to invest 10% of your income — adjust upward as you grow"
+          ],
+          "sketch": "checklist"
+        }
+      ],
+      "takeaway": "You don't need to be rich to invest. You need to invest to BECOME rich. Start with £50, stay consistent, and let compound interest do what it does best.",
+      "category": "Investing Basics",
+      "status": "pending"
+    },
+    {
+      "id": 8,
+      "title": "The Emergency Fund: Your Financial Foundation",
+      "hook": "63% of people can't cover a £500 emergency. Here's how to build your safety net from scratch.",
+      "sections": [
+        {
+          "heading": "Why Emergency Funds Come First",
+          "points": [
+            "Without an emergency fund, every surprise expense becomes a DEBT",
+            "Car repair? Credit card. Medical bill? Overdraft. Job loss? Panic",
+            "An emergency fund breaks the cycle — it's the foundation everything else is built on"
+          ],
+          "sketch": "shield"
+        },
+        {
+          "heading": "How Much Do You Actually Need?",
+          "points": [
+            "Starter fund: £1,000 — enough to cover most single emergencies",
+            "Standard fund: 3-6 months of expenses — enough to survive job loss",
+            "If you're self-employed or single income: aim for 6-9 months",
+            "Calculate YOUR number: monthly expenses × months of coverage you want"
+          ],
+          "sketch": "ladder"
+        },
+        {
+          "heading": "Where to Keep Your Emergency Fund",
+          "points": [
+            "A high-interest savings account — SEPARATE from your daily spending",
+            "It needs to be accessible within 1-2 days — but NOT in your current account",
+            "Keeping it separate is critical — out of sight, out of mind, out of temptation",
+            "Current best rates in the UK: 4-5% on easy-access savings accounts"
+          ],
+          "sketch": "shield"
+        },
+        {
+          "heading": "The Fast-Track Savings Plan",
+          "points": [
+            "Week 1-4: £25/week = £100 in your first month",
+            "Find ONE expense to cut: eating out less, downgrading a subscription, cheaper phone plan",
+            "Sell 10 things you haven't used in 6 months on eBay or Facebook Marketplace",
+            "Redirect any unexpected money: cashback, rebates, found money, overtime pay"
+          ],
+          "sketch": "timeline"
+        },
+        {
+          "heading": "What Counts as an Emergency (And What Doesn't)",
+          "points": [
+            "YES: unexpected car repair, medical bill, urgent home repair, job loss",
+            "NO: a sale at your favourite shop, holiday deposits, planned expenses, 'treats'",
+            "The test: is this UNEXPECTED, NECESSARY, and URGENT? All three = emergency",
+            "Having clear rules prevents the 'everything is an emergency' trap"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "After the Emergency Fund: What Next?",
+          "points": [
+            "Once you have 3-6 months saved, REDIRECT those savings to investing",
+            "Keep the emergency fund topped up — if you use it, refill it immediately",
+            "Your emergency fund is not an investment — it's insurance. Don't try to get rich from it",
+            "Now you're ready for the wealth-building phase with zero financial anxiety"
+          ],
+          "sketch": "flow"
+        }
+      ],
+      "takeaway": "An emergency fund isn't exciting. It won't make you rich. But it will give you something money can't buy: peace of mind. Build yours before building wealth.",
+      "category": "Emergency Fund",
+      "status": "pending"
+    },
+    {
+      "id": 9,
+      "title": "Side Hustle to Full Business: The Realistic Roadmap",
+      "hook": "4 in 10 people now have a side hustle. Here's how to turn yours into something that could replace your salary.",
+      "sections": [
+        {
+          "heading": "Finding Your Side Hustle Sweet Spot",
+          "points": [
+            "The sweet spot: what you're GOOD at + what people will PAY for + what you ENJOY",
+            "Don't start with passion alone — start with a PROBLEM people need solved",
+            "The easiest side hustles use skills you ALREADY have from your day job",
+            "Examples: writing, design, tutoring, bookkeeping, social media, coaching, trades"
+          ],
+          "sketch": "venn"
+        },
+        {
+          "heading": "The Minimum Viable Side Hustle",
+          "points": [
+            "Don't spend months planning — get your FIRST customer within 7 days",
+            "Start with a service (trade time for money) before building a product",
+            "Your first price should make you slightly uncomfortable — that means it's about right",
+            "One customer proves the concept. Then worry about scaling"
+          ],
+          "sketch": "timeline"
+        },
+        {
+          "heading": "From £0 to £1,000/Month",
+          "points": [
+            "The first £1K/month is the hardest — it proves the model works",
+            "Find 5-10 clients paying £100-200 each OR sell a product 50-100 times",
+            "Referrals are king at this stage — overdeliver so clients recommend you",
+            "Track every penny of income and expenses from day one — future you will thank you"
+          ],
+          "sketch": "ladder"
+        },
+        {
+          "heading": "The Productisation Pivot",
+          "points": [
+            "Services trade time for money — they don't scale well",
+            "Productise your service: turn your expertise into a template, course, or tool",
+            "A £50 digital product sold 100 times/month = £5,000 passive-ish income",
+            "This is how you decouple income from hours worked"
+          ],
+          "sketch": "flow"
+        },
+        {
+          "heading": "When to Go Full Time",
+          "points": [
+            "The safe threshold: side hustle income covers 75% of your salary for 6 months consistently",
+            "Have 6 months of expenses saved PLUS the side hustle income before quitting",
+            "Test going full-time during a holiday week — can you sustain the pace?",
+            "Most successful entrepreneurs keep their day job longer than you'd think"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "The Mistakes That Kill Side Hustles",
+          "points": [
+            "Spending money on a logo and website before getting ONE customer",
+            "Underpricing: charging what you'd pay, not what the VALUE is worth",
+            "Trying to serve everyone — pick a specific niche and dominate it",
+            "Not treating it like a business: track income, expenses, and time invested"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "Start This Week",
+          "points": [
+            "Day 1: List 3 skills people have asked your help with before",
+            "Day 2: Find 5 people who might need that skill — LinkedIn, friends, local groups",
+            "Day 3: Offer to help ONE person at a fair price — just get the first client",
+            "Day 7: Review what worked, adjust, repeat. You're officially a business owner"
+          ],
+          "sketch": "checklist"
+        }
+      ],
+      "takeaway": "Every business empire started as someone's side hustle. You don't need a perfect plan — you need your first customer and the willingness to learn as you go.",
+      "category": "Side Hustle",
+      "status": "pending"
+    },
+    {
+      "id": 10,
+      "title": "The Wealth Gap Explained: Why the Rich Get Richer",
+      "hook": "The top 1% own more than the bottom 50% combined. This isn't an accident — here's how the system works.",
+      "sections": [
+        {
+          "heading": "The Numbers Are Staggering",
+          "points": [
+            "The wealthiest 1% of the world own 46% of ALL global wealth",
+            "In the UK, the richest 10% hold 57% of the nation's wealth",
+            "Since 2020, the ultra-wealthy have doubled their fortunes while median wages grew just 3-5%",
+            "This isn't about judging anyone — it's about understanding the MECHANICS"
+          ],
+          "sketch": "pie"
+        },
+        {
+          "heading": "Income vs Wealth: The Critical Difference",
+          "points": [
+            "INCOME is what you earn — your salary, wages, freelance payments",
+            "WEALTH is what you OWN minus what you OWE — assets minus liabilities",
+            "A doctor earning £150K with £200K in debt has high income but negative wealth",
+            "A teacher with a paid-off home and £300K invested has modest income but real wealth"
+          ],
+          "sketch": "comparison"
+        },
+        {
+          "heading": "How the System Favours Wealth Owners",
+          "points": [
+            "Earned income is taxed at 20-45%. Investment gains are taxed at 10-20%",
+            "The more assets you own, the easier it is to borrow cheaply and buy MORE assets",
+            "Financial literacy is not taught in schools — keeping people in the dark benefits the system",
+            "The wealthy pass knowledge AND assets to their children, compounding advantages"
+          ],
+          "sketch": "ladder"
+        },
+        {
+          "heading": "The Asset Escalator",
+          "points": [
+            "Money in a savings account: grows at 1-5% per year",
+            "Money in the stock market: grows at 8-10% per year average",
+            "Money in property: grows via appreciation + rent + leverage",
+            "Money in businesses: unlimited upside — the primary wealth creation vehicle",
+            "Each step up the escalator multiplies wealth faster"
+          ],
+          "sketch": "growth"
+        },
+        {
+          "heading": "Breaking Into the Wealth Game",
+          "points": [
+            "Step 1: Shift from consumer to investor mindset — buy assets, not liabilities",
+            "Step 2: Maximise tax-advantaged accounts (ISAs, pensions) — use the same tools the wealthy use",
+            "Step 3: Build income streams beyond your salary — business, investments, royalties",
+            "Step 4: Teach financial literacy to your children — break the cycle"
+          ],
+          "sketch": "checklist"
+        },
+        {
+          "heading": "The Long Game Strategy",
+          "points": [
+            "You can't close the wealth gap overnight — but you can START climbing",
+            "Consistent investing of £300/month for 30 years at 8% = over £400,000",
+            "Combine that with a paid-off home and pension, and you're in the top 20% of wealth",
+            "Knowledge is the great equaliser — the information the wealthy act on is available to everyone"
+          ],
+          "sketch": "timeline"
+        }
+      ],
+      "takeaway": "The wealth gap exists because of SYSTEMS, not just effort. Once you understand the system, you can start using the same tools and principles to build your own wealth — one step at a time.",
+      "category": "Wealth Building",
+      "status": "pending"
+    },
+    {
+      "id": 11,
+      "title": "Tax Secrets: Legal Ways to Keep More of Your Money",
+      "hook": "The average person overpays thousands in tax every year simply because nobody told them the rules. Let's change that.",
+      "sections": [
+        { "heading": "Why Tax Knowledge Is Wealth Knowledge", "points": ["It's not about how much you EARN — it's about how much you KEEP", "A 5% tax saving on £40K salary = £2,000/year = £60,000+ over a career when invested", "The wealthy don't avoid tax illegally — they use EVERY legal allowance available"], "sketch": "comparison" },
+        { "heading": "ISAs: Your Tax-Free Superpower", "points": ["Every UK adult can shelter £20,000/year in ISAs — gains, dividends, interest ALL tax-free", "A Stocks & Shares ISA over 30 years could save you £50,000+ in capital gains tax", "Cash ISAs for your emergency fund, Stocks & Shares ISA for long-term investing", "If you're not using your full ISA allowance, you're literally giving money to HMRC"], "sketch": "shield" },
+        { "heading": "Pension Tax Relief: Free Money", "points": ["The government ADDS money to your pension — 20% for basic rate, 40% for higher rate", "Put in £80, the government adds £20. Higher earners: put in £60, get £100 in your pension", "Employer matching: if your employer matches contributions, that's an instant 100% return", "Salary sacrifice: save on National Insurance too — ask your HR department about this"], "sketch": "growth" },
+        { "heading": "Marriage Allowance and Personal Allowance", "points": ["Marriage allowance: transfer £1,260 of unused personal allowance to your spouse — saves £252/year", "Your first £12,570 of income is TAX-FREE — make sure both partners are using this", "If one partner earns under £12,570, they can transfer unused allowance to the other"], "sketch": "flow" },
+        { "heading": "Capital Gains Allowance", "points": ["You can make £3,000 in capital gains per year completely TAX-FREE", "Couples can use both allowances: £6,000 combined", "Smart investors 'harvest' gains each year to stay within the allowance", "Transfer assets between spouses before selling to double your tax-free threshold"], "sketch": "checklist" },
+        { "heading": "Self-Employment Tax Strategies", "points": ["Claim ALL allowable expenses: home office, equipment, travel, software, training", "The trading allowance: earn up to £1,000 from side hustles completely tax-free", "Consider incorporating if profits exceed £30-40K — corporation tax can be lower than income tax", "Keep receipts for EVERYTHING — a shoebox system is better than no system"], "sketch": "checklist" },
+        { "heading": "Your Tax Action Plan", "points": ["This week: Check if you're using your full ISA allowance — open one if you haven't", "This month: Review your pension contributions — are you getting full employer matching?", "If married: Apply for marriage allowance on gov.uk — takes 5 minutes", "Every year: Use your capital gains allowance before April 5th — don't waste it"], "sketch": "checklist" }
+      ],
+      "takeaway": "Tax planning isn't just for the rich. Every allowance you claim is money working for YOUR future instead of disappearing. Knowledge is literally money here.",
+      "category": "Tax Planning",
+      "status": "pending"
+    },
+    {
+      "id": 12,
+      "title": "Money Habits That Separate the Wealthy from Everyone Else",
+      "hook": "Wealth isn't built in big moments. It's built in daily habits that compound over decades.",
+      "sections": [
+        { "heading": "Habit 1: They Pay Themselves First", "points": ["The #1 wealth habit: save and invest BEFORE spending on anything else", "Set up automatic transfers on payday — treat investing like a non-negotiable bill", "Start with 10% of income, increase by 1% every pay rise until you hit 20-30%"], "sketch": "flow" },
+        { "heading": "Habit 2: They Track Their Net Worth Monthly", "points": ["What gets measured gets managed — the wealthy know their exact net worth", "Net worth = everything you OWN minus everything you OWE", "Track it monthly in a simple spreadsheet — watching it grow is incredibly motivating", "Focus on this number, not your salary — it's the true scorecard of wealth"], "sketch": "growth" },
+        { "heading": "Habit 3: They Live Below Their Means", "points": ["The typical millionaire drives a car that's 3+ years old", "Wealth is what you DON'T see — the money saved and invested, not the stuff bought", "Lifestyle inflation is the silent wealth killer — every raise becomes new spending", "The 50% rule: when you get a raise, invest 50% and enjoy 50%"], "sketch": "comparison" },
+        { "heading": "Habit 4: They Never Stop Learning", "points": ["The average CEO reads 52 books per year. The average person reads 4", "Wealthy people invest in knowledge: courses, books, mentors, mastermind groups", "Financial literacy compounds just like money — each lesson makes the next one more valuable", "Spend 30 minutes daily learning about money, business, or investing"], "sketch": "ladder" },
+        { "heading": "Habit 5: They Think in Decades, Not Days", "points": ["Short-term thinking: 'Can I afford the monthly payment?'", "Long-term thinking: 'What will this decision cost me over 10 years?'", "A £500/month car payment invested instead = £180,000+ over 20 years", "Every financial decision should pass the 10-year test"], "sketch": "timeline" },
+        { "heading": "Habit 6: They Protect Their Downside", "points": ["Emergency fund before investments. Insurance before speculation", "The wealthy don't take uncalculated risks — they manage risk carefully", "They diversify: never put all eggs in one basket — stocks, property, business, cash", "Protecting what you have is just as important as growing it"], "sketch": "shield" },
+        { "heading": "Building Your Wealth Habits", "points": ["Pick ONE habit from this list to start this week — don't overwhelm yourself", "Stack it onto an existing habit: 'After I check my phone in the morning, I'll check my net worth app'", "Track your consistency: 30 days of a new habit makes it stick", "Add the next habit only when the first one is automatic"], "sketch": "checklist" }
+      ],
+      "takeaway": "You don't become wealthy from one big decision. You become wealthy from hundreds of small daily habits that compound — just like your investments.",
+      "category": "Wealth Habits",
+      "status": "pending"
+    },
+    {
+      "id": 13,
+      "title": "Understanding Your Payslip: Where Your Money Actually Goes",
+      "hook": "Most people glance at the bottom number and ignore the rest. Here's what every line on your payslip actually means.",
+      "sections": [
+        { "heading": "Gross Pay vs Net Pay", "points": ["GROSS pay: what your employer pays you — the big number in your contract", "NET pay: what actually lands in your bank — always less than you expect", "The gap between gross and net is your total tax burden — and it's bigger than most think"], "sketch": "comparison" },
+        { "heading": "Income Tax: The Big One", "points": ["Personal allowance: first £12,570 is TAX-FREE — this is your zero-rate band", "Basic rate: 20% on income from £12,571 to £50,270", "Higher rate: 40% on income from £50,271 to £125,140", "Additional rate: 45% on income above £125,140", "You only pay the higher rate on the AMOUNT above each threshold — not your entire salary"], "sketch": "ladder" },
+        { "heading": "National Insurance: The Hidden Tax", "points": ["You pay 8% NI on earnings between £12,570 and £50,270", "2% on anything above £50,270", "Your employer ALSO pays 13.8% on top of your salary — you never see this but it's real", "NI funds your state pension and NHS — it's essentially a second income tax"], "sketch": "pie" },
+        { "heading": "Pension Contributions", "points": ["If you see pension deductions, this is GOOD — it's your future self getting paid", "Auto-enrolment: minimum 5% employee + 3% employer = 8% total", "This comes out BEFORE tax — so a £100 pension contribution only 'costs' you £80 in take-home", "Always, always, ALWAYS take the full employer match — it's literally free money"], "sketch": "growth" },
+        { "heading": "Student Loan Repayments", "points": ["Plan 1: 9% of income above £22,015", "Plan 2: 9% of income above £27,295", "Plan 5: 9% of income above £25,000", "These are automatic and come off your payslip — they're NOT optional while employed", "Student loans are wiped after 25-40 years depending on your plan — not all debt is created equal"], "sketch": "flow" },
+        { "heading": "Other Deductions to Watch For", "points": ["Salary sacrifice: pension, cycle to work, childcare vouchers — these save tax", "Private healthcare: check if your employer offers this as a benefit", "Union fees, professional subscriptions — some are tax-deductible", "If anything looks wrong: QUERY IT immediately — payroll errors are more common than you think"], "sketch": "checklist" },
+        { "heading": "Maximise Your Take-Home Pay", "points": ["Check your tax code — wrong tax codes cost UK workers millions every year", "If you work from home, claim the £6/week tax relief from HMRC", "Review salary sacrifice options — they can save hundreds per year", "Use your payslip knowledge to negotiate raises — know what £5K extra actually means after tax"], "sketch": "checklist" }
+      ],
+      "takeaway": "Your payslip is a financial roadmap hiding in plain sight. Understanding every line gives you the power to optimise your income and stop leaving money on the table.",
+      "category": "Financial Literacy",
+      "status": "pending"
+    },
+    {
+      "id": 14,
+      "title": "The FIRE Movement: How to Retire Decades Early",
+      "hook": "What if you could retire at 40 instead of 68? The FIRE movement has a formula — and it's simpler than you think.",
+      "sections": [
+        { "heading": "What FIRE Actually Means", "points": ["Financial Independence, Retire Early — but 'retire' doesn't mean doing nothing", "It means having enough invested that you CHOOSE whether to work, not HAVE to work", "The core idea: save and invest 50-70% of your income for 10-15 years"], "sketch": "formula" },
+        { "heading": "The 4% Rule: Your FIRE Number", "points": ["The Trinity Study: you can safely withdraw 4% of your portfolio per year indefinitely", "Your FIRE number = annual expenses × 25", "Spend £30,000/year? You need £750,000 invested to be financially independent", "Spend £20,000/year? You only need £500,000 — lowering expenses is a double win"], "sketch": "formula" },
+        { "heading": "Types of FIRE", "points": ["Fat FIRE: high spending in retirement, need £1M+ (£40K+/year lifestyle)", "Lean FIRE: minimalist spending, £400-600K (£16-24K/year lifestyle)", "Barista FIRE: partially independent, work part-time for fun and benefits", "Coast FIRE: enough invested that compounding alone will fund your retirement — no new contributions needed"], "sketch": "ladder" },
+        { "heading": "The Maths of Savings Rate", "points": ["Save 10% → retire in about 51 years", "Save 25% → retire in about 32 years", "Save 50% → retire in about 17 years", "Save 70% → retire in about 8.5 years", "Your savings rate is the SINGLE biggest factor — not returns, not income"], "sketch": "growth" },
+        { "heading": "How FIRE People Actually Invest", "points": ["Low-cost global index funds — Vanguard, iShares, Fidelity", "ISAs and SIPPs for tax efficiency — maximise these every year", "No stock picking, no day trading — boring and consistent beats exciting and risky", "Reinvest all dividends until you reach your FIRE number"], "sketch": "shield" },
+        { "heading": "The Real Challenges of FIRE", "points": ["Social pressure: people WILL think you're weird for not spending like everyone else", "Lifestyle inflation: as income grows, the temptation to spend more is constant", "Market crashes: your portfolio WILL drop 30-40% at some point — you must hold through it", "Identity: when you're not defined by your job, you need to know who you ARE"], "sketch": "comparison" },
+        { "heading": "Starting Your FIRE Journey", "points": ["Calculate your current savings rate — income minus expenses, divided by income", "Calculate your FIRE number — annual expenses × 25", "Open a Stocks & Shares ISA if you haven't already", "Focus on the biggest expense categories first: housing, transport, food", "Track your net worth monthly — watch your FIRE progress in real time"], "sketch": "checklist" }
+      ],
+      "takeaway": "FIRE isn't about deprivation — it's about being intentional with your money so that one day, work becomes a CHOICE, not a requirement. Even if you don't want to retire early, the principles will transform your finances.",
+      "category": "Financial Freedom",
+      "status": "pending"
+    },
+    {
+      "id": 15,
+      "title": "How to Negotiate Your Salary (And Actually Get More)",
+      "hook": "Not negotiating your salary costs you £500,000+ over your career. Here's the script and strategy to change that.",
+      "sections": [
+        { "heading": "Why Most People Don't Negotiate", "points": ["Fear of rejection, fear of seeming greedy, fear of losing the offer", "Only 39% of people negotiate their first salary — the other 61% leave money on the table", "Most employers EXPECT negotiation — they build a buffer into their initial offer"], "sketch": "comparison" },
+        { "heading": "The Compound Cost of Not Negotiating", "points": ["£5,000 more in your first job, invested at 8%, compounds to £500,000+ over a 40-year career", "Every future raise is a PERCENTAGE of your current salary — a higher base amplifies everything", "Pension matching, bonuses, and pay rises all compound from a higher starting point"], "sketch": "growth" },
+        { "heading": "Research: Know Your Worth", "points": ["Use Glassdoor, LinkedIn Salary, PayScale to find market rates for your role", "Talk to recruiters — they know exactly what companies are paying right now", "Factor in location, experience, certifications, and company size", "Know the RANGE: aim for the 75th percentile, not the average"], "sketch": "checklist" },
+        { "heading": "Timing Your Negotiation", "points": ["Job offers: negotiate AFTER they want you, not before — leverage peaks at the offer stage", "Current job: schedule the conversation 2-3 months BEFORE annual reviews", "After a big win: delivered a project, landed a client, saved money? That's your moment", "NEVER negotiate when your employer is cutting costs or during layoffs"], "sketch": "timeline" },
+        { "heading": "The Negotiation Script", "points": ["'Thank you for the offer. I'm excited about this role and I want to make this work'", "'Based on my research and the value I'll bring, I was expecting something in the range of £X to £Y'", "'I'm confident I can deliver [specific value] in this role — can we discuss bridging the gap?'", "Always give a RANGE, not a single number — it creates room for negotiation"], "sketch": "flow" },
+        { "heading": "Beyond Salary: The Full Package", "points": ["If salary is fixed, negotiate: extra holiday days, remote work, signing bonus, training budget", "Pension contributions above the standard match — this is tax-efficient extra pay", "Review date: 'Can we agree to revisit this in 6 months based on my performance?'", "The total package often matters more than the headline number"], "sketch": "three_buckets" },
+        { "heading": "Prepare to Walk Away", "points": ["The strongest negotiation position is being willing to say 'no'", "NEVER negotiate without an alternative: another offer, your current job, or genuine willingness to walk", "If they lowball you after honest negotiation, that tells you something about how they'll treat you", "Your career is 40+ years — one negotiation now compounds for decades"], "sketch": "shield" }
+      ],
+      "takeaway": "Negotiation isn't about being aggressive — it's about knowing your worth and having the courage to ask for it. A single conversation can change the trajectory of your entire financial life.",
+      "category": "Career & Income",
+      "status": "pending"
+    },
+    {
+      "id": 16,
+      "title": "Property vs Stocks: Where Should You Put Your Money?",
+      "hook": "The UK is obsessed with property. But is bricks and mortar actually the best investment? The data might surprise you.",
+      "sections": [
+        { "heading": "The Great British Property Obsession", "points": ["The UK has a cultural belief that property is the SAFEST investment", "But property has averaged 3-5% annual growth over the long term — stocks have averaged 8-10%", "Neither is 'better' — they serve different purposes in a wealth strategy"], "sketch": "comparison" },
+        { "heading": "Property: The Advantages", "points": ["Leverage: you can buy £250,000 of property with £25,000 — try doing that with stocks", "Rental income: monthly cash flow that can cover the mortgage and more", "Tangible: you can see it, live in it, and everyone understands it", "Tax benefits: mortgage interest relief for landlords, CGT exemption on primary residence"], "sketch": "shield" },
+        { "heading": "Property: The Hidden Costs", "points": ["Stamp duty, solicitor fees, surveys: £5,000-£15,000 just to BUY the property", "Maintenance, repairs, void periods: budget 15-20% of rental income for ongoing costs", "It's ILLIQUID: selling takes months and costs thousands — you can't sell half a house", "Concentration risk: your entire wealth in one building in one postcode"], "sketch": "comparison" },
+        { "heading": "Stocks: The Advantages", "points": ["Liquidity: buy or sell in seconds — your money is never locked up", "Diversification: £100 buys you a piece of thousands of companies worldwide", "Zero maintenance: no tenants calling at midnight, no leaky roofs, no void periods", "Tax-free growth in an ISA: up to £20,000/year with ZERO capital gains tax"], "sketch": "growth" },
+        { "heading": "Stocks: The Challenges", "points": ["Volatility: your portfolio can drop 30% in a month — you need to hold through it", "Emotional risk: it's easy to panic sell, hard to stay disciplined during crashes", "No leverage: you invest what you have (margin trading exists but is risky)", "Less tangible: a number on a screen doesn't feel as 'real' as a building"], "sketch": "comparison" },
+        { "heading": "The Smart Approach: Both", "points": ["Buy your home if the maths works — mortgage payment ≤ rent for equivalent property", "Invest in stocks through ISAs alongside your property — diversification is key", "REITs: invest in property THROUGH the stock market — combine benefits of both", "Don't put ALL your wealth in one asset class — balance reduces risk dramatically"], "sketch": "pie" },
+        { "heading": "Making Your Decision", "points": ["If you value stability and leverage → property-heavy portfolio", "If you value liquidity and simplicity → stock-heavy portfolio", "If you want the best risk-adjusted returns → a mix of both", "The wrong answer is doing NOTHING — both beat cash sitting in a bank losing to inflation"], "sketch": "checklist" }
+      ],
+      "takeaway": "Property and stocks are both powerful wealth tools — they're not rivals. The smartest investors use both strategically, playing to each asset's strengths while compensating for weaknesses.",
+      "category": "Investing",
+      "status": "pending"
+    },
+    {
+      "id": 17,
+      "title": "Teaching Kids About Money: Ages 3 to 18",
+      "hook": "Children form their money beliefs by age 7. Here's the age-by-age guide to raising financially confident kids.",
+      "sections": [
+        { "heading": "Why Financial Literacy Starts at Home", "points": ["Schools don't teach personal finance adequately — parents fill the gap", "Money habits and beliefs are formed by age 7 according to Cambridge University research", "Children who learn about money early are more likely to save, invest, and avoid debt as adults"], "sketch": "timeline" },
+        { "heading": "Ages 3-5: Money Basics", "points": ["Use coins and notes — let them physically handle money and count it", "Play 'shop' — buying and selling teaches the concept of exchange", "Delayed gratification: 'You can have one sweet now, or two after dinner'", "The piggy bank: visible saving teaches that money grows when you wait"], "sketch": "ladder" },
+        { "heading": "Ages 6-9: Earning and Saving", "points": ["Pocket money tied to chores — money is earned, not given", "The three-jar system: SAVE jar, SPEND jar, GIVE jar — teach allocation", "Let them make spending mistakes with their OWN money — this is how they learn", "Open a children's savings account — show them how interest adds money"], "sketch": "three_buckets" },
+        { "heading": "Ages 10-13: Budgeting and Goals", "points": ["Give them a monthly budget for their own expenses: school supplies, treats, outings", "Teach them to save for something specific — a game, a gadget, an experience", "Introduce comparison shopping: 'Is there a cheaper way to get this?'", "Start talking about advertising: companies are trying to make you WANT things"], "sketch": "flow" },
+        { "heading": "Ages 14-16: Real-World Money", "points": ["Help them get their first job or side hustle — real money changes behaviour", "Open a bank account in their name — teach online banking, statements, budgeting apps", "Introduce investing concepts: 'If you'd bought Apple stock 10 years ago...'", "Explain debt using real examples — show how credit card interest compounds"], "sketch": "growth" },
+        { "heading": "Ages 16-18: Financial Independence Prep", "points": ["Teach them about tax, National Insurance, and reading a payslip", "Help them open a Junior ISA or start micro-investing", "Discuss student loans: how they work, what they'll actually repay each month", "Build their credit score responsibly — a simple phone contract is a good start"], "sketch": "checklist" },
+        { "heading": "The Conversations That Matter Most", "points": ["Talk about money openly — secrecy creates shame and anxiety around finances", "Share your own mistakes — normalise imperfection and learning", "Focus on VALUES not amounts — generosity, patience, and intentionality", "Remember: they learn more from what you DO than what you SAY about money"], "sketch": "comparison" }
+      ],
+      "takeaway": "The greatest financial gift you can give your children isn't money — it's the knowledge to manage it wisely. Start these conversations early and watch them build a foundation that lasts a lifetime.",
+      "category": "Financial Literacy",
+      "status": "pending"
+    },
+    {
+      "id": 18,
+      "title": "Money and Mental Health: Breaking the Shame Cycle",
+      "hook": "Money problems are the #1 source of stress worldwide. Let's talk about what nobody talks about — and how to break free.",
+      "sections": [
+        { "heading": "The Silent Crisis", "points": ["1 in 4 UK adults say money worries have affected their mental health", "Financial stress impacts sleep, relationships, work performance, and physical health", "And yet, money is the LAST thing most people are willing to talk about openly"], "sketch": "comparison" },
+        { "heading": "The Shame Spiral", "points": ["Financial stress → shame and avoidance → ignored bills and mounting debt → MORE stress", "Shame makes people hide from their finances — unopened letters, avoided bank apps", "The avoidance feels protective but it ALWAYS makes the problem worse", "Breaking the cycle starts with ONE brave act: looking at the numbers"], "sketch": "cycle" },
+        { "heading": "Money Scripts: The Stories Running Your Life", "points": ["Money scripts are the unconscious beliefs about money you learned in childhood", "'Money is the root of all evil' → guilt about earning or having money", "'We can't afford it' → scarcity mindset even when you CAN afford it", "'Rich people are greedy' → unconscious self-sabotage when you start building wealth", "Identifying your money scripts is the first step to rewriting them"], "sketch": "brain" },
+        { "heading": "Debt and Depression: The Two-Way Street", "points": ["People with debt are 3x more likely to experience mental health problems", "But depression also makes financial management harder — it's a vicious cycle", "If you're struggling with both: address the mental health FIRST — you can't budget your way out of depression", "Seek support: GPs, charities like Mind and StepChange offer free, confidential help"], "sketch": "comparison" },
+        { "heading": "Breaking Free: Practical First Steps", "points": ["Step 1: Open ONE bank statement or bill you've been avoiding — just ONE", "Step 2: Write down the total of all debts — the number is less scary than the unknown", "Step 3: Call ONE creditor and explain your situation — most will work with you", "Step 4: Tell ONE person you trust — shame thrives in secrecy and dies in daylight"], "sketch": "ladder" },
+        { "heading": "Building a Healthy Money Relationship", "points": ["Schedule a weekly 15-minute 'money date' — normalise checking in with your finances", "Celebrate small wins: paid a bill on time? That counts. Saved £10? That counts", "Separate your WORTH from your NET WORTH — you are not your bank balance", "Replace shame with curiosity: 'I wonder why I made that choice?' instead of 'I'm terrible with money'"], "sketch": "checklist" },
+        { "heading": "Resources and Support", "points": ["StepChange: free debt advice and management plans — 0800 138 1111", "Mind: mental health support including money and mental health resources", "Citizens Advice: free help with benefits, debt, and financial hardship", "You are NOT alone — millions of people are going through this right now"], "sketch": "shield" }
+      ],
+      "takeaway": "Your relationship with money doesn't have to be defined by shame or stress. Healing starts with awareness, one small step at a time, and the knowledge that you deserve financial peace just as much as anyone else.",
+      "category": "Money Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 19,
+      "title": "The Millionaire Next Door: What Real Wealth Looks Like",
+      "hook": "The typical millionaire doesn't drive a Lamborghini. They drive a Toyota. Here's why appearances deceive us about wealth.",
+      "sections": [
+        { "heading": "The Wealth Illusion", "points": ["The person with the £80K car might have £500K in debt", "The person with the 10-year-old car might have £800K in investments", "Spending signals income. Saving signals wealth. They are NOT the same thing"], "sketch": "comparison" },
+        { "heading": "What Millionaires Actually Do", "points": ["Studies of real millionaires reveal: most are self-made, most are frugal, most are boring", "Average millionaire: drives a car worth less than £30K, lives in a modest neighbourhood", "They're business owners, professionals, and disciplined savers — NOT lottery winners or celebrities", "The flashy lifestyle you see on Instagram represents less than 1% of actual millionaires"], "sketch": "pie" },
+        { "heading": "The PAW vs UAW Framework", "points": ["PAW: Prodigious Accumulator of Wealth — someone who has MORE wealth than expected for their income", "UAW: Under Accumulator of Wealth — someone who has LESS wealth than expected", "Formula: expected net worth = age × annual income ÷ 10", "A 40-year-old earning £60K should have £240K. PAWs have 2x+ that. UAWs have less than half"], "sketch": "comparison" },
+        { "heading": "The Frugality Advantage", "points": ["Living below your means isn't about deprivation — it's about CHOICE", "Every pound not spent is a pound that can grow in investments", "Frugal millionaires still enjoy life — they're just intentional about WHERE they spend", "They optimise for experiences and freedom, not things and status"], "sketch": "flow" },
+        { "heading": "How Millionaires Build Wealth", "points": ["They invest consistently over decades — no shortcuts, no get-rich-quick schemes", "They avoid consumer debt completely — they pay cash or they don't buy", "They maximise tax-advantaged accounts (ISAs, pensions) every year without fail", "They automate everything — willpower is unreliable, systems are not"], "sketch": "checklist" },
+        { "heading": "The Invisible Millionaire Habits", "points": ["They say 'no' to social pressure to spend — peer pressure isn't just for teenagers", "They marry someone with similar financial values — money is the #1 cause of divorce", "They teach their children the VALUE of money, not just how to SPEND it", "They track their net worth regularly — you can't grow what you don't measure"], "sketch": "checklist" },
+        { "heading": "Becoming the Millionaire Next Door", "points": ["Stop comparing your spending to others — compare your NET WORTH growth", "Increase your savings rate by 1% with every pay rise — you'll never miss it", "Define your own 'enough' — the treadmill of more will never make you wealthy", "Remember: wealth is what you don't see. Financial freedom is the ultimate luxury"], "sketch": "timeline" }
+      ],
+      "takeaway": "Real wealth is invisible. It's not the car in the driveway or the clothes on your back — it's the freedom to choose how you spend your time. That's the richest life there is.",
+      "category": "Wealth Mindset",
+      "status": "pending"
+    },
+    {
+      "id": 20,
+      "title": "Protecting Your Wealth: Insurance, Wills, and What Most People Forget",
+      "hook": "Building wealth is only half the job. Protecting it is the half nobody talks about — until it's too late.",
+      "sections": [
+        { "heading": "Why Protection Matters", "points": ["A single event — illness, accident, death, lawsuit — can wipe out decades of wealth building", "80% of adults in the UK don't have adequate insurance or an up-to-date will", "Protection isn't pessimistic — it's the foundation that lets you take smart risks elsewhere"], "sketch": "shield" },
+        { "heading": "Life Insurance: Who Needs It?", "points": ["If ANYONE depends on your income — partner, children, parents — you need life insurance", "Term life insurance is cheap: a healthy 30-year-old can get £250K coverage for £10-15/month", "Coverage should be 10-15x your annual income, enough to replace your earnings for a decade+", "Review and update when life changes: marriage, children, mortgage, divorce"], "sketch": "comparison" },
+        { "heading": "Income Protection Insurance", "points": ["Pays a portion of your salary (typically 60-70%) if you can't work due to illness or injury", "Employer sick pay usually runs out after 6 months — then what?", "This is arguably MORE important than life insurance — you're 4x more likely to be unable to work than to die before retirement", "Critical illness cover: pays a lump sum if diagnosed with specific conditions"], "sketch": "shield" },
+        { "heading": "Writing a Will: It's Not Just for the Rich", "points": ["Without a will, the government decides who gets your money — and it might not be who you'd choose", "If you have children: a will names their guardian. Without one, a court decides", "Online wills start from £30-90. Solicitor-drafted wills from £150-300. No excuses", "Review every 5 years or after major life events"], "sketch": "checklist" },
+        { "heading": "Emergency Fund: Your First Line of Defence", "points": ["3-6 months of expenses in an accessible savings account", "This covers job loss, unexpected repairs, and medical costs without touching investments", "Without this buffer, every surprise becomes debt — derailing your wealth building", "Keep it SEPARATE from your daily account — remove the temptation to dip into it"], "sketch": "shield" },
+        { "heading": "Power of Attorney: Plan While You Can", "points": ["A Lasting Power of Attorney lets someone you trust manage your affairs if you can't", "Without one, your family must go to court — costing thousands and months of delay", "There are two types: financial decisions and health/welfare decisions", "Set these up WHILE you're healthy — you can't do it once you need it"], "sketch": "flow" },
+        { "heading": "Your Protection Checklist", "points": ["This week: Get a life insurance quote — takes 5 minutes online", "This month: Write or update your will — free online templates or use a solicitor", "This quarter: Review all insurance: home, car, health — are there gaps?", "This year: Set up a Lasting Power of Attorney — protect your family from bureaucracy"], "sketch": "checklist" }
+      ],
+      "takeaway": "Protection isn't glamorous and it won't go viral. But it's the unsexy work that ensures everything you build actually survives to benefit the people you love.",
+      "category": "Wealth Protection",
+      "status": "pending"
+    }
+  ]
+}
