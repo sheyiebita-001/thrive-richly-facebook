@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 
 /**
- * Thrive Richly — Freehand Sketch Explainer Video Generator
+ * Thrive Richly — Freehand Sketch Explainer v2
  * 
- * Generates whiteboard-style explainer videos with HAND-DRAWN aesthetic.
- * All lines, shapes, and underlines have natural wobble and imperfections.
- * Text appears as if being written in real-time with a marker pen.
+ * DOODLE VIDEO STYLE — Features an animated marker pen that visibly
+ * draws every line, shape, and text element on screen in real-time.
+ * Like InstaDoodle / Doodly / VideoScribe whiteboard animations.
  * 
- * Visual: Cream paper background + sketchy marker lines + hand-drawn diagrams
- * Flow: Hook → Points (appear one by one) → Takeaway → Brand
+ * Architecture:
+ *   1. Each section builds a list of "draw commands" (strokes, text, shapes)
+ *   2. Frame renderer replays commands progressively over time
+ *   3. A marker pen graphic follows the active drawing point
+ *   4. Completed strokes persist, new ones animate with the pen
  * 
  * Required env vars:
  *   FB_PAGE_ACCESS_TOKEN  — Page Access Token
@@ -47,6 +50,8 @@ const COLORS = {
   highlight: '#FFEFB8',
   brand1: '#C49A2A',
   brand2: '#E8C547',
+  penBody: '#333333',
+  penTip: '#1A1A2E',
 }
 
 if (!FB_PAGE_ACCESS_TOKEN) {
@@ -65,124 +70,13 @@ function seededRandom(seed) {
   }
 }
 
-// Persistent jitter random per concept for consistent wobble
 let _rand
 function initRand(seed) { _rand = seededRandom(seed) }
 function rnd() { return _rand() }
 function jit(amount) { return (rnd() - 0.5) * amount * 2 }
 
 // ============================================================================
-// FREEHAND DRAWING PRIMITIVES
-// ============================================================================
-
-/** Draw a wobbly line that looks hand-drawn */
-function sketchLine(ctx, x1, y1, x2, y2, wobble = 3) {
-  const steps = Math.max(8, Math.floor(Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2) / 8))
-  ctx.beginPath()
-  ctx.moveTo(x1 + jit(wobble * 0.5), y1 + jit(wobble * 0.5))
-  for (let i = 1; i <= steps; i++) {
-    const t = i / steps
-    const x = x1 + (x2 - x1) * t + jit(wobble)
-    const y = y1 + (y2 - y1) * t + jit(wobble)
-    ctx.lineTo(x, y)
-  }
-  ctx.stroke()
-}
-
-/** Draw a wobbly rectangle */
-function sketchRect(ctx, x, y, w, h, wobble = 3) {
-  sketchLine(ctx, x, y, x + w, y, wobble)
-  sketchLine(ctx, x + w, y, x + w, y + h, wobble)
-  sketchLine(ctx, x + w, y + h, x, y + h, wobble)
-  sketchLine(ctx, x, y + h, x, y, wobble)
-}
-
-/** Draw a wobbly filled rectangle */
-function sketchFilledRect(ctx, x, y, w, h, wobble = 3) {
-  ctx.beginPath()
-  const corners = [
-    [x + jit(wobble), y + jit(wobble)],
-    [x + w + jit(wobble), y + jit(wobble)],
-    [x + w + jit(wobble), y + h + jit(wobble)],
-    [x + jit(wobble), y + h + jit(wobble)],
-  ]
-  ctx.moveTo(corners[0][0], corners[0][1])
-  for (let i = 1; i < corners.length; i++) {
-    // Add midpoint wobble for each edge
-    const prev = corners[i - 1]
-    const curr = corners[i]
-    const mx = (prev[0] + curr[0]) / 2 + jit(wobble)
-    const my = (prev[1] + curr[1]) / 2 + jit(wobble)
-    ctx.quadraticCurveTo(mx, my, curr[0], curr[1])
-  }
-  ctx.closePath()
-  ctx.fill()
-}
-
-/** Draw a wobbly circle */
-function sketchCircle(ctx, cx, cy, r, wobble = 4) {
-  ctx.beginPath()
-  const steps = 36
-  for (let i = 0; i <= steps; i++) {
-    const angle = (i / steps) * Math.PI * 2
-    const wr = r + jit(wobble)
-    const x = cx + wr * Math.cos(angle)
-    const y = cy + wr * Math.sin(angle)
-    if (i === 0) ctx.moveTo(x, y)
-    else ctx.lineTo(x, y)
-  }
-  ctx.closePath()
-}
-
-/** Draw a wobbly underline */
-function sketchUnderline(ctx, x, y, width, wobble = 2) {
-  const saved = ctx.lineWidth
-  ctx.lineWidth = 2.5
-  sketchLine(ctx, x, y, x + width, y, wobble)
-  ctx.lineWidth = saved
-}
-
-/** Draw a hand-drawn arrow */
-function sketchArrow(ctx, x1, y1, x2, y2, wobble = 3) {
-  sketchLine(ctx, x1, y1, x2, y2, wobble)
-  // Arrowhead
-  const angle = Math.atan2(y2 - y1, x2 - x1)
-  const headLen = 15
-  const a1 = angle + Math.PI * 0.8
-  const a2 = angle - Math.PI * 0.8
-  sketchLine(ctx, x2, y2, x2 + headLen * Math.cos(a1), y2 + headLen * Math.sin(a1), wobble * 0.5)
-  sketchLine(ctx, x2, y2, x2 + headLen * Math.cos(a2), y2 + headLen * Math.sin(a2), wobble * 0.5)
-}
-
-/** Draw a hand-drawn checkmark */
-function sketchCheck(ctx, x, y, size, wobble = 2) {
-  ctx.lineWidth = 3
-  sketchLine(ctx, x, y, x + size * 0.35, y + size * 0.5, wobble)
-  sketchLine(ctx, x + size * 0.35, y + size * 0.5, x + size, y - size * 0.2, wobble)
-}
-
-/** Draw a hand-drawn bullet point (small filled circle) */
-function sketchBullet(ctx, x, y, radius = 5) {
-  sketchCircle(ctx, x, y, radius, 1.5)
-  ctx.fill()
-}
-
-/** Draw a wobbly star */
-function sketchStar(ctx, cx, cy, r, wobble = 3) {
-  ctx.beginPath()
-  for (let i = 0; i < 10; i++) {
-    const angle = (i / 10) * Math.PI * 2 - Math.PI / 2
-    const rad = i % 2 === 0 ? r + jit(wobble) : r * 0.45 + jit(wobble * 0.5)
-    const x = cx + rad * Math.cos(angle)
-    const y = cy + rad * Math.sin(angle)
-    if (i === 0) ctx.moveTo(x, y)
-    else ctx.lineTo(x, y)
-  }
-  ctx.closePath()
-}
-
-// ============================================================================
-// TEXT HELPERS
+// TEXT WRAPPING
 // ============================================================================
 function wrapText(ctx, text, maxWidth) {
   const words = text.split(' ')
@@ -202,659 +96,661 @@ function wrapText(ctx, text, maxWidth) {
 }
 
 // ============================================================================
-// WHITEBOARD BACKGROUND — Paper texture with faint grid
+// DRAW COMMAND SYSTEM
+// Each section produces an array of draw commands. The renderer
+// plays them sequentially, with the pen following the active command.
+//
+// Command types:
+//   { type: 'line', points: [{x,y}...], color, width, wobble }
+//   { type: 'text', text, x, y, font, color, charByChar }
+//   { type: 'fill_rect', x, y, w, h, color, opacity }
+//   { type: 'circle', cx, cy, r, color, width, fill }
+//   { type: 'bullet', cx, cy, r, color }
+//   { type: 'check', x, y, size, color }
+//   { type: 'star', cx, cy, r, color, fill }
+//   { type: 'pause', duration } (fraction of section time)
 // ============================================================================
-function drawBackground(ctx, conceptSeed) {
-  initRand(conceptSeed + 1000)
 
-  // Cream paper base
+function makeWobblyLinePoints(x1, y1, x2, y2, wobble, seed) {
+  const oldRand = _rand
+  initRand(seed)
+  const dist = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+  const steps = Math.max(6, Math.floor(dist / 10))
+  const pts = []
+  for (let i = 0; i <= steps; i++) {
+    const t = i / steps
+    pts.push({
+      x: x1 + (x2 - x1) * t + (i > 0 && i < steps ? jit(wobble) : jit(wobble * 0.3)),
+      y: y1 + (y2 - y1) * t + (i > 0 && i < steps ? jit(wobble) : jit(wobble * 0.3)),
+    })
+  }
+  _rand = oldRand
+  return pts
+}
+
+function makeCirclePoints(cx, cy, r, wobble, seed) {
+  const oldRand = _rand
+  initRand(seed)
+  const pts = []
+  const steps = 30
+  for (let i = 0; i <= steps; i++) {
+    const angle = (i / steps) * Math.PI * 2
+    const wr = r + jit(wobble)
+    pts.push({ x: cx + wr * Math.cos(angle), y: cy + wr * Math.sin(angle) })
+  }
+  _rand = oldRand
+  return pts
+}
+
+// ============================================================================
+// PEN / MARKER RENDERER
+// Draws a realistic marker pen at a given position with angle
+// ============================================================================
+function drawPen(ctx, x, y, angle) {
+  ctx.save()
+  ctx.translate(x, y)
+  ctx.rotate(angle || -Math.PI / 4)
+
+  // Pen body (angled marker)
+  const bodyLen = 90
+  const bodyW = 14
+
+  // Shadow
+  ctx.fillStyle = 'rgba(0,0,0,0.15)'
+  ctx.beginPath()
+  ctx.ellipse(4, 4, bodyW * 0.7, 6, 0, 0, Math.PI * 2)
+  ctx.fill()
+
+  // Main body
+  const grad = ctx.createLinearGradient(0, -bodyLen, 0, 0)
+  grad.addColorStop(0, '#555555')
+  grad.addColorStop(0.3, '#444444')
+  grad.addColorStop(0.7, '#333333')
+  grad.addColorStop(1, '#222222')
+  ctx.fillStyle = grad
+  ctx.beginPath()
+  ctx.moveTo(-bodyW / 2, -bodyLen)
+  ctx.lineTo(bodyW / 2, -bodyLen)
+  ctx.lineTo(bodyW / 2 - 2, -8)
+  ctx.lineTo(-bodyW / 2 + 2, -8)
+  ctx.closePath()
+  ctx.fill()
+
+  // Pen tip
+  ctx.fillStyle = COLORS.penTip
+  ctx.beginPath()
+  ctx.moveTo(-5, -8)
+  ctx.lineTo(5, -8)
+  ctx.lineTo(1, 0)
+  ctx.lineTo(-1, 0)
+  ctx.closePath()
+  ctx.fill()
+
+  // Cap ring
+  ctx.fillStyle = COLORS.accent
+  ctx.fillRect(-bodyW / 2 - 1, -bodyLen - 2, bodyW + 2, 8)
+
+  // Highlight stripe
+  ctx.fillStyle = 'rgba(255,255,255,0.15)'
+  ctx.fillRect(-2, -bodyLen + 10, 4, bodyLen - 20)
+
+  ctx.restore()
+}
+
+// ============================================================================
+// COMMAND RENDERER
+// Given a list of commands and a progress (0-1), draws all completed
+// commands fully and the active command partially, with pen at the tip.
+// Returns the pen position { x, y }.
+// ============================================================================
+function renderCommands(ctx, commands, progress) {
+  if (commands.length === 0) return null
+
+  // Calculate total weight
+  let totalWeight = 0
+  const weights = commands.map(cmd => {
+    const w = cmd.weight || 1
+    totalWeight += w
+    return w
+  })
+
+  let penX = WIDTH / 2, penY = HEIGHT / 2
+  let accumulated = 0
+
+  for (let ci = 0; ci < commands.length; ci++) {
+    const cmd = commands[ci]
+    const cmdStart = accumulated / totalWeight
+    const cmdEnd = (accumulated + weights[ci]) / totalWeight
+    accumulated += weights[ci]
+
+    if (progress < cmdStart) break
+
+    const cmdProgress = Math.min(1, (progress - cmdStart) / (cmdEnd - cmdStart))
+
+    switch (cmd.type) {
+      case 'line': {
+        const pts = cmd.points
+        const drawCount = Math.floor(cmdProgress * (pts.length - 1)) + 1
+        ctx.strokeStyle = cmd.color || COLORS.marker
+        ctx.lineWidth = cmd.width || 2.5
+        ctx.lineCap = 'round'
+        ctx.lineJoin = 'round'
+        ctx.beginPath()
+        ctx.moveTo(pts[0].x, pts[0].y)
+        for (let i = 1; i < drawCount && i < pts.length; i++) {
+          ctx.lineTo(pts[i].x, pts[i].y)
+        }
+        // Partial segment for smooth animation
+        if (drawCount < pts.length) {
+          const frac = (cmdProgress * (pts.length - 1)) - (drawCount - 1)
+          const prev = pts[drawCount - 1]
+          const next = pts[drawCount]
+          if (next) {
+            const ix = prev.x + (next.x - prev.x) * frac
+            const iy = prev.y + (next.y - prev.y) * frac
+            ctx.lineTo(ix, iy)
+            penX = ix; penY = iy
+          }
+        } else {
+          penX = pts[pts.length - 1].x
+          penY = pts[pts.length - 1].y
+        }
+        ctx.stroke()
+        break
+      }
+
+      case 'text': {
+        ctx.font = cmd.font || '28px "Poppins", sans-serif'
+        ctx.fillStyle = cmd.color || COLORS.marker
+        ctx.textAlign = cmd.align || 'left'
+        ctx.textBaseline = 'top'
+        if (cmd.charByChar) {
+          const chars = Math.floor(cmdProgress * cmd.text.length)
+          const visible = cmd.text.substring(0, chars)
+          ctx.fillText(visible, cmd.x, cmd.y)
+          const tw = ctx.measureText(visible).width
+          if (cmd.align === 'center') {
+            const fullW = ctx.measureText(cmd.text).width
+            penX = cmd.x - fullW / 2 + tw
+          } else {
+            penX = cmd.x + tw
+          }
+          penY = cmd.y + 5
+        } else {
+          if (cmdProgress >= 1) {
+            ctx.fillText(cmd.text, cmd.x, cmd.y)
+          } else {
+            ctx.globalAlpha = cmdProgress
+            ctx.fillText(cmd.text, cmd.x, cmd.y)
+            ctx.globalAlpha = 1.0
+          }
+          const tw = ctx.measureText(cmd.text).width
+          penX = (cmd.align === 'center' ? cmd.x + tw / 2 : cmd.x + tw)
+          penY = cmd.y + 5
+        }
+        break
+      }
+
+      case 'fill_rect': {
+        ctx.globalAlpha = (cmd.opacity || 1) * Math.min(1, cmdProgress * 3)
+        ctx.fillStyle = cmd.color || COLORS.highlight
+        ctx.fillRect(cmd.x, cmd.y, cmd.w * Math.min(1, cmdProgress * 1.5), cmd.h)
+        ctx.globalAlpha = 1.0
+        penX = cmd.x + cmd.w * cmdProgress
+        penY = cmd.y + cmd.h / 2
+        break
+      }
+
+      case 'circle': {
+        const pts = cmd.points || makeCirclePoints(cmd.cx, cmd.cy, cmd.r, 4, cmd.seed || 42)
+        const drawCount = Math.floor(cmdProgress * pts.length)
+        if (cmd.fill && cmdProgress > 0.5) {
+          ctx.fillStyle = cmd.fillColor || cmd.color || COLORS.blue
+          ctx.globalAlpha = cmd.fillOpacity || 0.2
+          ctx.beginPath()
+          pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y))
+          ctx.closePath()
+          ctx.fill()
+          ctx.globalAlpha = 1.0
+        }
+        ctx.strokeStyle = cmd.color || COLORS.marker
+        ctx.lineWidth = cmd.width || 2.5
+        ctx.beginPath()
+        for (let i = 0; i < drawCount && i < pts.length; i++) {
+          if (i === 0) ctx.moveTo(pts[i].x, pts[i].y)
+          else ctx.lineTo(pts[i].x, pts[i].y)
+        }
+        ctx.stroke()
+        if (drawCount > 0 && drawCount <= pts.length) {
+          penX = pts[Math.min(drawCount - 1, pts.length - 1)].x
+          penY = pts[Math.min(drawCount - 1, pts.length - 1)].y
+        }
+        break
+      }
+
+      case 'bullet': {
+        const bp = Math.min(1, cmdProgress * 2)
+        ctx.fillStyle = cmd.color || COLORS.accent
+        ctx.beginPath()
+        ctx.arc(cmd.cx, cmd.cy, cmd.r * bp, 0, Math.PI * 2)
+        ctx.fill()
+        penX = cmd.cx + cmd.r
+        penY = cmd.cy
+        break
+      }
+
+      case 'check': {
+        const pts1 = makeWobblyLinePoints(cmd.x, cmd.y, cmd.x + cmd.size * 0.35, cmd.y + cmd.size * 0.5, 2, cmd.seed || 77)
+        const pts2 = makeWobblyLinePoints(cmd.x + cmd.size * 0.35, cmd.y + cmd.size * 0.5, cmd.x + cmd.size, cmd.y - cmd.size * 0.2, 2, (cmd.seed || 77) + 50)
+        ctx.strokeStyle = cmd.color || COLORS.green
+        ctx.lineWidth = 3
+        ctx.lineCap = 'round'
+        if (cmdProgress < 0.5) {
+          const p = cmdProgress * 2
+          const dc = Math.floor(p * pts1.length)
+          ctx.beginPath()
+          for (let i = 0; i < dc && i < pts1.length; i++) {
+            if (i === 0) ctx.moveTo(pts1[i].x, pts1[i].y)
+            else ctx.lineTo(pts1[i].x, pts1[i].y)
+          }
+          ctx.stroke()
+          if (dc > 0) { penX = pts1[Math.min(dc - 1, pts1.length - 1)].x; penY = pts1[Math.min(dc - 1, pts1.length - 1)].y }
+        } else {
+          ctx.beginPath()
+          pts1.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y))
+          ctx.stroke()
+          const p = (cmdProgress - 0.5) * 2
+          const dc = Math.floor(p * pts2.length)
+          ctx.beginPath()
+          for (let i = 0; i < dc && i < pts2.length; i++) {
+            if (i === 0) ctx.moveTo(pts2[i].x, pts2[i].y)
+            else ctx.lineTo(pts2[i].x, pts2[i].y)
+          }
+          ctx.stroke()
+          if (dc > 0) { penX = pts2[Math.min(dc - 1, pts2.length - 1)].x; penY = pts2[Math.min(dc - 1, pts2.length - 1)].y }
+        }
+        break
+      }
+
+      case 'star': {
+        const pts = []
+        for (let i = 0; i < 10; i++) {
+          const angle = (i / 10) * Math.PI * 2 - Math.PI / 2
+          const rad = i % 2 === 0 ? cmd.r : cmd.r * 0.45
+          pts.push({ x: cmd.cx + rad * Math.cos(angle), y: cmd.cy + rad * Math.sin(angle) })
+        }
+        pts.push(pts[0])
+        const drawCount = Math.floor(cmdProgress * pts.length)
+        if (cmd.fill && cmdProgress > 0.6) {
+          ctx.fillStyle = cmd.color || COLORS.accent
+          ctx.beginPath()
+          pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y))
+          ctx.fill()
+        }
+        ctx.strokeStyle = cmd.color || COLORS.accent
+        ctx.lineWidth = 2
+        ctx.beginPath()
+        for (let i = 0; i < drawCount; i++) {
+          if (i === 0) ctx.moveTo(pts[i].x, pts[i].y)
+          else ctx.lineTo(pts[i].x, pts[i].y)
+        }
+        ctx.stroke()
+        if (drawCount > 0) { penX = pts[drawCount - 1].x; penY = pts[drawCount - 1].y }
+        break
+      }
+
+      case 'pause': {
+        break
+      }
+    }
+  }
+
+  return { x: penX, y: penY }
+}
+
+// ============================================================================
+// BACKGROUND
+// ============================================================================
+function drawBackground(ctx, seed) {
+  const oldRand = _rand
+  initRand(seed + 5000)
   ctx.fillStyle = COLORS.bg
   ctx.fillRect(0, 0, WIDTH, HEIGHT)
 
-  // Subtle dot grid (not lines — more whiteboard feel)
-  ctx.fillStyle = 'rgba(0,0,0,0.04)'
+  // Dot grid
+  ctx.fillStyle = 'rgba(0,0,0,0.035)'
   for (let gx = 50; gx < WIDTH; gx += 40) {
     for (let gy = 50; gy < HEIGHT; gy += 40) {
       ctx.beginPath()
-      ctx.arc(gx + jit(1), gy + jit(1), 1, 0, Math.PI * 2)
+      ctx.arc(gx, gy, 1, 0, Math.PI * 2)
       ctx.fill()
     }
   }
 
-  // Random paper texture specks
-  ctx.fillStyle = 'rgba(0,0,0,0.015)'
-  for (let i = 0; i < 150; i++) {
+  // Paper specks
+  ctx.fillStyle = 'rgba(0,0,0,0.012)'
+  for (let i = 0; i < 100; i++) {
     ctx.beginPath()
-    ctx.arc(rnd() * WIDTH, rnd() * HEIGHT, rnd() * 3 + 0.5, 0, Math.PI * 2)
+    ctx.arc(rnd() * WIDTH, rnd() * HEIGHT, rnd() * 2.5 + 0.5, 0, Math.PI * 2)
     ctx.fill()
   }
-
-  // Faint coffee stain ring (adds authenticity)
-  ctx.strokeStyle = 'rgba(160, 130, 80, 0.04)'
-  ctx.lineWidth = 2
-  const stainX = 200 + rnd() * 600
-  const stainY = 300 + rnd() * 1200
-  sketchCircle(ctx, stainX, stainY, 40 + rnd() * 30, 8)
-  ctx.stroke()
+  _rand = oldRand
 }
 
 // ============================================================================
-// SKETCH DIAGRAM RENDERERS
+// SECTION COMMAND BUILDERS
 // ============================================================================
 
-function drawSketchGrowth(ctx, x, y, w, h, progress) {
-  ctx.strokeStyle = COLORS.marker
-  ctx.lineWidth = 2
+function buildHookCommands(topic, ctx) {
+  const cmds = []
+  let seed = topic.id * 13
 
-  // Axes
-  if (progress > 0.05) {
-    sketchLine(ctx, x + 30, y + h - 30, x + 30, y + 20, 3)
-    sketchLine(ctx, x + 30, y + h - 30, x + w - 20, y + h - 30, 3)
-  }
+  // Category label
+  cmds.push({ type: 'text', text: topic.category.toUpperCase(), x: WIDTH / 2, y: 290, font: 'bold 20px "Poppins", sans-serif', color: COLORS.accent, align: 'center', charByChar: true, weight: 1.5 })
 
-  // Exponential curve
-  if (progress > 0.15) {
-    ctx.strokeStyle = COLORS.green
-    ctx.lineWidth = 3
-    const pts = Math.floor(Math.min(1, (progress - 0.15) / 0.6) * 30)
-    ctx.beginPath()
-    for (let i = 0; i <= pts; i++) {
-      const t = i / 30
-      const px = x + 40 + t * (w - 70)
-      const py = y + h - 40 - Math.pow(t, 2.3) * (h - 70)
-      if (i === 0) ctx.moveTo(px + jit(2), py + jit(2))
-      else ctx.lineTo(px + jit(2), py + jit(2))
-    }
-    ctx.stroke()
-  }
-
-  // Annotation arrow and label
-  if (progress > 0.8) {
-    ctx.strokeStyle = COLORS.red
-    ctx.lineWidth = 2
-    sketchArrow(ctx, x + w - 120, y + 60, x + w - 60, y + 100, 3)
-    ctx.fillStyle = COLORS.red
-    ctx.font = 'bold 20px "Poppins", sans-serif'
-    ctx.textAlign = 'left'
-    ctx.fillText('GROWTH!', x + w - 190, y + 55)
-  }
-}
-
-function drawSketchComparison(ctx, x, y, w, h, progress) {
-  const midX = x + w / 2
-  ctx.lineWidth = 2
-
-  // Divider line
-  if (progress > 0.1) {
-    ctx.strokeStyle = COLORS.subtle
-    ctx.setLineDash([8, 6])
-    sketchLine(ctx, midX, y + 10, midX, y + h - 10, 2)
-    ctx.setLineDash([])
-  }
-
-  // Left side (green / good)
-  if (progress > 0.2) {
-    ctx.strokeStyle = COLORS.green
-    ctx.fillStyle = COLORS.green
-    ctx.font = 'bold 24px "Poppins", sans-serif'
-    ctx.textAlign = 'center'
-    ctx.fillText('✓ YES', x + w / 4, y + 35)
-    sketchUnderline(ctx, x + w / 4 - 40, y + 42, 80, 2)
-
-    // Check marks
-    const checks = Math.min(3, Math.floor((progress - 0.3) / 0.15) + 1)
-    if (progress > 0.3) {
-      for (let i = 0; i < checks; i++) {
-        sketchCheck(ctx, x + 40, y + 65 + i * 45, 20, 2)
-      }
-    }
-  }
-
-  // Right side (red / bad)
-  if (progress > 0.4) {
-    ctx.strokeStyle = COLORS.red
-    ctx.fillStyle = COLORS.red
-    ctx.font = 'bold 24px "Poppins", sans-serif'
-    ctx.textAlign = 'center'
-    ctx.fillText('✗ NO', x + w * 3 / 4, y + 35)
-    sketchUnderline(ctx, x + w * 3 / 4 - 30, y + 42, 60, 2)
-
-    // X marks
-    const xs = Math.min(3, Math.floor((progress - 0.5) / 0.15) + 1)
-    if (progress > 0.5) {
-      ctx.lineWidth = 3
-      for (let i = 0; i < xs; i++) {
-        const bx = midX + 50
-        const by = y + 65 + i * 45
-        sketchLine(ctx, bx, by, bx + 18, by + 18, 2)
-        sketchLine(ctx, bx + 18, by, bx, by + 18, 2)
-      }
-    }
-  }
-}
-
-function drawSketchPie(ctx, x, y, w, h, progress) {
-  const cx = x + w / 2
-  const cy = y + h / 2 - 15
-  const r = Math.min(w, h) / 2 - 40
-
-  const slices = [
-    { pct: 0.50, color: COLORS.blue, label: '50%' },
-    { pct: 0.30, color: COLORS.accent, label: '30%' },
-    { pct: 0.20, color: COLORS.green, label: '20%' },
-  ]
-
-  let startAngle = -Math.PI / 2
-  const totalDraw = Math.min(1, progress * 1.3) * Math.PI * 2
-
-  for (const slice of slices) {
-    const sliceAngle = slice.pct * Math.PI * 2
-    const drawAngle = Math.min(sliceAngle, Math.max(0, totalDraw - (startAngle + Math.PI / 2)))
-
-    if (drawAngle > 0) {
-      // Draw wobbly slice
-      ctx.fillStyle = slice.color
-      ctx.globalAlpha = 0.3
-      ctx.beginPath()
-      ctx.moveTo(cx, cy)
-      ctx.arc(cx, cy, r, startAngle, startAngle + drawAngle)
-      ctx.closePath()
-      ctx.fill()
-      ctx.globalAlpha = 1.0
-
-      // Wobbly outline
-      ctx.strokeStyle = slice.color
-      ctx.lineWidth = 2.5
-      ctx.beginPath()
-      ctx.moveTo(cx + jit(2), cy + jit(2))
-      const arcStart = startAngle
-      const arcEnd = startAngle + drawAngle
-      for (let a = arcStart; a <= arcEnd; a += 0.1) {
-        ctx.lineTo(cx + (r + jit(3)) * Math.cos(a), cy + (r + jit(3)) * Math.sin(a))
-      }
-      ctx.lineTo(cx + jit(2), cy + jit(2))
-      ctx.stroke()
-
-      // Label
-      if (drawAngle >= sliceAngle * 0.6) {
-        const mid = startAngle + sliceAngle / 2
-        ctx.fillStyle = slice.color
-        ctx.font = 'bold 26px "Poppins", sans-serif'
-        ctx.textAlign = 'center'
-        ctx.fillText(slice.label, cx + r * 0.55 * Math.cos(mid), cy + r * 0.55 * Math.sin(mid) + 8)
-      }
-    }
-    startAngle += sliceAngle
-  }
-}
-
-function drawSketchLadder(ctx, x, y, w, h, progress) {
-  ctx.lineWidth = 2.5
-  ctx.strokeStyle = COLORS.marker
-
-  // Side rails
-  const railL = x + 60
-  const railR = x + w - 60
-  if (progress > 0.05) {
-    sketchLine(ctx, railL, y + h - 20, railL - 30, y + 20, 4)
-    sketchLine(ctx, railR, y + h - 20, railR + 30, y + 20, 4)
-  }
-
-  // Rungs
-  const rungs = 5
-  for (let i = 0; i < rungs; i++) {
-    const rungProg = (progress - 0.1 - i * 0.12)
-    if (rungProg > 0) {
-      const ry = y + h - 50 - i * ((h - 70) / rungs)
-      const shrink = i * 6
-      ctx.strokeStyle = i === rungs - 1 ? COLORS.accent : COLORS.marker
-      ctx.lineWidth = i === rungs - 1 ? 3 : 2
-      sketchLine(ctx, railL - 20 + shrink, ry, railR + 20 - shrink, ry, 3)
-    }
-  }
-
-  // Star at top
-  if (progress > 0.85) {
-    ctx.fillStyle = COLORS.accent
-    ctx.strokeStyle = COLORS.accent
-    ctx.lineWidth = 2
-    sketchStar(ctx, x + w / 2, y + 35, 22, 3)
-    ctx.fill()
-    ctx.stroke()
-  }
-}
-
-function drawSketchTimeline(ctx, x, y, w, h, progress) {
-  ctx.strokeStyle = COLORS.marker
-  ctx.lineWidth = 2
-
-  // Main line
-  if (progress > 0.05) {
-    const lineY = y + h / 2
-    sketchArrow(ctx, x + 30, lineY, x + w - 30, lineY, 3)
-  }
-
-  // Markers
-  const dots = 4
-  for (let i = 0; i < dots; i++) {
-    const dp = (progress - 0.15 - i * 0.15)
-    if (dp > 0) {
-      const dx = x + 80 + i * ((w - 160) / (dots - 1))
-      const dy = y + h / 2
-      ctx.fillStyle = i === dots - 1 ? COLORS.green : COLORS.blue
-      ctx.strokeStyle = ctx.fillStyle
-      sketchCircle(ctx, dx, dy, 8, 2)
-      ctx.fill()
-
-      // Tick up
-      ctx.lineWidth = 1.5
-      sketchLine(ctx, dx, dy - 12, dx, dy - 35, 2)
-    }
-  }
-}
-
-function drawSketchShield(ctx, x, y, w, h, progress) {
-  const cx = x + w / 2
-  const cy = y + h / 2
-
-  if (progress > 0.1) {
-    const s = Math.min(w, h) * 0.28
-    ctx.strokeStyle = COLORS.blue
-    ctx.lineWidth = 3
-
-    // Shield shape (wobbly)
-    ctx.beginPath()
-    ctx.moveTo(cx + jit(3), cy - s + jit(3))
-    ctx.lineTo(cx + s * 0.8 + jit(3), cy - s * 0.4 + jit(3))
-    ctx.lineTo(cx + s * 0.75 + jit(3), cy + s * 0.3 + jit(3))
-    ctx.lineTo(cx + jit(3), cy + s * 0.9 + jit(3))
-    ctx.lineTo(cx - s * 0.75 + jit(3), cy + s * 0.3 + jit(3))
-    ctx.lineTo(cx - s * 0.8 + jit(3), cy - s * 0.4 + jit(3))
-    ctx.closePath()
-
-    ctx.fillStyle = 'rgba(46, 110, 190, 0.15)'
-    ctx.fill()
-    ctx.stroke()
-
-    // Checkmark inside
-    if (progress > 0.5) {
-      ctx.strokeStyle = COLORS.green
-      ctx.lineWidth = 4
-      sketchCheck(ctx, cx - 25, cy - 5, 50, 3)
-    }
-  }
-}
-
-function drawSketchFlow(ctx, x, y, w, h, progress) {
-  const boxes = ['IN', 'PROCESS', 'OUT']
-  const boxW = 100
-  const totalW = boxes.length * boxW + (boxes.length - 1) * 60
-  const startX = x + (w - totalW) / 2
-  const midY = y + h / 2
-
-  boxes.forEach((label, i) => {
-    const bp = (progress - i * 0.2) / 0.3
-    if (bp > 0) {
-      const bx = startX + i * (boxW + 60)
-      ctx.strokeStyle = i === 2 ? COLORS.green : COLORS.blue
-      ctx.lineWidth = 2
-      sketchRect(ctx, bx, midY - 25, boxW, 50, 3)
-
-      if (bp > 0.5) {
-        ctx.fillStyle = ctx.strokeStyle
-        ctx.font = 'bold 18px "Poppins", sans-serif'
-        ctx.textAlign = 'center'
-        ctx.fillText(label, bx + boxW / 2, midY + 7)
-      }
-
-      // Arrow between boxes
-      if (i < boxes.length - 1 && bp > 0.8) {
-        ctx.strokeStyle = COLORS.subtle
-        ctx.lineWidth = 2
-        sketchArrow(ctx, bx + boxW + 8, midY, bx + boxW + 50, midY, 2)
-      }
-    }
-  })
-}
-
-function drawSketchChecklist(ctx, x, y, w, h, progress) {
-  const items = 5
-  const itemH = 38
-  const startY = y + 20
-
-  for (let i = 0; i < items; i++) {
-    const ip = (progress - i * 0.12) / 0.2
-    if (ip > 0) {
-      const iy = startY + i * itemH
-      // Box
-      ctx.strokeStyle = ip > 1 ? COLORS.green : COLORS.marker
-      ctx.lineWidth = 2
-      sketchRect(ctx, x + 30, iy, 22, 22, 2)
-
-      // Check if filled
-      if (ip > 1) {
-        ctx.strokeStyle = COLORS.green
-        ctx.lineWidth = 2.5
-        sketchCheck(ctx, x + 33, iy + 4, 16, 1.5)
-      }
-
-      // Line (representing text)
-      ctx.strokeStyle = COLORS.bgLine
-      ctx.lineWidth = 8
-      const lineW = 100 + rnd() * 150
-      sketchLine(ctx, x + 65, iy + 11, x + 65 + lineW, iy + 11, 1)
-    }
-  }
-}
-
-// Diagram dispatcher
-function drawSketchDiagram(ctx, type, x, y, w, h, progress) {
-  switch (type) {
-    case 'growth':
-    case 'decline':
-      drawSketchGrowth(ctx, x, y, w, h, progress)
-      break
-    case 'comparison':
-    case 'balance':
-      drawSketchComparison(ctx, x, y, w, h, progress)
-      break
-    case 'pie':
-    case 'jars':
-    case 'three_buckets':
-    case 'quadrant':
-    case 'venn':
-    case 'seven_streams':
-      drawSketchPie(ctx, x, y, w, h, progress)
-      break
-    case 'ladder':
-    case 'stack':
-      drawSketchLadder(ctx, x, y, w, h, progress)
-      break
-    case 'timeline':
-    case 'formula':
-      drawSketchTimeline(ctx, x, y, w, h, progress)
-      break
-    case 'shield':
-      drawSketchShield(ctx, x, y, w, h, progress)
-      break
-    case 'flow':
-    case 'cycle':
-    case 'scroll':
-      drawSketchFlow(ctx, x, y, w, h, progress)
-      break
-    case 'checklist':
-      drawSketchChecklist(ctx, x, y, w, h, progress)
-      break
-    case 'brain':
-    case 'iceberg':
-    case 'fork':
-    case 'circles':
-      drawSketchShield(ctx, x, y, w, h, progress)
-      break
-    default:
-      drawSketchGrowth(ctx, x, y, w, h, progress)
-  }
-}
-
-// ============================================================================
-// SECTION RENDERERS
-// ============================================================================
-
-function renderHook(ctx, topic, alpha, progress) {
-  ctx.globalAlpha = alpha
-
-  // Category tag
-  ctx.fillStyle = COLORS.accent
+  // Underline under category
   ctx.font = 'bold 20px "Poppins", sans-serif'
-  ctx.textAlign = 'center'
-  ctx.fillText(topic.category.toUpperCase(), WIDTH / 2, 300)
-
-  // Wobbly underline under category
-  ctx.strokeStyle = COLORS.accent
-  ctx.lineWidth = 2
   const catW = ctx.measureText(topic.category.toUpperCase()).width
-  sketchUnderline(ctx, WIDTH / 2 - catW / 2 - 5, 308, catW + 10, 2)
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(WIDTH / 2 - catW / 2 - 5, 308, WIDTH / 2 + catW / 2 + 5, 308, 2, seed++), color: COLORS.accent, width: 2.5, weight: 0.5 })
 
-  // Title
-  ctx.fillStyle = COLORS.marker
+  // Title lines
   ctx.font = 'bold 48px "Poppins", sans-serif'
-  ctx.textAlign = 'center'
   const titleLines = wrapText(ctx, topic.title, WIDTH - 160)
   titleLines.forEach((line, i) => {
-    ctx.fillText(line, WIDTH / 2, 380 + i * 62)
+    cmds.push({ type: 'text', text: line, x: WIDTH / 2, y: 350 + i * 62, font: 'bold 48px "Poppins", sans-serif', color: COLORS.marker, align: 'center', charByChar: true, weight: 2 })
   })
 
-  // Hand-drawn circle around an important word area
-  if (progress > 0.5) {
-    ctx.strokeStyle = COLORS.red
-    ctx.lineWidth = 2
-    const circleY = 380 + (titleLines.length - 1) * 62
-    sketchCircle(ctx, WIDTH / 2, circleY - 15, 120 + titleLines[0].length * 2, 8)
-    ctx.stroke()
-  }
+  // Circle emphasis around title area
+  const circleY = 365 + (titleLines.length - 1) * 31
+  cmds.push({ type: 'circle', cx: WIDTH / 2, cy: circleY, r: 100 + titleLines[0].length * 2, color: COLORS.red, width: 2.5, points: makeCirclePoints(WIDTH / 2, circleY, 100 + titleLines[0].length * 2, 8, seed++), weight: 2 })
 
   // Hook text
-  if (progress > 0.3) {
-    ctx.fillStyle = COLORS.markerLight
-    ctx.font = 'italic 28px "Poppins", sans-serif'
-    ctx.textAlign = 'center'
-    const hookY = 400 + titleLines.length * 62
-    const hookAlpha = Math.min(1, (progress - 0.3) / 0.3)
-    ctx.globalAlpha = alpha * hookAlpha
-    ctx.fillText(topic.hook, WIDTH / 2, hookY)
-  }
+  cmds.push({ type: 'pause', weight: 0.3 })
+  const hookY = 390 + titleLines.length * 62
+  cmds.push({ type: 'text', text: topic.hook, x: WIDTH / 2, y: hookY, font: 'italic 28px "Poppins", sans-serif', color: COLORS.markerLight, align: 'center', charByChar: true, weight: 2.5 })
 
-  ctx.globalAlpha = 1.0
+  return cmds
 }
 
-function renderPoints(ctx, topic, alpha, progress) {
-  ctx.globalAlpha = alpha
+function buildPointsCommands(topic, ctx) {
+  const cmds = []
+  let seed = topic.id * 17 + 200
 
-  // Section label
-  ctx.fillStyle = COLORS.blue
-  ctx.font = 'bold 22px "Poppins", sans-serif'
-  ctx.textAlign = 'left'
-  ctx.fillText('HERE\'S THE BREAKDOWN:', 90, 230)
-  ctx.strokeStyle = COLORS.blue
-  ctx.lineWidth = 2
-  sketchUnderline(ctx, 90, 242, 320, 2)
+  // Section header
+  cmds.push({ type: 'text', text: 'HERE\'S THE BREAKDOWN:', x: 90, y: 225, font: 'bold 22px "Poppins", sans-serif', color: COLORS.blue, charByChar: true, weight: 1.5 })
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(90, 252, 410, 252, 2, seed++), color: COLORS.blue, width: 2.5, weight: 0.5 })
+  cmds.push({ type: 'pause', weight: 0.3 })
 
-  // Points appear one by one
+  // Points
   const pointCount = topic.points.length
-  const pointSpacing = Math.min(130, (HEIGHT - 550) / pointCount)
+  const spacing = Math.min(140, (HEIGHT - 600) / pointCount)
   const startY = 290
 
   for (let i = 0; i < pointCount; i++) {
-    const pointStart = i / pointCount
-    const pointProg = Math.max(0, (progress - pointStart) / (1 / pointCount))
+    const py = startY + i * spacing
 
-    if (pointProg > 0) {
-      const py = startY + i * pointSpacing
-      const textAlpha = Math.min(1, pointProg * 2)
-      ctx.globalAlpha = alpha * textAlpha
+    // Bullet dot
+    cmds.push({ type: 'bullet', cx: 105, cy: py + 12, r: 6, color: COLORS.accent, weight: 0.3 })
 
-      // Bullet / number
-      ctx.fillStyle = COLORS.accent
-      ctx.font = 'bold 28px "Poppins", sans-serif'
-      ctx.textAlign = 'left'
+    // Point text
+    ctx.font = '28px "Poppins", sans-serif'
+    const lines = wrapText(ctx, topic.points[i], WIDTH - 220)
+    lines.forEach((line, li) => {
+      cmds.push({ type: 'text', text: line, x: 128, y: py + li * 40, font: '28px "Poppins", sans-serif', color: COLORS.marker, charByChar: true, weight: 2.5 })
+    })
 
-      // Sketch bullet
-      ctx.strokeStyle = COLORS.accent
-      ctx.lineWidth = 2
-      sketchBullet(ctx, 108, py + 2, 6)
-
-      // Point text
-      ctx.fillStyle = COLORS.marker
-      ctx.font = '28px "Poppins", sans-serif'
-      const lines = wrapText(ctx, topic.points[i], WIDTH - 220)
-      lines.forEach((line, li) => {
-        ctx.fillText(line, 130, py + li * 38)
-      })
-
-      // Hand-drawn emphasis on key words (underline occasional words)
-      if (pointProg > 0.8 && i < 2) {
-        ctx.strokeStyle = COLORS.accent
-        ctx.globalAlpha = alpha * 0.4
-        ctx.lineWidth = 6
-        const firstLine = lines[0]
-        const capsWord = firstLine.match(/[A-Z]{2,}/)
-        if (capsWord) {
-          const beforeW = ctx.measureText(firstLine.substring(0, firstLine.indexOf(capsWord[0]))).width
-          const wordW = ctx.measureText(capsWord[0]).width
-          sketchLine(ctx, 130 + beforeW, py + 6, 130 + beforeW + wordW, py + 6, 1)
-        }
+    // Highlight underline on CAPS words in first 2 points
+    if (i < 2) {
+      const capsMatch = topic.points[i].match(/[A-Z]{2,}/)
+      if (capsMatch) {
+        const beforeW = ctx.measureText(topic.points[i].substring(0, topic.points[i].indexOf(capsMatch[0]))).width
+        const wordW = ctx.measureText(capsMatch[0]).width
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(128 + beforeW, py + 18, 128 + beforeW + wordW, py + 18, 1, seed++), color: COLORS.accent, width: 5, weight: 0.4 })
       }
+    }
+
+    if (i < pointCount - 1) cmds.push({ type: 'pause', weight: 0.2 })
+  }
+
+  return cmds
+}
+
+function buildDiagramCommands(topic, ctx) {
+  const cmds = []
+  let seed = topic.id * 23 + 500
+  const dx = 80, dy = 310, dw = WIDTH - 160, dh = 460
+
+  // Header
+  cmds.push({ type: 'text', text: 'VISUALISED:', x: 90, y: 245, font: 'bold 22px "Poppins", sans-serif', color: COLORS.marker, charByChar: true, weight: 1 })
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(90, 272, 250, 272, 2, seed++), color: COLORS.marker, width: 2.5, weight: 0.3 })
+
+  // Border box
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(dx, dy, dx + dw, dy, 3, seed++), color: COLORS.bgLine, width: 1.5, weight: 0.4 })
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(dx + dw, dy, dx + dw, dy + dh, 3, seed++), color: COLORS.bgLine, width: 1.5, weight: 0.4 })
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(dx + dw, dy + dh, dx, dy + dh, 3, seed++), color: COLORS.bgLine, width: 1.5, weight: 0.4 })
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(dx, dy + dh, dx, dy, 3, seed++), color: COLORS.bgLine, width: 1.5, weight: 0.4 })
+
+  const ix = dx + 30, iy = dy + 25, iw = dw - 60, ih = dh - 50
+
+  switch (topic.sketch) {
+    case 'growth': {
+      cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 30, iy + ih - 20, ix + 30, iy + 10, 3, seed++), color: COLORS.marker, width: 2, weight: 1 })
+      cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 30, iy + ih - 20, ix + iw - 10, iy + ih - 20, 3, seed++), color: COLORS.marker, width: 2, weight: 1 })
+      const curvePts = []
+      for (let i = 0; i <= 35; i++) {
+        const t = i / 35
+        curvePts.push({ x: ix + 40 + t * (iw - 60), y: iy + ih - 30 - Math.pow(t, 2.3) * (ih - 50) })
+      }
+      cmds.push({ type: 'line', points: curvePts, color: COLORS.green, width: 3.5, weight: 4 })
+      cmds.push({ type: 'text', text: 'GROWTH!', x: ix + iw - 140, y: iy + 20, font: 'bold 22px "Poppins", sans-serif', color: COLORS.red, charByChar: true, weight: 1 })
+      break
+    }
+    case 'comparison': {
+      const midX = ix + iw / 2
+      cmds.push({ type: 'line', points: makeWobblyLinePoints(midX, iy + 5, midX, iy + ih - 5, 2, seed++), color: COLORS.subtle, width: 1.5, weight: 1 })
+      cmds.push({ type: 'text', text: '✓ YES', x: ix + iw / 4, y: iy + 15, font: 'bold 26px "Poppins", sans-serif', color: COLORS.green, align: 'center', charByChar: true, weight: 0.8 })
+      cmds.push({ type: 'text', text: '✗ NO', x: ix + iw * 3 / 4, y: iy + 15, font: 'bold 26px "Poppins", sans-serif', color: COLORS.red, align: 'center', charByChar: true, weight: 0.8 })
+      for (let i = 0; i < 3; i++) {
+        cmds.push({ type: 'check', x: ix + 30, y: iy + 65 + i * 55, size: 22, color: COLORS.green, seed: seed++ + i, weight: 0.8 })
+      }
+      for (let i = 0; i < 3; i++) {
+        const bx = midX + 30, by = iy + 65 + i * 55
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(bx, by, bx + 20, by + 20, 2, seed++), color: COLORS.red, width: 3, weight: 0.4 })
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(bx + 20, by, bx, by + 20, 2, seed++), color: COLORS.red, width: 3, weight: 0.4 })
+      }
+      break
+    }
+    case 'ladder':
+    case 'stack': {
+      cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 60, iy + ih - 10, ix + 30, iy + 10, 4, seed++), color: COLORS.marker, width: 2.5, weight: 1 })
+      cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + iw - 60, iy + ih - 10, ix + iw - 30, iy + 10, 4, seed++), color: COLORS.marker, width: 2.5, weight: 1 })
+      for (let i = 0; i < 5; i++) {
+        const ry = iy + ih - 40 - i * ((ih - 50) / 5)
+        const shrink = i * 5
+        const isTop = i === 4
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 40 + shrink, ry, ix + iw - 40 - shrink, ry, 3, seed++), color: isTop ? COLORS.accent : COLORS.marker, width: isTop ? 3 : 2, weight: 0.8 })
+      }
+      cmds.push({ type: 'star', cx: ix + iw / 2, cy: iy + 25, r: 22, color: COLORS.accent, fill: true, weight: 1 })
+      break
+    }
+    case 'timeline':
+    case 'formula': {
+      cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 20, iy + ih / 2, ix + iw - 20, iy + ih / 2, 3, seed++), color: COLORS.marker, width: 2, weight: 2 })
+      const ax = ix + iw - 20, ay = iy + ih / 2
+      cmds.push({ type: 'line', points: makeWobblyLinePoints(ax - 15, ay - 10, ax, ay, 1.5, seed++), color: COLORS.marker, width: 2, weight: 0.3 })
+      cmds.push({ type: 'line', points: makeWobblyLinePoints(ax - 15, ay + 10, ax, ay, 1.5, seed++), color: COLORS.marker, width: 2, weight: 0.3 })
+      for (let i = 0; i < 4; i++) {
+        const mx = ix + 60 + i * ((iw - 100) / 3)
+        cmds.push({ type: 'bullet', cx: mx, cy: ay, r: 8, color: i === 3 ? COLORS.green : COLORS.blue, weight: 0.4 })
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(mx, ay - 14, mx, ay - 40, 2, seed++), color: COLORS.subtle, width: 1.5, weight: 0.3 })
+      }
+      break
+    }
+    case 'shield': {
+      const cx = ix + iw / 2, cy = iy + ih / 2
+      const s = Math.min(iw, ih) * 0.3
+      const shieldPts = [
+        { x: cx, y: cy - s }, { x: cx + s * 0.8, y: cy - s * 0.4 },
+        { x: cx + s * 0.75, y: cy + s * 0.3 }, { x: cx, y: cy + s * 0.9 },
+        { x: cx - s * 0.75, y: cy + s * 0.3 }, { x: cx - s * 0.8, y: cy - s * 0.4 },
+        { x: cx, y: cy - s },
+      ]
+      cmds.push({ type: 'line', points: shieldPts, color: COLORS.blue, width: 3, weight: 3 })
+      cmds.push({ type: 'fill_rect', x: cx - s * 0.7, y: cy - s * 0.3, w: s * 1.4, h: s * 1.1, color: 'rgba(46,110,190,0.1)', weight: 0.5 })
+      cmds.push({ type: 'check', x: cx - 25, y: cy - 10, size: 50, color: COLORS.green, seed: seed++, weight: 1.5 })
+      break
+    }
+    case 'pie':
+    case 'jars':
+    case 'three_buckets': {
+      const cx = ix + iw / 2, cy = iy + ih / 2 - 10, r = Math.min(iw, ih) / 2 - 30
+      const slices = [{ pct: 0.50, color: COLORS.blue }, { pct: 0.30, color: COLORS.accent }, { pct: 0.20, color: COLORS.green }]
+      let startA = -Math.PI / 2
+      slices.forEach((sl) => {
+        const endA = startA + sl.pct * Math.PI * 2
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(cx, cy, cx + r * Math.cos(startA), cy + r * Math.sin(startA), 2, seed++), color: sl.color, width: 2, weight: 0.4 })
+        const arcPts = []
+        const steps = Math.floor(sl.pct * 30) + 5
+        for (let i = 0; i <= steps; i++) {
+          const a = startA + (endA - startA) * (i / steps)
+          arcPts.push({ x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) })
+        }
+        cmds.push({ type: 'line', points: arcPts, color: sl.color, width: 3, weight: 2 })
+        const midA = startA + sl.pct * Math.PI
+        cmds.push({ type: 'text', text: `${sl.pct * 100}%`, x: cx + r * 0.55 * Math.cos(midA), y: cy + r * 0.55 * Math.sin(midA) - 12, font: 'bold 24px "Poppins", sans-serif', color: sl.color, align: 'center', charByChar: false, weight: 0.5 })
+        startA = endA
+      })
+      cmds.push({ type: 'line', points: makeWobblyLinePoints(cx, cy, cx + r * Math.cos(startA), cy + r * Math.sin(startA), 2, seed++), color: slices[slices.length - 1].color, width: 2, weight: 0.3 })
+      break
+    }
+    case 'flow':
+    case 'cycle':
+    case 'scroll': {
+      const labels = ['IN', 'PROCESS', 'OUT']
+      const bw = 100, bh = 50
+      const totalBW = labels.length * bw + (labels.length - 1) * 60
+      const sx = ix + (iw - totalBW) / 2
+      const my = iy + ih / 2
+      labels.forEach((label, li) => {
+        const bx = sx + li * (bw + 60)
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(bx, my - bh / 2, bx + bw, my - bh / 2, 3, seed++), color: li === 2 ? COLORS.green : COLORS.blue, width: 2, weight: 0.4 })
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(bx + bw, my - bh / 2, bx + bw, my + bh / 2, 3, seed++), color: li === 2 ? COLORS.green : COLORS.blue, width: 2, weight: 0.4 })
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(bx + bw, my + bh / 2, bx, my + bh / 2, 3, seed++), color: li === 2 ? COLORS.green : COLORS.blue, width: 2, weight: 0.4 })
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(bx, my + bh / 2, bx, my - bh / 2, 3, seed++), color: li === 2 ? COLORS.green : COLORS.blue, width: 2, weight: 0.4 })
+        cmds.push({ type: 'text', text: label, x: bx + bw / 2, y: my - 10, font: 'bold 18px "Poppins", sans-serif', color: li === 2 ? COLORS.green : COLORS.blue, align: 'center', charByChar: false, weight: 0.3 })
+        if (li < labels.length - 1) {
+          cmds.push({ type: 'line', points: makeWobblyLinePoints(bx + bw + 8, my, bx + bw + 48, my, 2, seed++), color: COLORS.subtle, width: 2, weight: 0.4 })
+          cmds.push({ type: 'line', points: makeWobblyLinePoints(bx + bw + 38, my - 8, bx + bw + 50, my, 1, seed++), color: COLORS.subtle, width: 2, weight: 0.15 })
+          cmds.push({ type: 'line', points: makeWobblyLinePoints(bx + bw + 38, my + 8, bx + bw + 50, my, 1, seed++), color: COLORS.subtle, width: 2, weight: 0.15 })
+        }
+      })
+      break
+    }
+    case 'checklist': {
+      for (let i = 0; i < 5; i++) {
+        const cy = iy + 15 + i * 42
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 20, cy, ix + 42, cy, 2, seed++), color: COLORS.marker, width: 2, weight: 0.15 })
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 42, cy, ix + 42, cy + 22, 2, seed++), color: COLORS.marker, width: 2, weight: 0.15 })
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 42, cy + 22, ix + 20, cy + 22, 2, seed++), color: COLORS.marker, width: 2, weight: 0.15 })
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 20, cy + 22, ix + 20, cy, 2, seed++), color: COLORS.marker, width: 2, weight: 0.15 })
+        cmds.push({ type: 'check', x: ix + 23, y: cy + 4, size: 16, color: COLORS.green, seed: seed++ + i, weight: 0.5 })
+        cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 55, cy + 11, ix + 55 + 100 + (seed % 100), cy + 11, 1, seed++), color: COLORS.bgLine, width: 7, weight: 0.3 })
+      }
+      break
+    }
+    default: {
+      cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 30, iy + ih - 20, ix + 30, iy + 10, 3, seed++), color: COLORS.marker, width: 2, weight: 1 })
+      cmds.push({ type: 'line', points: makeWobblyLinePoints(ix + 30, iy + ih - 20, ix + iw - 10, iy + ih - 20, 3, seed++), color: COLORS.marker, width: 2, weight: 1 })
+      const pts = []
+      for (let i = 0; i <= 30; i++) {
+        const t = i / 30
+        pts.push({ x: ix + 40 + t * (iw - 60), y: iy + ih - 30 - Math.pow(t, 2) * (ih - 50) })
+      }
+      cmds.push({ type: 'line', points: pts, color: COLORS.green, width: 3.5, weight: 4 })
     }
   }
 
-  ctx.globalAlpha = 1.0
+  return cmds
 }
 
-function renderDiagram(ctx, topic, alpha, progress) {
-  ctx.globalAlpha = alpha
+function buildTakeawayCommands(topic, ctx) {
+  const cmds = []
+  let seed = topic.id * 31 + 800
 
-  // Label
-  ctx.fillStyle = COLORS.marker
-  ctx.font = 'bold 22px "Poppins", sans-serif'
-  ctx.textAlign = 'left'
-  ctx.fillText('VISUALISED:', 90, 250)
-  ctx.strokeStyle = COLORS.marker
-  ctx.lineWidth = 2
-  sketchUnderline(ctx, 90, 262, 160, 2)
+  cmds.push({ type: 'fill_rect', x: 70, y: 310, w: WIDTH - 140, h: 400, color: COLORS.highlight, opacity: 0.6, weight: 1 })
+  cmds.push({ type: 'fill_rect', x: 70, y: 310, w: 6, h: 400, color: COLORS.accent, weight: 0.3 })
+  cmds.push({ type: 'star', cx: 120, cy: 355, r: 18, color: COLORS.accent, fill: true, weight: 1 })
+  cmds.push({ type: 'text', text: 'KEY TAKEAWAY', x: 150, y: 340, font: 'bold 26px "Poppins", sans-serif', color: COLORS.accent, charByChar: true, weight: 1.5 })
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(150, 372, 350, 372, 2, seed++), color: COLORS.accent, width: 2.5, weight: 0.4 })
+  cmds.push({ type: 'pause', weight: 0.3 })
 
-  // Diagram area with hand-drawn border
-  const dx = 70, dy = 300, dw = WIDTH - 140, dh = 480
-  ctx.strokeStyle = COLORS.bgLine
-  ctx.lineWidth = 1.5
-  sketchRect(ctx, dx, dy, dw, dh, 4)
+  ctx.font = 'bold 32px "Poppins", sans-serif'
+  const lines = wrapText(ctx, topic.takeaway, WIDTH - 220)
+  lines.forEach((line, i) => {
+    cmds.push({ type: 'text', text: line, x: 100, y: 400 + i * 50, font: 'bold 32px "Poppins", sans-serif', color: COLORS.marker, charByChar: true, weight: 3 })
+  })
 
-  drawSketchDiagram(ctx, topic.sketch, dx + 20, dy + 15, dw - 40, dh - 30, progress)
-
-  ctx.globalAlpha = 1.0
+  return cmds
 }
 
-function renderTakeaway(ctx, topic, alpha, progress) {
-  ctx.globalAlpha = alpha
+function buildBrandCommands(topic) {
+  const cmds = []
+  let seed = topic.id * 37 + 1100
 
-  // Highlight box background (hand-drawn)
-  ctx.fillStyle = COLORS.highlight
-  sketchFilledRect(ctx, 70, 320, WIDTH - 140, 380, 5)
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(WIDTH / 2 - 80, HEIGHT / 2 - 80, WIDTH / 2 + 80, HEIGHT / 2 - 80, 3, seed++), color: COLORS.accent, width: 2, weight: 0.5 })
+  cmds.push({ type: 'text', text: 'THRIVE', x: WIDTH / 2 - 140, y: HEIGHT / 2 - 50, font: 'bold 42px "Poppins", sans-serif', color: COLORS.brand1, charByChar: true, weight: 1.5 })
+  cmds.push({ type: 'text', text: 'RICHLY', x: WIDTH / 2 + 20, y: HEIGHT / 2 - 50, font: 'bold 42px "Poppins", sans-serif', color: COLORS.brand2, charByChar: true, weight: 1.5 })
+  cmds.push({ type: 'text', text: 'Wealth wisdom, sketched simply.', x: WIDTH / 2, y: HEIGHT / 2 + 15, font: '22px "Poppins", sans-serif', color: COLORS.subtle, align: 'center', charByChar: true, weight: 2 })
 
-  // Left accent bar
-  ctx.fillStyle = COLORS.accent
-  ctx.fillRect(70, 320, 6, 380)
+  // CTA box
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(WIDTH / 2 - 180, HEIGHT / 2 + 55, WIDTH / 2 + 180, HEIGHT / 2 + 55, 3, seed++), color: COLORS.accent, width: 2, weight: 0.3 })
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(WIDTH / 2 + 180, HEIGHT / 2 + 55, WIDTH / 2 + 180, HEIGHT / 2 + 95, 3, seed++), color: COLORS.accent, width: 2, weight: 0.3 })
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(WIDTH / 2 + 180, HEIGHT / 2 + 95, WIDTH / 2 - 180, HEIGHT / 2 + 95, 3, seed++), color: COLORS.accent, width: 2, weight: 0.3 })
+  cmds.push({ type: 'line', points: makeWobblyLinePoints(WIDTH / 2 - 180, HEIGHT / 2 + 95, WIDTH / 2 - 180, HEIGHT / 2 + 55, 3, seed++), color: COLORS.accent, width: 2, weight: 0.3 })
+  cmds.push({ type: 'text', text: 'Follow for daily sketches', x: WIDTH / 2, y: HEIGHT / 2 + 60, font: 'bold 24px "Poppins", sans-serif', color: COLORS.accent, align: 'center', charByChar: true, weight: 1.5 })
 
-  // Header with star
-  ctx.fillStyle = COLORS.accent
-  ctx.strokeStyle = COLORS.accent
-  ctx.lineWidth = 2
-  sketchStar(ctx, 120, 365, 18, 2)
-  ctx.fill()
-  ctx.stroke()
-
-  ctx.font = 'bold 26px "Poppins", sans-serif'
-  ctx.textAlign = 'left'
-  ctx.fillText('KEY TAKEAWAY', 150, 375)
-  sketchUnderline(ctx, 150, 385, 200, 2)
-
-  // Takeaway text — reveal word by word
-  const words = topic.takeaway.split(' ')
-  const showWords = Math.floor(progress * words.length)
-  const visibleText = words.slice(0, showWords).join(' ')
-
-  if (visibleText) {
-    ctx.fillStyle = COLORS.marker
-    ctx.font = 'bold 32px "Poppins", sans-serif'
-    const lines = wrapText(ctx, visibleText, WIDTH - 220)
-    lines.forEach((line, i) => {
-      ctx.fillText(line, 100, 430 + i * 48)
-    })
-  }
-
-  ctx.globalAlpha = 1.0
-}
-
-function renderBrand(ctx, alpha) {
-  ctx.globalAlpha = alpha
-
-  // Hand-drawn separator
-  ctx.strokeStyle = COLORS.accent
-  ctx.lineWidth = 2
-  sketchLine(ctx, WIDTH / 2 - 80, HEIGHT / 2 - 80, WIDTH / 2 + 80, HEIGHT / 2 - 80, 3)
-
-  // Brand name
-  ctx.font = 'bold 42px "Poppins", sans-serif'
-  ctx.textAlign = 'center'
-  const t1 = 'THRIVE '
-  const t2 = 'RICHLY'
-  const t1w = ctx.measureText(t1).width
-  const t2w = ctx.measureText(t2).width
-  const bx = (WIDTH - t1w - t2w) / 2
-
-  ctx.textAlign = 'left'
-  ctx.fillStyle = COLORS.brand1
-  ctx.fillText(t1, bx, HEIGHT / 2 - 20)
-  ctx.fillStyle = COLORS.brand2
-  ctx.fillText(t2, bx + t1w, HEIGHT / 2 - 20)
-
-  // Tagline
-  ctx.font = '22px "Poppins", sans-serif'
-  ctx.fillStyle = COLORS.subtle
-  ctx.textAlign = 'center'
-  ctx.fillText('Wealth wisdom, sketched simply.', WIDTH / 2, HEIGHT / 2 + 30)
-
-  // CTA
-  ctx.font = 'bold 24px "Poppins", sans-serif'
-  ctx.fillStyle = COLORS.accent
-  ctx.fillText('Follow for daily sketches', WIDTH / 2, HEIGHT / 2 + 80)
-
-  // Hand-drawn box around CTA
-  ctx.strokeStyle = COLORS.accent
-  ctx.lineWidth = 2
-  sketchRect(ctx, WIDTH / 2 - 180, HEIGHT / 2 + 55, 360, 40, 3)
-
-  ctx.globalAlpha = 1.0
+  return cmds
 }
 
 // ============================================================================
 // FRAME GENERATION
 // ============================================================================
 function generateFrames(topic, framesDir) {
-  console.log('  ✏️  Generating freehand sketch frames...')
-
-  const SECTIONS = [
-    { name: 'hook', duration: 5 },
-    { name: 'points', duration: 22 },
-    { name: 'diagram', duration: 14 },
-    { name: 'takeaway', duration: 14 },
-    { name: 'brand', duration: 4 },
-  ]
-  const TRANS = 0.8
-
-  const totalDuration = SECTIONS.reduce((s, sec) => s + sec.duration, 0) + TRANS * (SECTIONS.length - 1)
-  const totalFrames = Math.ceil(totalDuration * FPS)
-
-  console.log(`  📐 ${SECTIONS.length} sections, ${totalDuration.toFixed(1)}s, ${totalFrames} frames`)
+  console.log('  ✏️  Generating doodle frames with animated pen...')
 
   const canvas = createCanvas(WIDTH, HEIGHT)
   const ctx = canvas.getContext('2d')
   const bgSeed = topic.id * 7 + 99
+  initRand(bgSeed)
+
+  const sectionDefs = [
+    { name: 'hook', duration: 6, builder: () => buildHookCommands(topic, ctx) },
+    { name: 'points', duration: 24, builder: () => buildPointsCommands(topic, ctx) },
+    { name: 'diagram', duration: 16, builder: () => buildDiagramCommands(topic, ctx) },
+    { name: 'takeaway', duration: 16, builder: () => buildTakeawayCommands(topic, ctx) },
+    { name: 'brand', duration: 5, builder: () => buildBrandCommands(topic) },
+  ]
+
+  const TRANS = 0.6
+  const sections = sectionDefs.map(s => ({ ...s, commands: s.builder() }))
+  const totalDuration = sections.reduce((s, sec) => s + sec.duration, 0) + TRANS * (sections.length - 1)
+  const totalFrames = Math.ceil(totalDuration * FPS)
+
+  console.log(`  📐 ${sections.length} sections, ${totalDuration.toFixed(1)}s, ${totalFrames} frames`)
 
   fs.mkdirSync(framesDir, { recursive: true })
 
   for (let frame = 0; frame < totalFrames; frame++) {
     const t = frame / FPS
 
-    // Reset jitter seed per frame + concept for consistent wobble
-    initRand(bgSeed + frame * 3)
-
-    // Draw background (always fresh — wobble is seeded so it's stable)
     drawBackground(ctx, bgSeed)
 
-    // Determine active section
     let elapsed = 0
-    for (let si = 0; si < SECTIONS.length; si++) {
-      const sec = SECTIONS[si]
+    let penPos = null
+    let showPen = true
+
+    for (let si = 0; si < sections.length; si++) {
+      const sec = sections[si]
       const secStart = elapsed
       const secEnd = elapsed + sec.duration
 
@@ -865,30 +761,29 @@ function generateFrames(topic, framesDir) {
 
         const secT = Math.min(1, (t - secStart) / sec.duration)
 
-        // Re-init jitter for consistent sketch look within section
-        initRand(bgSeed + si * 1000 + 42)
+        ctx.globalAlpha = alpha
+        penPos = renderCommands(ctx, sec.commands, secT)
+        ctx.globalAlpha = 1.0
 
-        switch (sec.name) {
-          case 'hook': renderHook(ctx, topic, alpha, secT); break
-          case 'points': renderPoints(ctx, topic, alpha, secT); break
-          case 'diagram': renderDiagram(ctx, topic, alpha, secT); break
-          case 'takeaway': renderTakeaway(ctx, topic, alpha, secT); break
-          case 'brand': renderBrand(ctx, alpha); break
-        }
+        if (alpha < 0.5 || (sec.name === 'brand' && secT > 0.9)) showPen = false
         if (alpha > 0) break
       }
       elapsed += sec.duration + TRANS
     }
 
+    // Draw the animated pen
+    if (penPos && showPen) {
+      drawPen(ctx, penPos.x, penPos.y, -Math.PI / 4)
+    }
+
     // Watermark
-    ctx.globalAlpha = 0.3
+    ctx.globalAlpha = 0.25
     ctx.font = '16px "Poppins", sans-serif'
     ctx.fillStyle = COLORS.subtle
     ctx.textAlign = 'center'
     ctx.fillText('THRIVE RICHLY', WIDTH / 2, HEIGHT - 35)
     ctx.globalAlpha = 1.0
 
-    // Save
     const buffer = canvas.toBuffer('image/jpeg', { quality: 0.88 })
     fs.writeFileSync(path.join(framesDir, `frame_${String(frame).padStart(5, '0')}.jpg`), buffer)
 
@@ -902,7 +797,7 @@ function generateFrames(topic, framesDir) {
 }
 
 // ============================================================================
-// VIDEO ASSEMBLY (same proven approach as Reels)
+// VIDEO ASSEMBLY
 // ============================================================================
 function assembleVideo(framesDir, outputPath, duration) {
   console.log('  🎬 Assembling video...')
@@ -912,7 +807,7 @@ function assembleVideo(framesDir, outputPath, duration) {
     const files = fs.readdirSync(MUSIC_DIR).filter(f => /\.(mp3|aac|m4a|wav)$/i.test(f))
     if (files.length > 0) {
       musicPath = path.join(MUSIC_DIR, files[Math.floor(Math.random() * files.length)])
-      console.log(`  🎵 Using music: ${path.basename(musicPath)}`)
+      console.log(`  🎵 Music: ${path.basename(musicPath)}`)
     }
   }
 
@@ -920,9 +815,9 @@ function assembleVideo(framesDir, outputPath, duration) {
     const fade = Math.max(0, duration - 2)
     try {
       execSync(`ffmpeg -y -framerate ${FPS} -i "${framesDir}/frame_%05d.jpg" -i "${musicPath}" -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 128k -af "afade=t=in:d=1.5,afade=t=out:st=${fade}:d=2,volume=0.3" -pix_fmt yuv420p -t ${duration} -movflags +faststart "${outputPath}" 2>&1`, { maxBuffer: 5 * 1024 * 1024 })
-      console.log(`  ✅ Video ready (with music): ${(fs.statSync(outputPath).size / 1024 / 1024).toFixed(1)}MB`)
+      console.log(`  ✅ Video (with music): ${(fs.statSync(outputPath).size / 1024 / 1024).toFixed(1)}MB`)
       return
-    } catch (e) { console.log('  ⚠️  Music mux failed, trying silent...') }
+    } catch (e) { console.log('  ⚠️  Music failed, using silent...') }
   }
 
   const noAudio = outputPath.replace('.mp4', '_v.mp4')
@@ -932,7 +827,7 @@ function assembleVideo(framesDir, outputPath, duration) {
   } catch (e) { fs.copyFileSync(noAudio, outputPath) }
   try { fs.unlinkSync(noAudio) } catch (e) {}
 
-  console.log(`  ✅ Video ready: ${(fs.statSync(outputPath).size / 1024 / 1024).toFixed(1)}MB`)
+  console.log(`  ✅ Video: ${(fs.statSync(outputPath).size / 1024 / 1024).toFixed(1)}MB`)
 }
 
 // ============================================================================
@@ -979,7 +874,6 @@ async function uploadReel(videoPath, caption, scheduledTime = null) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(finish),
   })
-
   if (!pubRes.ok && scheduledTime) {
     delete finish.video_state
     delete finish.scheduled_publish_time
@@ -1005,8 +899,7 @@ function generateCaption(topic) {
     `🧠 Did you know?\n\n${topic.hook}\n\n${topic.takeaway}\n\n📌 Save for later.`,
     `✏️ "${topic.title}"\n\n${topic.takeaway}\n\n🔥 Tag someone who needs to see this.`,
   ]
-  const hash = topic.title.split('').reduce((a, c) => a + c.charCodeAt(0), 0)
-  return caps[hash % caps.length]
+  return caps[topic.id % caps.length]
 }
 
 function getScheduleTime() {
@@ -1025,7 +918,7 @@ function getNextTopic() {
   const data = JSON.parse(fs.readFileSync(TOPICS_FILE, 'utf-8'))
   const pending = data.topics.filter(t => t.status === 'pending')
   if (pending.length === 0) {
-    console.log('✅ All sketch topics posted! Add more to sketch-topics.json.')
+    console.log('✅ All sketch topics posted!')
     process.exit(0)
   }
   return { data, topic: pending[0], remaining: pending.length - 1 }
@@ -1041,7 +934,7 @@ function markComplete(data, topicId) {
 // MAIN
 // ============================================================================
 async function main() {
-  console.log('✏️  Thrive Richly — Freehand Sketch Explainer Generator\n')
+  console.log('✏️  Thrive Richly — Doodle Sketch v2 (Animated Pen)\n')
   console.log(`📱 Page ID: ${FB_PAGE_ID}`)
   console.log(`📅 Date: ${new Date().toISOString().split('T')[0]}\n`)
 
@@ -1067,7 +960,7 @@ async function main() {
     console.log(`  ✅ Published! ID: ${result.id || result.video_id || 'success'}`)
 
     markComplete(data, topic.id)
-    console.log(`\n✅ Marked "${topic.title}" as posted`)
+    console.log(`\n✅ "${topic.title}" posted`)
   } catch (err) {
     console.error(`\n❌ Failed: ${err.message}`)
     process.exit(1)
@@ -1078,7 +971,6 @@ async function main() {
   console.log('\n' + '='.repeat(50))
   console.log(`🎉 Sketch published: "${topic.title}"`)
   console.log(`📊 Remaining: ${remaining}`)
-  console.log(`📅 Days of content: ${remaining}`)
   console.log('='.repeat(50))
 }
 
