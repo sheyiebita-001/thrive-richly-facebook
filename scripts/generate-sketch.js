@@ -143,56 +143,169 @@ function makeCirclePoints(cx, cy, r, wobble, seed) {
 }
 
 // ============================================================================
-// PEN / MARKER RENDERER
-// Draws a realistic marker pen at a given position with angle
+// HAND + MARKER RENDERER
+// Draws a large, clearly visible hand holding a marker pen.
+// The pen tip touches (x, y). The hand extends to the bottom-right.
+// This is the signature "doodle video" look — a hand drawing on screen.
 // ============================================================================
-function drawPen(ctx, x, y, angle) {
+function drawPen(ctx, x, y) {
   ctx.save()
-  ctx.translate(x, y)
-  ctx.rotate(angle || -Math.PI / 4)
 
-  // Pen body (angled marker)
-  const bodyLen = 90
-  const bodyW = 14
+  // Offset: pen tip at (x,y), hand extends to bottom-right
+  const hx = x + 35  // hand center x offset from tip
+  const hy = y + 45   // hand center y offset from tip
 
-  // Shadow
-  ctx.fillStyle = 'rgba(0,0,0,0.15)'
+  // === LARGE DROP SHADOW under entire hand ===
+  ctx.fillStyle = 'rgba(0,0,0,0.18)'
   ctx.beginPath()
-  ctx.ellipse(4, 4, bodyW * 0.7, 6, 0, 0, Math.PI * 2)
+  ctx.ellipse(hx + 12, hy + 50, 70, 35, 0.2, 0, Math.PI * 2)
   ctx.fill()
 
-  // Main body
-  const grad = ctx.createLinearGradient(0, -bodyLen, 0, 0)
-  grad.addColorStop(0, '#555555')
-  grad.addColorStop(0.3, '#444444')
-  grad.addColorStop(0.7, '#333333')
-  grad.addColorStop(1, '#222222')
-  ctx.fillStyle = grad
+  // === MARKER PEN (behind hand) ===
+  ctx.save()
+  ctx.translate(hx - 10, hy - 30)
+  ctx.rotate(-0.65) // ~37 degrees tilted
+
+  // Pen body
+  const penLen = 180
+  const penW = 18
+  const penGrad = ctx.createLinearGradient(0, -penLen, 0, 20)
+  penGrad.addColorStop(0, '#2A2A2A')
+  penGrad.addColorStop(0.4, '#383838')
+  penGrad.addColorStop(0.85, '#2E2E2E')
+  penGrad.addColorStop(1, '#1A1A1A')
+  ctx.fillStyle = penGrad
   ctx.beginPath()
-  ctx.moveTo(-bodyW / 2, -bodyLen)
-  ctx.lineTo(bodyW / 2, -bodyLen)
-  ctx.lineTo(bodyW / 2 - 2, -8)
-  ctx.lineTo(-bodyW / 2 + 2, -8)
+  ctx.moveTo(-penW / 2, -penLen)
+  ctx.lineTo(penW / 2, -penLen)
+  ctx.lineTo(penW / 2 - 1, 10)
+  ctx.lineTo(-penW / 2 + 1, 10)
   ctx.closePath()
   ctx.fill()
 
-  // Pen tip
-  ctx.fillStyle = COLORS.penTip
+  // Pen highlight
+  ctx.fillStyle = 'rgba(255,255,255,0.12)'
+  ctx.fillRect(-3, -penLen + 15, 5, penLen - 30)
+
+  // Gold cap band
+  ctx.fillStyle = '#C49A2A'
+  ctx.fillRect(-penW / 2 - 1, -penLen, penW + 2, 12)
+
+  // Gold middle band
+  ctx.fillStyle = '#C49A2A'
+  ctx.fillRect(-penW / 2, -penLen * 0.4, penW, 6)
+
+  // Pen tip (dark cone)
+  ctx.fillStyle = '#111111'
   ctx.beginPath()
-  ctx.moveTo(-5, -8)
-  ctx.lineTo(5, -8)
-  ctx.lineTo(1, 0)
-  ctx.lineTo(-1, 0)
+  ctx.moveTo(-7, 10)
+  ctx.lineTo(7, 10)
+  ctx.lineTo(1, 28)
+  ctx.lineTo(-1, 28)
   ctx.closePath()
   ctx.fill()
 
-  // Cap ring
-  ctx.fillStyle = COLORS.accent
-  ctx.fillRect(-bodyW / 2 - 1, -bodyLen - 2, bodyW + 2, 8)
+  ctx.restore() // un-rotate pen
 
-  // Highlight stripe
-  ctx.fillStyle = 'rgba(255,255,255,0.15)'
-  ctx.fillRect(-2, -bodyLen + 10, 4, bodyLen - 20)
+  // === HAND (skin-colored fist gripping pen) ===
+  const skin = '#F0C8A0'
+  const skinDark = '#D4A574'
+  const skinLight = '#FAE0C0'
+
+  // Back of hand (large oval)
+  ctx.fillStyle = skin
+  ctx.beginPath()
+  ctx.ellipse(hx + 20, hy + 18, 52, 40, 0.3, 0, Math.PI * 2)
+  ctx.fill()
+
+  // Hand outline
+  ctx.strokeStyle = skinDark
+  ctx.lineWidth = 2
+  ctx.beginPath()
+  ctx.ellipse(hx + 20, hy + 18, 52, 40, 0.3, 0, Math.PI * 2)
+  ctx.stroke()
+
+  // Thumb (pointing up along pen)
+  ctx.fillStyle = skin
+  ctx.beginPath()
+  ctx.ellipse(hx - 14, hy - 12, 14, 28, -0.5, 0, Math.PI * 2)
+  ctx.fill()
+  ctx.strokeStyle = skinDark
+  ctx.lineWidth = 1.5
+  ctx.stroke()
+
+  // Thumb highlight
+  ctx.fillStyle = skinLight
+  ctx.beginPath()
+  ctx.ellipse(hx - 16, hy - 16, 6, 12, -0.5, 0, Math.PI * 2)
+  ctx.fill()
+
+  // Index finger (curled around pen)
+  ctx.fillStyle = skin
+  ctx.beginPath()
+  ctx.ellipse(hx - 2, hy + 2, 13, 20, -0.3, 0, Math.PI * 2)
+  ctx.fill()
+  ctx.strokeStyle = skinDark
+  ctx.lineWidth = 1.5
+  ctx.stroke()
+
+  // Middle finger
+  ctx.fillStyle = skin
+  ctx.beginPath()
+  ctx.ellipse(hx + 10, hy + 12, 12, 18, -0.15, 0, Math.PI * 2)
+  ctx.fill()
+  ctx.strokeStyle = skinDark
+  ctx.lineWidth = 1.5
+  ctx.stroke()
+
+  // Ring finger
+  ctx.fillStyle = skin
+  ctx.beginPath()
+  ctx.ellipse(hx + 22, hy + 20, 11, 16, 0, 0, Math.PI * 2)
+  ctx.fill()
+  ctx.strokeStyle = skinDark
+  ctx.lineWidth = 1.5
+  ctx.stroke()
+
+  // Pinky (smaller, tucked)
+  ctx.fillStyle = skin
+  ctx.beginPath()
+  ctx.ellipse(hx + 34, hy + 26, 9, 13, 0.15, 0, Math.PI * 2)
+  ctx.fill()
+  ctx.strokeStyle = skinDark
+  ctx.lineWidth = 1.5
+  ctx.stroke()
+
+  // Knuckle lines on fingers
+  ctx.strokeStyle = skinDark
+  ctx.lineWidth = 1
+  ctx.globalAlpha = 0.4
+  // Index
+  ctx.beginPath()
+  ctx.arc(hx - 2, hy + 5, 8, 0.3, 2.0)
+  ctx.stroke()
+  // Middle
+  ctx.beginPath()
+  ctx.arc(hx + 10, hy + 15, 7, 0.3, 2.0)
+  ctx.stroke()
+  // Ring
+  ctx.beginPath()
+  ctx.arc(hx + 22, hy + 23, 6, 0.3, 1.8)
+  ctx.stroke()
+  ctx.globalAlpha = 1.0
+
+  // Wrist (extending off bottom-right)
+  ctx.fillStyle = skin
+  ctx.beginPath()
+  ctx.moveTo(hx + 40, hy + 5)
+  ctx.quadraticCurveTo(hx + 80, hy + 15, hx + 95, hy + 55)
+  ctx.lineTo(hx + 75, hy + 65)
+  ctx.quadraticCurveTo(hx + 55, hy + 40, hx + 30, hy + 38)
+  ctx.closePath()
+  ctx.fill()
+  ctx.strokeStyle = skinDark
+  ctx.lineWidth = 1.5
+  ctx.stroke()
 
   ctx.restore()
 }
@@ -771,9 +884,12 @@ function generateFrames(topic, framesDir) {
       elapsed += sec.duration + TRANS
     }
 
-    // Draw the animated pen
+    // Draw the animated hand + pen
     if (penPos && showPen) {
-      drawPen(ctx, penPos.x, penPos.y, -Math.PI / 4)
+      drawPen(ctx, penPos.x, penPos.y)
+      if (frame === FPS * 2) console.log(`  ✋ Hand confirmed visible at frame ${frame} — position (${penPos.x.toFixed(0)}, ${penPos.y.toFixed(0)})`)
+    } else if (frame === FPS * 2) {
+      console.log(`  ⚠️  Hand NOT drawn at frame ${frame} — penPos=${!!penPos}, showPen=${showPen}`)
     }
 
     // Watermark
