@@ -496,6 +496,18 @@ async function main() {
     const archivePath = path.join(videosDir, `${pending.slug}.mp4`)
     fs.copyFileSync(VIDEO_OUTPUT, archivePath)
     console.log(`📁 Video archived: videos/${pending.slug}.mp4`)
+
+    // Generate thumbnail from intro scene (3 seconds in)
+    const thumbnailPath = path.join(videosDir, `${pending.slug}.jpg`)
+    try {
+      execSync(
+        `ffmpeg -y -ss 3 -i "${archivePath}" -vframes 1 -q:v 2 "${thumbnailPath}"`,
+        { stdio: 'pipe' }
+      )
+      console.log(`🖼️  Thumbnail saved: videos/${pending.slug}.jpg`)
+    } catch (thumbErr) {
+      console.error(`⚠️ Thumbnail generation failed: ${thumbErr.message}`)
+    }
   } catch (err) {
     console.error(`⚠️ Video archive failed: ${err.message}`)
   }
