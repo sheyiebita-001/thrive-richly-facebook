@@ -408,6 +408,8 @@ async function postToFacebook(script) {
         upload_session_id,
         title: script.topic,
         description: caption,
+        published: false,
+        scheduled_publish_time: Math.floor(Date.now() / 1000) + 3600,        
       }),
     }
   )
