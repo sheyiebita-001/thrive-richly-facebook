@@ -308,7 +308,7 @@ function renderVideo(script, hasVoiceover) {
   console.log(`   Mode: ${hasVoiceover ? 'voiceover' : 'text-only'}`)
 
   // Save script with voiceover flag for Remotion to read
-  const renderProps = { ...script, hasVoiceover }
+  const renderProps = { script: { ...script, hasVoiceover } }
   fs.mkdirSync(path.dirname(SCRIPT_OUTPUT), { recursive: true })
   fs.writeFileSync(SCRIPT_OUTPUT, JSON.stringify(renderProps, null, 2))
 
