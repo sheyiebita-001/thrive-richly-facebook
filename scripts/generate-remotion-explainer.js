@@ -3,8 +3,8 @@
 /**
  * Remotion Financial Explainer Generator
  *
- * Full pipeline: Claude script → ElevenLabs voiceover (optional) → Remotion render → Facebook post.
- * If ELEVENLABS_API_KEY is not set, renders text-only video with estimated timing.
+ * Full pipeline: Claude script → Google TTS voiceover (optional) → Remotion render → Facebook post.
+ * If GOOGLE_TTS_API_KEY is not set, renders text-only video with estimated timing.
  *
  * Required env vars:
  *   ANTHROPIC_API_KEY       — Claude API (writes the video script)
@@ -12,7 +12,7 @@
  *   FB_PAGE_ID              — Facebook Page ID
  *
  * Optional env vars:
- *   ELEVENLABS_API_KEY      — ElevenLabs TTS (voiceover). Falls back to text-only if missing.
+ *   GOOGLE_TTS_API_KEY      — Google Cloud TTS (voiceover). Falls back to text-only if missing.
  */
 
 const fs = require('fs')
@@ -24,7 +24,7 @@ const { execSync } = require('child_process')
 // ============================================================================
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY
-const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY
+const GOOGLE_TTS_API_KEY = process.env.GOOGLE_TTS_API_KEY
 const FB_PAGE_ACCESS_TOKEN = process.env.FB_PAGE_ACCESS_TOKEN
 const FB_PAGE_ID = process.env.FB_PAGE_ID
 
@@ -38,7 +38,20 @@ const SCRIPT_OUTPUT = path.join(REMOTION_DIR, 'public', 'current-script.json')
 const VOICEOVER_DIR = path.join(REMOTION_DIR, 'public', 'voiceover', 'current')
 const VIDEO_OUTPUT = path.join(REMOTION_DIR, 'out', 'explainer.mp4')
 
-const ELEVENLABS_VOICE_ID = 'pNInz6obpgDQGcFmaJgB' // Adam — professional male
+// Google TTS voice config — en-US Studio male, natural sounding
+const GOOGLE_TTS_VOICE = {
+  languageCode: 'en-US',
+  name: 'en-US-Studio-M',  // Studio voices are highest quality
+  ssmlGender: 'MALE',
+}
+
+const GOOGLE_TTS_AUDIO_CONFIG = {
+  audioEncoding: 'MP3',
+  speakingRate: 0.95,     // Slightly slower for educational content
+  pitch: -1.0,            // Slightly deeper — professional tone
+  volumeGainDb: 0.0,
+  effectsProfileId: ['small-bluetooth-speaker-class-device'], // Optimised for mobile playback
+}
 
 // ============================================================================
 // HELPERS
@@ -74,9 +87,9 @@ async function callClaude(prompt, maxTokens = 8000) {
 
         // Retry on overloaded (529) or server errors (500, 502, 503)
         if (response.status === 529 || response.status >= 500) {
-          const delayMs = BASE_DELAY * Math.pow(2, attempt - 1) // 10s, 20s, 40s, 80s, 160s
+          const delayMs = BASE_DELAY * Math.pow(2, attempt - 1)
           console.warn(`  ⚠️ ${model} — ${response.status} (attempt ${attempt}/${MAX_RETRIES}) — retrying in ${delayMs / 1000}s...`)
-          if (attempt === MAX_RETRIES) break // try next model
+          if (attempt === MAX_RETRIES) break
           await sleep(delayMs)
           continue
         }
@@ -86,12 +99,12 @@ async function callClaude(prompt, maxTokens = 8000) {
           const retryAfter = response.headers.get('retry-after')
           const delayMs = retryAfter ? parseInt(retryAfter, 10) * 1000 : BASE_DELAY * Math.pow(2, attempt)
           console.warn(`  ⚠️ ${model} — rate limited (attempt ${attempt}/${MAX_RETRIES}) — retrying in ${delayMs / 1000}s...`)
-          if (attempt === MAX_RETRIES) break // try next model
+          if (attempt === MAX_RETRIES) break
           await sleep(delayMs)
           continue
         }
 
-        // Non-retryable error (e.g. 401 bad key, 400 bad request)
+        // Non-retryable error
         if (!response.ok) {
           const err = await response.text()
           throw new Error(`Claude API error ${response.status}: ${err}`)
@@ -102,13 +115,11 @@ async function callClaude(prompt, maxTokens = 8000) {
         return data.content[0].text
 
       } catch (err) {
-        // If it's a non-retryable API error, throw immediately
         if (err.message && err.message.startsWith('Claude API error')) throw err
 
-        // Network errors — retry
         const delayMs = BASE_DELAY * Math.pow(2, attempt - 1)
         console.warn(`  ⚠️ Network error (attempt ${attempt}/${MAX_RETRIES}): ${err.message}`)
-        if (attempt === MAX_RETRIES) break // try next model
+        if (attempt === MAX_RETRIES) break
         await sleep(delayMs)
         continue
       }
@@ -141,7 +152,7 @@ function markTopicComplete(topics, slug) {
 // Estimate scene duration from word count (when no voiceover)
 function estimateNarrationSeconds(text) {
   const words = text.trim().split(/\s+/).length
-  return Math.max(8, Math.ceil(words / 2.5)) // ~150 wpm speaking rate
+  return Math.max(8, Math.ceil(words / 2.5))
 }
 
 // ============================================================================
@@ -151,7 +162,7 @@ function estimateNarrationSeconds(text) {
 async function generateScript(topic) {
   console.log('🤖 Generating script with Claude...')
 
-  // Check if we have a matching concept in financial-concepts.json for richer context
+  // Check if we have a matching concept for richer context
   let conceptContext = ''
   try {
     const concepts = JSON.parse(fs.readFileSync(CONCEPTS_FILE, 'utf-8'))
@@ -196,9 +207,21 @@ SCENE TYPES (use the right fields for each type):
 - "keypoints": 3-5 bulletPoints. headline. Narration: 30-50s.
 - "quote": quoteText + quoteAuthor. Narration: 15-25s.
 - "recap": 3-5 bulletPoints as takeaways. headline. Narration: 25-40s.
-- "outro": CTA. headline + subheadline + bodyText. Narration: 10-20s.
+- "cta": Subscribe call-to-action. headline + subheadline + bodyText. Narration: 10-15s.
+- "outro": Final sign-off. headline + subheadline. Narration: 5-10s.
 
-STRUCTURE: intro → 10-14 middle scenes (varied types, never same type back to back) → recap → outro
+STRUCTURE: intro → 10-14 middle scenes (varied types, never same type back to back) → recap → cta → outro
+
+IMPORTANT — The second-to-last scene MUST be type "cta" with:
+- headline: "Want More Like This?"
+- subheadline: "Follow @thriverichly on Facebook"
+- bodyText: "We drop new financial education content every week. Hit follow so you never miss out!"
+- narration: "If you found this helpful, make sure you follow us at Thrive Richly on Facebook. We post new financial education content every week, and you don't want to miss it. Hit that follow button now!"
+
+The FINAL scene MUST be type "outro" with:
+- headline: "@thriverichly"
+- subheadline: "Follow on Facebook for more"
+- narration: "Thanks for watching. See you in the next one!"
 
 COLOR SCHEME: Dark backgrounds (#0a0a0a to #1a1a2e). Use blue/green/gold accents. White text.
 
@@ -238,16 +261,16 @@ transitionToNext must be one of: "fade", "slide", "wipe", "none".`
 }
 
 // ============================================================================
-// STAGE 2: GENERATE VOICEOVER (OPTIONAL)
+// STAGE 2: GENERATE VOICEOVER VIA GOOGLE CLOUD TTS
 // ============================================================================
 
 async function generateVoiceover(script) {
-  if (!ELEVENLABS_API_KEY) {
-    console.log('⏭️  No ELEVENLABS_API_KEY — skipping voiceover (text-only mode)')
+  if (!GOOGLE_TTS_API_KEY) {
+    console.log('⏭️  No GOOGLE_TTS_API_KEY — skipping voiceover (text-only mode)')
     return false
   }
 
-  console.log(`🎙️  Generating voiceover for ${script.scenes.length} scenes...`)
+  console.log(`🎙️  Generating voiceover with Google TTS for ${script.scenes.length} scenes...`)
   fs.mkdirSync(VOICEOVER_DIR, { recursive: true })
 
   let successCount = 0
@@ -255,35 +278,35 @@ async function generateVoiceover(script) {
   for (const scene of script.scenes) {
     try {
       const response = await fetch(
-        `https://api.elevenlabs.io/v1/text-to-speech/${ELEVENLABS_VOICE_ID}`,
+        `https://texttospeech.googleapis.com/v1/text:synthesize?key=${GOOGLE_TTS_API_KEY}`,
         {
           method: 'POST',
-          headers: {
-            'xi-api-key': ELEVENLABS_API_KEY,
-            'Content-Type': 'application/json',
-            'Accept': 'audio/mpeg',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            text: scene.narration,
-            model_id: 'eleven_multilingual_v2',
-            voice_settings: { stability: 0.6, similarity_boost: 0.75, style: 0.2 },
+            input: { text: scene.narration },
+            voice: GOOGLE_TTS_VOICE,
+            audioConfig: GOOGLE_TTS_AUDIO_CONFIG,
           }),
         }
       )
 
       if (!response.ok) {
         const errorText = await response.text()
-        console.error(`  ✗ ${scene.id}: ElevenLabs ${response.status} — ${errorText}`)
+        console.error(`  ✗ ${scene.id}: Google TTS ${response.status} — ${errorText}`)
         continue
       }
 
-      const buf = Buffer.from(await response.arrayBuffer())
-      fs.writeFileSync(path.join(VOICEOVER_DIR, `${scene.id}.mp3`), buf)
-      console.log(`  ✓ ${scene.id} (${(buf.byteLength / 1024).toFixed(0)} KB)`)
+      const data = await response.json()
+
+      // Google TTS returns base64-encoded audio in audioContent
+      const audioBuffer = Buffer.from(data.audioContent, 'base64')
+      fs.writeFileSync(path.join(VOICEOVER_DIR, `${scene.id}.mp3`), audioBuffer)
+      console.log(`  ✓ ${scene.id} (${(audioBuffer.byteLength / 1024).toFixed(0)} KB)`)
       successCount++
 
-      // Rate limit pause
-      await new Promise(r => setTimeout(r, 500))
+      // Small pause between requests to be respectful of rate limits
+      await sleep(200)
+
     } catch (err) {
       console.error(`  ✗ ${scene.id}: ${err.message}`)
     }
@@ -293,7 +316,7 @@ async function generateVoiceover(script) {
   if (!hasVoiceover) {
     console.warn(`⚠️ Only ${successCount}/${script.scenes.length} voiceovers generated — falling back to text-only`)
   } else {
-    console.log(`✅ All ${successCount} voiceovers generated`)
+    console.log(`✅ All ${successCount} voiceovers generated via Google TTS`)
   }
 
   return hasVoiceover
@@ -342,8 +365,8 @@ async function postToFacebook(script) {
   const videoSizeMB = (videoBuffer.byteLength / (1024 * 1024)).toFixed(1)
   console.log(`   Video size: ${videoSizeMB} MB`)
 
-  // Build caption
-  const caption = `💡 ${script.topic}\n\n${script.description}\n\n🔔 Follow Thrive Richly for weekly financial education!\n\n#ThriveRichly #FinancialEducation #WealthMindset #MoneyTips`
+  // Build caption with subscribe CTA
+  const caption = `💡 ${script.topic}\n\n${script.description}\n\n🔔 Follow @thriverichly for weekly financial education!\n💰 New videos every week — don't miss out!\n\n#ThriveRichly #FinancialEducation #WealthMindset #MoneyTips #PersonalFinance`
 
   // Step 1: Start upload session
   const startRes = await fetch(
@@ -409,7 +432,7 @@ async function postToFacebook(script) {
         title: script.topic,
         description: caption,
         published: false,
-        scheduled_publish_time: Math.floor(Date.now() / 1000) + 3600,        
+        scheduled_publish_time: Math.floor(Date.now() / 1000) + 3600,
       }),
     }
   )
@@ -439,7 +462,7 @@ async function main() {
   // 2. Generate script via Claude
   const script = await generateScript(pending.title)
 
-  // 3. Generate voiceover (optional)
+  // 3. Generate voiceover via Google TTS (optional)
   const hasVoiceover = await generateVoiceover(script)
 
   // If no voiceover, add estimated durations to script for Remotion
