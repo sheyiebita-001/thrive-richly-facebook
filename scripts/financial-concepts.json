@@ -31,7 +31,8 @@
       "example": "A rental property that pays you $500/month rent = asset. A car that costs you $400/month in payments = liability.",
       "diagram": "two_columns",
       "keyTakeaway": "Before any purchase, ask: does this put money in my pocket or take it out?",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-02-25"
     },
     {
       "id": 4,
