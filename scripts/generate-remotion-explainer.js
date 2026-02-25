@@ -317,7 +317,7 @@ function renderVideo(script, hasVoiceover) {
 
   try {
     execSync(
-      `npx remotion render FinancialExplainer "${VIDEO_OUTPUT}" --props="public/current-script.json" --concurrency=2 --gl=angle --timeout=120000`,
+      `npx remotion render src/index.ts FinancialExplainer "${VIDEO_OUTPUT}" --props="public/current-script.json" --concurrency=2 --gl=angle --timeout=120000`,
       {
         stdio: 'inherit',
         cwd: REMOTION_DIR,
