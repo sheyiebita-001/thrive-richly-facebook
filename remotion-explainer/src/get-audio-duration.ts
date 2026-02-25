@@ -1,6 +1,6 @@
-// Audio duration is calculated by the orchestrator and passed via sceneDurations prop
-// This file is kept as a placeholder for future use
+// Audio duration is calculated by the orchestrator script and passed via props.
+// This stub exists so other files can import it without breaking.
+
 export const getAudioDuration = async (_src: string): Promise<number> => {
-  // Duration comes from orchestrator, not measured here
   return 0;
 };
