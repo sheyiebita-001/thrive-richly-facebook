@@ -489,6 +489,17 @@ async function main() {
   markTopicComplete(topics, pending.slug)
   console.log(`✅ Marked "${pending.slug}" as complete`)
 
+  // 7. Archive video to videos/ folder for YouTube cross-posting
+  try {
+    const videosDir = path.join(__dirname, '..', 'videos')
+    fs.mkdirSync(videosDir, { recursive: true })
+    const archivePath = path.join(videosDir, `${pending.slug}.mp4`)
+    fs.copyFileSync(VIDEO_OUTPUT, archivePath)
+    console.log(`📁 Video archived: videos/${pending.slug}.mp4`)
+  } catch (err) {
+    console.error(`⚠️ Video archive failed: ${err.message}`)
+  }
+
   // Cleanup temp files
   try {
     fs.rmSync(VOICEOVER_DIR, { recursive: true, force: true })
