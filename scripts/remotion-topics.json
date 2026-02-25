@@ -1,0 +1,25 @@
+{
+  "description": "Remotion financial explainer video topics for Thrive Richly. Script picks next 'pending' topic each run.",
+  "topics": [
+    { "slug": "compound-interest", "title": "Compound Interest: How Your Money Grows Exponentially", "status": "pending" },
+    { "slug": "dollar-cost-averaging", "title": "Dollar Cost Averaging: The Power of Consistent Investing", "status": "pending" },
+    { "slug": "rule-of-72", "title": "The Rule of 72: Quick Mental Math for Investors", "status": "pending" },
+    { "slug": "index-funds-vs-active", "title": "Index Funds vs Active Management: What the Data Shows", "status": "pending" },
+    { "slug": "emergency-funds", "title": "Emergency Funds: How Much You Really Need", "status": "pending" },
+    { "slug": "inflation-wealth-destroyer", "title": "Inflation: The Silent Wealth Destroyer", "status": "pending" },
+    { "slug": "debt-snowball-vs-avalanche", "title": "Debt Snowball vs Debt Avalanche: Which Strategy Wins", "status": "pending" },
+    { "slug": "tax-advantaged-accounts", "title": "Tax-Advantaged Accounts: 401k, IRA, and Roth Explained", "status": "pending" },
+    { "slug": "diversification", "title": "Diversification: Why You Should Never Put All Eggs in One Basket", "status": "pending" },
+    { "slug": "time-value-of-money", "title": "The Time Value of Money: Why a Dollar Today Beats a Dollar Tomorrow", "status": "pending" },
+    { "slug": "credit-scores", "title": "Credit Scores: How They Work and Why They Matter", "status": "pending" },
+    { "slug": "real-estate-vs-stocks", "title": "Real Estate vs Stock Market: 30-Year Comparison", "status": "pending" },
+    { "slug": "behavioral-finance", "title": "Behavioral Finance: Why Smart People Make Dumb Money Decisions", "status": "pending" },
+    { "slug": "passive-income", "title": "The Power of Passive Income Streams", "status": "pending" },
+    { "slug": "social-security", "title": "Social Security: What You Need to Know Before Retirement", "status": "pending" },
+    { "slug": "crypto-basics", "title": "Cryptocurrency Basics: Blockchain, Bitcoin, and Risk", "status": "pending" },
+    { "slug": "mutual-fund-costs", "title": "The Hidden Costs of Mutual Funds: Expense Ratios Explained", "status": "pending" },
+    { "slug": "central-banks", "title": "How Central Banks Control the Economy", "status": "pending" },
+    { "slug": "wealth-in-20s-vs-40s", "title": "Building Wealth in Your 20s vs Starting in Your 40s", "status": "pending" },
+    { "slug": "financial-independence", "title": "Financial Independence and the 4% Rule", "status": "pending" }
+  ]
+}
