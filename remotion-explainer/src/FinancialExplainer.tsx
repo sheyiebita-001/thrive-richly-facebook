@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, staticFile, useVideoConfig } from "remotion";
-import { Audio } from "@remotion/media";
+import { Audio } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
 import { slide } from "@remotion/transitions/slide";
