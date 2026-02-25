@@ -1,9 +1,6 @@
-import { Input, ALL_FORMATS, UrlSource } from "mediabunny";
-
-export const getAudioDuration = async (src: string): Promise<number> => {
-  const input = new Input({
-    formats: ALL_FORMATS,
-    source: new UrlSource(src, { getRetryDelay: () => null }),
-  });
-  return await input.computeDuration();
+// Audio duration is calculated by the orchestrator and passed via sceneDurations prop
+// This file is kept as a placeholder for future use
+export const getAudioDuration = async (_src: string): Promise<number> => {
+  // Duration comes from orchestrator, not measured here
+  return 0;
 };
