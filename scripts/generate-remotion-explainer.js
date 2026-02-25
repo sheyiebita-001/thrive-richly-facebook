@@ -49,72 +49,74 @@ async function sleep(ms) {
 }
 
 async function callClaude(prompt, maxTokens = 8000) {
-  const MAX_RETRIES = 4
-  const BASE_DELAY = 5000 // 5 seconds
+  const MAX_RETRIES = 5
+  const BASE_DELAY = 10000 // 10 seconds
+  const MODELS = ['claude-sonnet-4-20250514', 'claude-haiku-4-5-20251001']
 
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    try {
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': ANTHROPIC_API_KEY,
-          'anthropic-version': '2023-06-01',
-        },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: maxTokens,
-          messages: [{ role: 'user', content: prompt }],
-        }),
-      })
+  for (const model of MODELS) {
+    console.log(`  🔄 Trying model: ${model}`)
 
-      // Retry on overloaded (529) or server errors (500, 502, 503)
-      if (response.status === 529 || response.status >= 500) {
-        const errText = await response.text()
-        const delayMs = BASE_DELAY * Math.pow(2, attempt - 1) // exponential: 5s, 10s, 20s, 40s
-        console.warn(`  ⚠️ Claude API ${response.status} (attempt ${attempt}/${MAX_RETRIES}) — retrying in ${delayMs / 1000}s...`)
-        if (attempt === MAX_RETRIES) {
-          throw new Error(`Claude API error ${response.status} after ${MAX_RETRIES} attempts: ${errText}`)
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+      try {
+        const response = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': ANTHROPIC_API_KEY,
+            'anthropic-version': '2023-06-01',
+          },
+          body: JSON.stringify({
+            model,
+            max_tokens: maxTokens,
+            messages: [{ role: 'user', content: prompt }],
+          }),
+        })
+
+        // Retry on overloaded (529) or server errors (500, 502, 503)
+        if (response.status === 529 || response.status >= 500) {
+          const delayMs = BASE_DELAY * Math.pow(2, attempt - 1) // 10s, 20s, 40s, 80s, 160s
+          console.warn(`  ⚠️ ${model} — ${response.status} (attempt ${attempt}/${MAX_RETRIES}) — retrying in ${delayMs / 1000}s...`)
+          if (attempt === MAX_RETRIES) break // try next model
+          await sleep(delayMs)
+          continue
         }
-        await sleep(delayMs)
-        continue
-      }
 
-      // Retry on rate limit (429) with longer delay
-      if (response.status === 429) {
-        const retryAfter = response.headers.get('retry-after')
-        const delayMs = retryAfter ? parseInt(retryAfter, 10) * 1000 : BASE_DELAY * Math.pow(2, attempt)
-        console.warn(`  ⚠️ Claude API rate limited (attempt ${attempt}/${MAX_RETRIES}) — retrying in ${delayMs / 1000}s...`)
-        if (attempt === MAX_RETRIES) {
-          const errText = await response.text()
-          throw new Error(`Claude API rate limited after ${MAX_RETRIES} attempts: ${errText}`)
+        // Retry on rate limit (429) with longer delay
+        if (response.status === 429) {
+          const retryAfter = response.headers.get('retry-after')
+          const delayMs = retryAfter ? parseInt(retryAfter, 10) * 1000 : BASE_DELAY * Math.pow(2, attempt)
+          console.warn(`  ⚠️ ${model} — rate limited (attempt ${attempt}/${MAX_RETRIES}) — retrying in ${delayMs / 1000}s...`)
+          if (attempt === MAX_RETRIES) break // try next model
+          await sleep(delayMs)
+          continue
         }
-        await sleep(delayMs)
-        continue
-      }
 
-      // Non-retryable error
-      if (!response.ok) {
-        const err = await response.text()
-        throw new Error(`Claude API error ${response.status}: ${err}`)
-      }
+        // Non-retryable error (e.g. 401 bad key, 400 bad request)
+        if (!response.ok) {
+          const err = await response.text()
+          throw new Error(`Claude API error ${response.status}: ${err}`)
+        }
 
-      const data = await response.json()
-      if (attempt > 1) console.log(`  ✅ Claude API succeeded on attempt ${attempt}`)
-      return data.content[0].text
+        const data = await response.json()
+        console.log(`  ✅ Success with ${model} on attempt ${attempt}`)
+        return data.content[0].text
 
-    } catch (err) {
-      // Network errors — retry
-      if (err.cause || err.code === 'ECONNRESET' || err.code === 'ETIMEDOUT') {
+      } catch (err) {
+        // If it's a non-retryable API error, throw immediately
+        if (err.message && err.message.startsWith('Claude API error')) throw err
+
+        // Network errors — retry
         const delayMs = BASE_DELAY * Math.pow(2, attempt - 1)
-        console.warn(`  ⚠️ Network error (attempt ${attempt}/${MAX_RETRIES}): ${err.message} — retrying in ${delayMs / 1000}s...`)
-        if (attempt === MAX_RETRIES) throw err
+        console.warn(`  ⚠️ Network error (attempt ${attempt}/${MAX_RETRIES}): ${err.message}`)
+        if (attempt === MAX_RETRIES) break // try next model
         await sleep(delayMs)
         continue
       }
-      throw err
     }
+    console.warn(`  ❌ ${model} failed all ${MAX_RETRIES} attempts, trying next model...`)
   }
+
+  throw new Error('All Claude models failed after retries — API may be down or key may be invalid')
 }
 
 function getNextTopic() {
