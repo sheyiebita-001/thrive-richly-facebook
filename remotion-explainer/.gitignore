@@ -1,0 +1,4 @@
+node_modules/
+out/
+public/voiceover/current/*.mp3
+public/current-script.json
