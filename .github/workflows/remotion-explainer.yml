@@ -20,7 +20,9 @@ jobs:
           node-version: '20'
       - name: Install Remotion dependencies
         working-directory: remotion-explainer
-        run: npm install
+        run: |
+          npm install
+          npm install mediabunny
       - name: Install system dependencies
         run: |
           sudo apt-get update -qq
