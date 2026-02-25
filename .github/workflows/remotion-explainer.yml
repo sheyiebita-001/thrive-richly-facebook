@@ -1,0 +1,60 @@
+name: Weekly Remotion Financial Explainer
+on:
+  schedule:
+    - cron: '0 9 * * 0'  # Sunday 9AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-remotion-explainer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Remotion dependencies
+        working-directory: remotion-explainer
+        run: npm install
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg libnss3 libatk1.0-0 libatk-bridge2.0-0 \
+            libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 \
+            libgbm1 libpango-1.0-0 libcairo2 libasound2t64
+
+      - name: Generate and post Remotion explainer
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+        run: node scripts/generate-remotion-explainer.js
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "remotion-bot@thriverichly.com"
+          git config --local user.name "Remotion Bot"
+          git add -A
+          git commit -m "🎬 Remotion explainer posted
+
+          Automated weekly Remotion financial explainer video.
+          Date: $(date -u +%Y-%m-%d)"
+          git push
