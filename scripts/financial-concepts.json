@@ -42,7 +42,8 @@
       "example": "You invest $200 every month into an index fund. Some months the price is high, some months low. After a year, your average cost per share is lower than if you'd tried to time the market.",
       "diagram": "bar_chart",
       "keyTakeaway": "Don't try to time the market. Consistency beats timing every time.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-02-26"
     },
     {
       "id": 5,
