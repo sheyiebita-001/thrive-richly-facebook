@@ -7118,7 +7118,9 @@
       "category": "Mindset & Success",
       "author": "",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-02-26"
     },
     {
       "id": 884,
@@ -7126,7 +7128,9 @@
       "category": "Leadership & Power",
       "author": "Joe Biden",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-02-26"
     },
     {
       "id": 885,
@@ -7134,7 +7138,9 @@
       "category": "Leadership & Power",
       "author": "Warren Buffett",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-02-26"
     },
     {
       "id": 886,
