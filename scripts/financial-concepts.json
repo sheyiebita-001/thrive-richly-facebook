@@ -64,7 +64,8 @@
       "example": "You own a house worth $300K, have $50K in investments, and $20K in savings. But you owe $200K on the mortgage and $10K on credit cards. Net worth: $160K.",
       "diagram": "balance_scale",
       "keyTakeaway": "Track your net worth monthly. The number matters more than your income.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-02-28"
     },
     {
       "id": 7,
