@@ -7061,7 +7061,9 @@
       "category": "Mindset & Success",
       "author": "Shiv Khera",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-01"
     },
     {
       "id": 875,
@@ -7069,7 +7071,9 @@
       "category": "Mindset & Success",
       "author": "",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-01"
     },
     {
       "id": 876,
@@ -7077,7 +7081,9 @@
       "category": "Mindset & Success",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-01"
     },
     {
       "id": 877,
