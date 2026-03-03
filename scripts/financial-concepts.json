@@ -97,7 +97,8 @@
       "example": "A 750 credit score could get you a 6% mortgage rate. A 620 score might get you 8%. On a $300K house, that difference costs you over $100K in extra interest.",
       "diagram": "gauge_meter",
       "keyTakeaway": "Pay bills on time, keep credit usage below 30%, and never close your oldest card.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-03-03"
     },
     {
       "id": 10,
