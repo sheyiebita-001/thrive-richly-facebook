@@ -1,7 +1,6 @@
 name: Daily Archetype Posts (5x/day)
 
 on:
-  # 5 separate triggers — one per posting slot
   schedule:
     - cron: '0 7 * * *'    # Slot 1 — 7 AM UTC (UK morning)
     - cron: '0 11 * * *'   # Slot 2 — 11 AM UTC (UK lunch / US morning)
@@ -9,7 +8,6 @@ on:
     - cron: '15 17 * * *'  # Slot 4 — 5:15 PM UTC (US afternoon)
     - cron: '0 21 * * *'   # Slot 5 — 9 PM UTC (US evening peak)
   
-  # Manual trigger — posts 1 immediately
   workflow_dispatch:
 
 permissions:
@@ -32,7 +30,16 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install sharp composio-core
+        run: npm install sharp
+
+      - name: Install system fonts (Poppins)
+        run: |
+          mkdir -p ~/.fonts
+          cd ~/.fonts
+          curl -sL "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Bold.ttf" -o Poppins-Bold.ttf
+          curl -sL "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Light.ttf" -o Poppins-Light.ttf
+          curl -sL "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Italic.ttf" -o Poppins-Italic.ttf
+          fc-cache -fv
 
       - name: Random delay (0-12 min) to vary posting time
         run: |
@@ -44,7 +51,8 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
-          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
         run: node scripts/post-archetype.js
 
       - name: Check for changes
