@@ -2,7 +2,6 @@ name: Daily Archetype Posts (5x/day)
 
 on:
   # 5 separate triggers — one per posting slot
-  # Each run takes ~3 mins instead of holding a runner for 16 hours
   schedule:
     - cron: '0 7 * * *'    # Slot 1 — 7 AM UTC (UK morning)
     - cron: '0 11 * * *'   # Slot 2 — 11 AM UTC (UK lunch / US morning)
@@ -19,7 +18,7 @@ permissions:
 jobs:
   post-archetype:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -35,9 +34,9 @@ jobs:
       - name: Install dependencies
         run: npm install sharp composio-core
 
-      - name: Random delay (0-25 min) to vary posting time
+      - name: Random delay (0-12 min) to vary posting time
         run: |
-          DELAY=$((RANDOM % 25))
+          DELAY=$((RANDOM % 13))
           echo "⏳ Waiting ${DELAY} minutes for natural timing..."
           sleep ${DELAY}m
 
