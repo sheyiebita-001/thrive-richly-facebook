@@ -1,0 +1,294 @@
+#!/usr/bin/env node
+
+/**
+ * Thrive Richly — Archetype Post (Single Post Per Run)
+ * 
+ * Called 5x/day by separate GitHub Actions cron triggers.
+ * Each run: picks ONE pending post → Claude caption → Unsplash image → 
+ * branded overlay → Facebook post → marks complete.
+ * 
+ * Based on Jeff Rose's Top 20 Highest-Paid Posts playbook.
+ * 10 proven archetypes × 100 topics = 1000 posts = 200 days.
+ * 
+ * Env vars: ANTHROPIC_API_KEY, UNSPLASH_ACCESS_KEY, COMPOSIO_API_KEY
+ * Packages: sharp, composio-core
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+// ============================================================================
+// CONFIG
+// ============================================================================
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+const UNSPLASH_ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
+const COMPOSIO_API_KEY = process.env.COMPOSIO_API_KEY;
+
+const TOPICS_FILE = path.join(__dirname, 'archetype-topics.json');
+const IMAGES_DIR = path.join(__dirname, '..', 'images', 'archetype-posts');
+
+const BRAND_COLORS = {
+  gold:          { accent: [196,154,42],  text: [245,245,245] },
+  crimson:       { accent: [204,51,51],   text: [245,245,245] },
+  electric_blue: { accent: [46,139,224],  text: [245,245,245] },
+  emerald:       { accent: [30,170,85],   text: [245,245,245] },
+  violet:        { accent: [155,64,208],  text: [245,245,245] },
+};
+
+if (!ANTHROPIC_API_KEY) { console.error('❌ ANTHROPIC_API_KEY required'); process.exit(1); }
+if (!COMPOSIO_API_KEY) { console.error('❌ COMPOSIO_API_KEY required'); process.exit(1); }
+
+const rand = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+
+// ============================================================================
+// CLAUDE API
+// ============================================================================
+async function generateCaption(post, archetype) {
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': ANTHROPIC_API_KEY,
+      'anthropic-version': '2023-06-01',
+    },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 1500,
+      system: `You are a viral Facebook content writer for "Thrive Richly", a financial education page targeting 22-45 year olds in the US, UK, Canada and Australia who want to build wealth.
+
+You write posts that earn thousands of dollars by following PROVEN FORMULAS from a page with 445K followers and 891M total views.
+
+RULES:
+1. NO hashtags — ever
+2. NO links in the post — kills organic reach
+3. Line break after every 1-2 sentences — mobile readability
+4. End EVERY post with the exact engagement CTA provided
+5. Follow the archetype formula PRECISELY — this is what makes it viral
+6. 150-400 words total
+7. Use SPECIFIC numbers, names, amounts — vague = scroll past
+8. Write in second person ("you") with occasional first person
+9. First line must be a scroll-stopper
+10. No emojis in the first 3 lines — let the words hit first. Use 2-4 emojis max in the rest.
+
+Return ONLY the caption text. No quotes, no explanation, no markdown.`,
+      messages: [{
+        role: 'user',
+        content: `Write a Facebook post using this EXACT archetype formula:
+
+ARCHETYPE: ${archetype.name}
+EARNING POTENTIAL: ${archetype.earning} per post (proven data)
+FORMULA: ${archetype.formula}
+EXAMPLE HOOK: "${archetype.example_hook}"
+
+TOPIC FOR THIS POST: "${post.topic}"
+ENGAGEMENT CTA (put at the very end): "${post.cta}"
+
+Write the full post now. Follow the formula exactly.`
+      }],
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`Claude API ${response.status}: ${err}`);
+  }
+
+  const data = await response.json();
+  return data.content[0].text.trim();
+}
+
+// ============================================================================
+// UNSPLASH
+// ============================================================================
+async function fetchUnsplashImage(query) {
+  if (!UNSPLASH_ACCESS_KEY) return null;
+
+  try {
+    const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=5&orientation=squarish&content_filter=high`;
+    const resp = await fetch(url, {
+      headers: { Authorization: `Client-ID ${UNSPLASH_ACCESS_KEY}` },
+    });
+    if (!resp.ok) return null;
+    let data = await resp.json();
+
+    if (!data.results?.length) {
+      const fb = await fetch(
+        `https://api.unsplash.com/search/photos?query=wealth+finance+success&per_page=5&orientation=squarish&content_filter=high`,
+        { headers: { Authorization: `Client-ID ${UNSPLASH_ACCESS_KEY}` } }
+      );
+      if (!fb.ok) return null;
+      data = await fb.json();
+      if (!data.results?.length) return null;
+    }
+
+    const photo = data.results[rand(0, Math.min(4, data.results.length - 1))];
+    const imgResp = await fetch(photo.urls.regular);
+    if (!imgResp.ok) return null;
+    const buffer = Buffer.from(await imgResp.arrayBuffer());
+
+    if (photo.links?.download_location) {
+      fetch(`${photo.links.download_location}?client_id=${UNSPLASH_ACCESS_KEY}`).catch(() => {});
+    }
+
+    console.log(`  📸 ${photo.user.name} via Unsplash`);
+    return { buffer, credit: photo.user.name };
+  } catch (err) {
+    console.warn(`  ⚠️ Unsplash: ${err.message}`);
+    return null;
+  }
+}
+
+// ============================================================================
+// BRANDED IMAGE — 1080x1080 via Sharp + SVG
+// ============================================================================
+async function createPostImage(caption, theme, unsplashImage, postId) {
+  const sharp = require('sharp');
+  const SIZE = 1080;
+  const colors = BRAND_COLORS[theme] || BRAND_COLORS.gold;
+  const [aR, aG, aB] = colors.accent;
+  const [tR, tG, tB] = colors.text;
+
+  const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+
+  // First 5 non-empty lines as hook text
+  const lines = caption.split('\n').filter(l => l.trim()).slice(0, 5);
+  const wrapped = [];
+  for (const line of lines) {
+    const words = line.split(' ');
+    let cur = '';
+    for (const w of words) {
+      if ((cur + ' ' + w).length > 30 && cur) { wrapped.push(cur); cur = w; }
+      else { cur = cur ? cur + ' ' + w : w; }
+    }
+    if (cur) wrapped.push(cur);
+    wrapped.push('');
+  }
+
+  let y = 180;
+  let svgText = '';
+  for (const line of wrapped) {
+    if (!line) { y += 14; continue; }
+    svgText += `<text x="80" y="${y}" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="40" fill="rgb(${tR},${tG},${tB})">${esc(line)}</text>\n`;
+    y += 50;
+  }
+
+  const creditLine = unsplashImage
+    ? `<text x="${SIZE-20}" y="${SIZE-8}" font-family="Arial,sans-serif" font-size="11" fill="rgb(70,70,70)" text-anchor="end">${esc(unsplashImage.credit)} / Unsplash</text>`
+    : '';
+
+  const svg = `<svg width="${SIZE}" height="${SIZE}" xmlns="http://www.w3.org/2000/svg">
+    <rect x="60" y="60" width="6" height="80" fill="rgb(${aR},${aG},${aB})"/>
+    ${svgText}
+    <rect x="80" y="${Math.min(y+20, 780)}" width="200" height="3" fill="rgb(${aR},${aG},${aB})"/>
+    <rect x="60" y="${SIZE-100}" width="${SIZE-120}" height="1" fill="rgb(55,55,55)"/>
+    <text x="80" y="${SIZE-58}" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="22" fill="rgb(${aR},${aG},${aB})">THRIVE RICHLY</text>
+    <text x="80" y="${SIZE-32}" font-family="Arial,sans-serif" font-size="17" fill="rgb(130,130,130)">Build wealth. Live free.</text>
+    ${creditLine}
+  </svg>`;
+
+  const svgBuf = Buffer.from(svg);
+  const overlayBuf = Buffer.from(`<svg width="${SIZE}" height="${SIZE}"><rect width="${SIZE}" height="${SIZE}" fill="rgba(12,12,14,0.82)"/></svg>`);
+
+  let result;
+  if (unsplashImage) {
+    result = await sharp(unsplashImage.buffer)
+      .resize(SIZE, SIZE, { fit: 'cover' })
+      .composite([{ input: overlayBuf, blend: 'over' }, { input: svgBuf, blend: 'over' }])
+      .png().toBuffer();
+  } else {
+    result = await sharp({ create: { width: SIZE, height: SIZE, channels: 3, background: { r: 12, g: 12, b: 14 } } })
+      .png().composite([{ input: svgBuf, blend: 'over' }]).png().toBuffer();
+  }
+
+  fs.mkdirSync(IMAGES_DIR, { recursive: true });
+  const imgPath = path.join(IMAGES_DIR, `post-${postId}.png`);
+  fs.writeFileSync(imgPath, result);
+  console.log(`  🖼️ ${Math.round(result.length / 1024)}KB`);
+  return imgPath;
+}
+
+// ============================================================================
+// FACEBOOK — Via Composio
+// ============================================================================
+async function postToFacebook(caption, imagePath) {
+  const { Composio } = require('composio-core');
+  const composio = new Composio(COMPOSIO_API_KEY);
+  const b64 = fs.readFileSync(imagePath).toString('base64');
+
+  try {
+    const result = await composio.executeAction('FACEBOOKPAGES_CREATE_PHOTO_POST', {
+      message: caption,
+      url: `data:image/png;base64,${b64}`,
+    });
+    if (result?.data?.id) {
+      console.log(`  ✅ FB ID: ${result.data.id}`);
+      return result.data.id;
+    }
+    return 'unknown';
+  } catch (err) {
+    console.error(`  ❌ FB: ${err.message}`);
+    return null;
+  }
+}
+
+// ============================================================================
+// MAIN — Single post per run
+// ============================================================================
+async function main() {
+  console.log('🚀 Thrive Richly — Archetype Post');
+  console.log(`📅 ${new Date().toISOString()}\n`);
+
+  const data = JSON.parse(fs.readFileSync(TOPICS_FILE, 'utf-8'));
+  const pending = data.posts.filter(p => p.status === 'pending');
+  const posted = data.posts.filter(p => p.status === 'posted').length;
+
+  if (!pending.length) {
+    console.log('✅ All 1000 posts complete!');
+    process.exit(0);
+  }
+
+  console.log(`📊 ${posted}/${data.totalPosts} posted | ${pending.length} remaining\n`);
+
+  // Pick the next pending post
+  const post = pending[0];
+  const arch = data.archetypes.find(a => a.key === post.archetype);
+
+  console.log(`📋 ${post.archetypeName} (${post.earning})`);
+  console.log(`💡 "${post.topic}"`);
+  console.log(`🎨 ${post.theme} | 🗣️ "${post.cta}"\n`);
+
+  // 1. Generate caption
+  console.log('🤖 Generating caption...');
+  const caption = await generateCaption(post, arch);
+  console.log(`  ✅ ${caption.length} chars\n`);
+
+  // 2. Fetch image
+  console.log(`🔍 Unsplash: "${post.unsplashQuery}"`);
+  const img = await fetchUnsplashImage(post.unsplashQuery);
+
+  // 3. Create branded image
+  console.log('🎨 Creating image...');
+  const imgPath = await createPostImage(caption, post.theme, img, post.id);
+
+  // 4. Post to Facebook
+  console.log('📤 Posting to Facebook...');
+  const fbId = await postToFacebook(caption, imgPath);
+
+  // 5. Update status
+  const orig = data.posts.find(p => p.id === post.id);
+  if (orig) {
+    orig.status = 'posted';
+    orig.postedAt = new Date().toISOString();
+    orig.postId = fbId;
+  }
+  fs.writeFileSync(TOPICS_FILE, JSON.stringify(data, null, 2));
+
+  // 6. Cleanup temp image
+  try { if (fs.existsSync(IMAGES_DIR)) fs.rmSync(IMAGES_DIR, { recursive: true }); } catch {}
+
+  const nowPosted = posted + 1;
+  const daysLeft = Math.ceil((data.totalPosts - nowPosted) / 5);
+  console.log(`\n🎉 Done — ${nowPosted}/${data.totalPosts} | ~${daysLeft} days remaining`);
+}
+
+main().catch(err => { console.error('❌', err); process.exit(1); });
