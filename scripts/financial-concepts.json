@@ -119,7 +119,8 @@
       "example": "You earn $5,000/month and pay $1,500 in debt payments (mortgage, car, student loans). Your DTI is 30% — healthy range.",
       "diagram": "percentage_bar",
       "keyTakeaway": "Keep your DTI below 36%. If it's higher, focus on paying down debt before borrowing more.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-03-05"
     },
     {
       "id": 12,
