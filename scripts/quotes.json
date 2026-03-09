@@ -6914,7 +6914,9 @@
       "category": "Resilience & Grit",
       "author": "Janet Fitch",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-09"
     },
     {
       "id": 851,
@@ -6922,7 +6924,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-09"
     },
     {
       "id": 852,
@@ -6930,7 +6934,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-09"
     },
     {
       "id": 853,
