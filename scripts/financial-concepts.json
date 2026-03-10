@@ -163,7 +163,8 @@
       "example": "That $5 daily coffee = $1,825/year. Invested at 10% for 30 years = $300,000+. The coffee doesn't cost $5. It costs $300K in future wealth.",
       "diagram": "fork_path",
       "keyTakeaway": "Think in opportunity costs. What is this purchase REALLY costing your future self?",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-03-10"
     },
     {
       "id": 16,
