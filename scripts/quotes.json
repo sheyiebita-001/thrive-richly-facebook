@@ -6857,7 +6857,9 @@
       "category": "Leadership & Power",
       "author": "Ralph Waldo Emerson",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-12"
     },
     {
       "id": 842,
@@ -6865,7 +6867,9 @@
       "category": "Leadership & Power",
       "author": "Lao Tzu",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-12"
     },
     {
       "id": 843,
@@ -6873,7 +6877,9 @@
       "category": "Leadership & Power",
       "author": "Mandy Hale",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-12"
     },
     {
       "id": 844,
