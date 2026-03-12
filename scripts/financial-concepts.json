@@ -185,7 +185,8 @@
       "example": "A savings account says 5% APY — that's what you actually earn. A credit card says 24% APR — but with monthly compounding, you're really paying 26.8%.",
       "diagram": "two_columns",
       "keyTakeaway": "When SAVING, look for high APY. When BORROWING, look for low APR.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-03-12"
     },
     {
       "id": 18,
