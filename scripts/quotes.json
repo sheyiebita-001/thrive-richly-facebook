@@ -6800,7 +6800,9 @@
       "category": "Leadership & Power",
       "author": "Cicero",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-15"
     },
     {
       "id": 833,
@@ -6808,7 +6810,9 @@
       "category": "Leadership & Power",
       "author": "Theodore Roosevelt",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-15"
     },
     {
       "id": 834,
@@ -6816,7 +6820,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-15"
     },
     {
       "id": 835,
