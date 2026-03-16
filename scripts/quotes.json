@@ -6781,7 +6781,9 @@
       "category": "Leadership & Power",
       "author": "Mark Cuban",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-16"
     },
     {
       "id": 830,
@@ -6789,7 +6791,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-16"
     },
     {
       "id": 831,
@@ -6797,7 +6801,9 @@
       "category": "Leadership & Power",
       "author": "Ralph Marston",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-16"
     },
     {
       "id": 832,
