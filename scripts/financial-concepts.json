@@ -218,7 +218,8 @@
       "example": "You buy a $200K property with $40K down (5x leverage). If the property rises 10% to $220K, your $40K made $20K — that's a 50% return on YOUR money.",
       "diagram": "lever_fulcrum",
       "keyTakeaway": "Leverage is powerful but dangerous. Only use it when the math clearly works in your favour.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-03-17"
     },
     {
       "id": 21,
