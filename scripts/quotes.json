@@ -6762,7 +6762,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-17"
     },
     {
       "id": 827,
@@ -6770,7 +6772,9 @@
       "category": "Leadership & Power",
       "author": "Oprah Winfrey",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-17"
     },
     {
       "id": 828,
@@ -6778,7 +6782,9 @@
       "category": "Leadership & Power",
       "author": "Jimi Hendrix",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-17"
     },
     {
       "id": 829,
