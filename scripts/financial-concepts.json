@@ -229,7 +229,8 @@
       "example": "Buy stock at $1,000, sell at $1,500. Your capital gain is $500. Hold it over a year and you might pay 15% tax ($75). Sell too early and you could pay 30%+ ($150+).",
       "diagram": "comparison_bars",
       "keyTakeaway": "Hold investments for at least a year when possible. Patience saves you money on taxes.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-03-18"
     },
     {
       "id": 22,
