@@ -6705,7 +6705,9 @@
       "category": "Leadership & Power",
       "author": "Socrates",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-20"
     },
     {
       "id": 818,
@@ -6713,7 +6715,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-20"
     },
     {
       "id": 819,
@@ -6721,7 +6725,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-20"
     },
     {
       "id": 820,
