@@ -6686,7 +6686,9 @@
       "category": "Leadership & Power",
       "author": "Heraclitus",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-21"
     },
     {
       "id": 815,
@@ -6694,7 +6696,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-21"
     },
     {
       "id": 816,
@@ -6702,7 +6706,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-21"
     },
     {
       "id": 817,
