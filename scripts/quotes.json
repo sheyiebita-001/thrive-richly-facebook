@@ -6648,7 +6648,9 @@
       "category": "Leadership & Power",
       "author": "Napoleon Bonaparte",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-23"
     },
     {
       "id": 809,
@@ -6656,7 +6658,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-23"
     },
     {
       "id": 810,
@@ -6664,7 +6668,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-23"
     },
     {
       "id": 811,
