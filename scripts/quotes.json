@@ -6610,7 +6610,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-25"
     },
     {
       "id": 803,
@@ -6618,7 +6620,9 @@
       "category": "Leadership & Power",
       "author": "Arnold Schwarzenegger",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-25"
     },
     {
       "id": 804,
@@ -6626,7 +6630,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-25"
     },
     {
       "id": 805,
