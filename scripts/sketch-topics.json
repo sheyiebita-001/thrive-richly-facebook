@@ -538,7 +538,8 @@
       "sketch": "stack",
       "takeaway": "Right now, open your bank statement. Cancel what you haven't used in 30 days. Do it today.",
       "category": "Money Hacks",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-03-25"
     },
     {
       "id": 34,
