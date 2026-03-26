@@ -6591,7 +6591,9 @@
       "category": "Leadership & Power",
       "author": "Booker T. Washington",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-26"
     },
     {
       "id": 800,
@@ -6599,7 +6601,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-26"
     },
     {
       "id": 801,
@@ -6607,7 +6611,9 @@
       "category": "Leadership & Power",
       "author": "Buddhist Saying",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-26"
     },
     {
       "id": 802,
