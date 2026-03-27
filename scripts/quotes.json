@@ -6572,7 +6572,9 @@
       "category": "Leadership & Power",
       "author": "Socrates",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-27"
     },
     {
       "id": 797,
@@ -6580,7 +6582,9 @@
       "category": "Leadership & Power",
       "author": "Albert Schweitzer",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-27"
     },
     {
       "id": 798,
@@ -6588,7 +6592,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-27"
     },
     {
       "id": 799,
