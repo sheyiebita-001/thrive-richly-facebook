@@ -328,7 +328,8 @@
       "example": "Stock drops 15% on bad news. You panic and sell. Next week it rebounds 20%. You locked in your losses while patient investors profited.",
       "diagram": "dip_recovery",
       "keyTakeaway": "Don't make financial decisions based on fear. Most dips are temporary.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-03-28"
     },
     {
       "id": 31,
