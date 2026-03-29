@@ -6534,7 +6534,9 @@
       "category": "Leadership & Power",
       "author": "Arnold Schwarzenegger",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-29"
     },
     {
       "id": 791,
@@ -6542,7 +6544,9 @@
       "category": "Leadership & Power",
       "author": "William Arthur Ward",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-29"
     },
     {
       "id": 792,
@@ -6550,7 +6554,9 @@
       "category": "Leadership & Power",
       "author": "Dale Carnegie",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-29"
     },
     {
       "id": 793,
