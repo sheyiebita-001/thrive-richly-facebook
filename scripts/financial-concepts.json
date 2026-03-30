@@ -350,7 +350,8 @@
       "example": "On a 30-year $300K mortgage, your first payment might be $700 interest and $300 principal. By year 25, it flips to $300 interest and $700 principal.",
       "diagram": "shifting_bars",
       "keyTakeaway": "Making extra payments early in a mortgage saves you the most money. Every extra dollar goes to principal.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-03-30"
     },
     {
       "id": 33,
