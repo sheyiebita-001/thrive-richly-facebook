@@ -6496,7 +6496,9 @@
       "category": "Leadership & Power",
       "author": "Gordon Eadie",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-31"
     },
     {
       "id": 785,
@@ -6504,7 +6506,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-31"
     },
     {
       "id": 786,
@@ -6512,7 +6516,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-03-31"
     },
     {
       "id": 787,
