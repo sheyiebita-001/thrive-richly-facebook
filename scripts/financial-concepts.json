@@ -372,7 +372,8 @@
       "example": "Your salary is $60,000 gross. After tax, pension, and insurance, your net take-home is $42,000. Budget based on $3,500/month, not $5,000.",
       "diagram": "shrinking_bar",
       "keyTakeaway": "Always budget based on net income. Gross income is a fantasy number.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-02"
     },
     {
       "id": 35,
