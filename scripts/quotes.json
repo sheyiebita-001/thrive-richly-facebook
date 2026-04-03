@@ -6439,7 +6439,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-03"
     },
     {
       "id": 776,
@@ -6447,7 +6449,9 @@
       "category": "Leadership & Power",
       "author": "Phil Jackson",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-03"
     },
     {
       "id": 777,
@@ -6455,7 +6459,9 @@
       "category": "Leadership & Power",
       "author": "Richard Branson",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-03"
     },
     {
       "id": 778,
