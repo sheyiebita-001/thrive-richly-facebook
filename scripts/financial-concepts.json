@@ -383,7 +383,8 @@
       "example": "A new car loses 20% of its value the moment you drive it off the lot. A $40,000 car is worth $32,000 the same day. After 5 years, maybe $16,000.",
       "diagram": "declining_curve",
       "keyTakeaway": "Buy depreciating assets used. Let someone else take the biggest hit.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-03"
     },
     {
       "id": 36,
