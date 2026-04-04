@@ -6420,7 +6420,9 @@
       "category": "Leadership & Power",
       "author": "Ralph Marston",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-04"
     },
     {
       "id": 773,
@@ -6428,7 +6430,9 @@
       "category": "Leadership & Power",
       "author": "Bernhard Langer",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-04"
     },
     {
       "id": 774,
@@ -6436,7 +6440,9 @@
       "category": "Leadership & Power",
       "author": "Porter Gale",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-04"
     },
     {
       "id": 775,
