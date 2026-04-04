@@ -394,7 +394,8 @@
       "example": "Age 25: 90% stocks, 10% bonds (aggressive). Age 50: 60% stocks, 30% bonds, 10% cash (moderate). Age 70: 30% stocks, 50% bonds, 20% cash (conservative).",
       "diagram": "pie_chart",
       "keyTakeaway": "Review your portfolio once a year. Rebalance to stay aligned with your goals.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-04"
     },
     {
       "id": 37,
