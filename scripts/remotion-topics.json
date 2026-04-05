@@ -58,7 +58,8 @@
     {
       "slug": "time-value-of-money",
       "title": "The Time Value of Money: Why a Dollar Today Beats a Dollar Tomorrow",
-      "status": "pending"
+      "status": "complete",
+      "completedAt": "2026-04-05"
     },
     {
       "slug": "credit-scores",
