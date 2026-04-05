@@ -6401,7 +6401,9 @@
       "category": "Leadership & Power",
       "author": "Tom Peters",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-05"
     },
     {
       "id": 770,
@@ -6409,7 +6411,9 @@
       "category": "Leadership & Power",
       "author": "Michael Jordan",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-05"
     },
     {
       "id": 771,
@@ -6417,7 +6421,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-05"
     },
     {
       "id": 772,
