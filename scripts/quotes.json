@@ -6382,7 +6382,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-06"
     },
     {
       "id": 767,
@@ -6390,7 +6392,9 @@
       "category": "Leadership & Power",
       "author": "Jim Collins",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-06"
     },
     {
       "id": 768,
@@ -6398,7 +6402,9 @@
       "category": "Leadership & Power",
       "author": "George Patton",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-06"
     },
     {
       "id": 769,
