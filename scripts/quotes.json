@@ -6344,7 +6344,9 @@
       "category": "Leadership & Power",
       "author": "Daniele Vare",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-08"
     },
     {
       "id": 761,
@@ -6352,7 +6354,9 @@
       "category": "Leadership & Power",
       "author": "Gene Mauch",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-08"
     },
     {
       "id": 762,
@@ -6360,7 +6364,9 @@
       "category": "Leadership & Power",
       "author": "Mahatma Gandhi",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-08"
     },
     {
       "id": 763,
