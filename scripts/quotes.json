@@ -6306,7 +6306,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-10"
     },
     {
       "id": 755,
@@ -6314,7 +6316,9 @@
       "category": "Leadership & Power",
       "author": "Napoleon Bonaparte",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-10"
     },
     {
       "id": 756,
@@ -6322,7 +6326,9 @@
       "category": "Leadership & Power",
       "author": "Frank Sinatra",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-10"
     },
     {
       "id": 757,
