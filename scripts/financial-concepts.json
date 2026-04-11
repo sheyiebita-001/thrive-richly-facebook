@@ -460,7 +460,8 @@
       "example": "You invest $10,000 (your principal). After 5 years at 8%, your account holds $14,693. The principal is still $10,000 — the extra $4,693 is your return.",
       "diagram": "stacking_blocks",
       "keyTakeaway": "Protect your principal. Gains come and go, but losing your base capital is the real danger.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-11"
     },
     {
       "id": 43,
