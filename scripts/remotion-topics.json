@@ -64,7 +64,8 @@
     {
       "slug": "credit-scores",
       "title": "Credit Scores: How They Work and Why They Matter",
-      "status": "pending"
+      "status": "complete",
+      "completedAt": "2026-04-12"
     },
     {
       "slug": "real-estate-vs-stocks",
