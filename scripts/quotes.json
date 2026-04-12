@@ -6276,7 +6276,9 @@
       "category": "Leadership & Power",
       "author": "Desmond Tutu",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-12"
     },
     {
       "id": 750,
@@ -6284,7 +6286,9 @@
       "category": "Leadership & Power",
       "author": "African Proverb",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-12"
     },
     {
       "id": 751,
@@ -6292,7 +6296,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-12"
     },
     {
       "id": 752,
