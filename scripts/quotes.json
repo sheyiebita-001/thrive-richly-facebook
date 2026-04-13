@@ -6257,7 +6257,9 @@
       "category": "Leadership & Power",
       "author": "Theodore Roosevelt",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-13"
     },
     {
       "id": 747,
@@ -6265,7 +6267,9 @@
       "category": "Leadership & Power",
       "author": "Ralph Nader",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-13"
     },
     {
       "id": 748,
@@ -6273,7 +6277,9 @@
       "category": "Leadership & Power",
       "author": "Jim Rohn",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-13"
     },
     {
       "id": 749,
