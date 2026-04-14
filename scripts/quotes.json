@@ -6238,7 +6238,9 @@
       "category": "Leadership & Power",
       "author": "Thomas Paine",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-14"
     },
     {
       "id": 744,
@@ -6246,7 +6248,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-14"
     },
     {
       "id": 745,
@@ -6254,7 +6258,9 @@
       "category": "Leadership & Power",
       "author": "Dwight D. Eisenhower",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-14"
     },
     {
       "id": 746,
