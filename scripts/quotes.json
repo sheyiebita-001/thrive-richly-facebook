@@ -6219,7 +6219,9 @@
       "category": "Leadership & Power",
       "author": "Douglas MacArthur",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-15"
     },
     {
       "id": 741,
@@ -6227,7 +6229,9 @@
       "category": "Leadership & Power",
       "author": "Publilius Syrus",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-15"
     },
     {
       "id": 742,
@@ -6235,7 +6239,9 @@
       "category": "Leadership & Power",
       "author": "Plato",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-15"
     },
     {
       "id": 743,
