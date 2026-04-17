@@ -6181,7 +6181,9 @@
       "category": "Leadership & Power",
       "author": "John Wooden",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-17"
     },
     {
       "id": 735,
@@ -6189,7 +6191,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-17"
     },
     {
       "id": 736,
@@ -6197,7 +6201,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-17"
     },
     {
       "id": 737,
