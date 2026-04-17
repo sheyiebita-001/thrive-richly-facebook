@@ -515,7 +515,8 @@
       "example": "You want $50K/year in retirement. $50,000 ÷ 0.04 = $1,250,000 needed. Once your portfolio hits $1.25M, you could live off 4% withdrawals indefinitely.",
       "diagram": "percentage_bar",
       "keyTakeaway": "Multiply your annual expenses by 25 to find your financial freedom number.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-17"
     },
     {
       "id": 48,
