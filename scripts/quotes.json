@@ -6162,7 +6162,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-18"
     },
     {
       "id": 732,
@@ -6170,7 +6172,9 @@
       "category": "Leadership & Power",
       "author": "Ray Kroc",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-18"
     },
     {
       "id": 733,
@@ -6178,7 +6182,9 @@
       "category": "Leadership & Power",
       "author": "Orrin Woodward",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-18"
     },
     {
       "id": 734,
