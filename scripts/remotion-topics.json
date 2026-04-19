@@ -70,7 +70,8 @@
     {
       "slug": "real-estate-vs-stocks",
       "title": "Real Estate vs Stock Market: 30-Year Comparison",
-      "status": "pending"
+      "status": "complete",
+      "completedAt": "2026-04-19"
     },
     {
       "slug": "behavioral-finance",
