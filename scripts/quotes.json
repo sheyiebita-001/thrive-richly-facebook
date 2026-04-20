@@ -6124,7 +6124,9 @@
       "category": "Leadership & Power",
       "author": "John Buchan",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-20"
     },
     {
       "id": 726,
@@ -6132,7 +6134,9 @@
       "category": "Leadership & Power",
       "author": "Abraham Lincoln",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-20"
     },
     {
       "id": 727,
@@ -6140,7 +6144,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-20"
     },
     {
       "id": 728,
