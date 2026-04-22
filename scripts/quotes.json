@@ -6086,7 +6086,9 @@
       "category": "Leadership & Power",
       "author": "Grace Hopper",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-22"
     },
     {
       "id": 720,
@@ -6094,7 +6096,9 @@
       "category": "Leadership & Power",
       "author": "John Maxwell",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-22"
     },
     {
       "id": 721,
@@ -6102,7 +6106,9 @@
       "category": "Leadership & Power",
       "author": "John C. Maxwell",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-22"
     },
     {
       "id": 722,
