@@ -548,7 +548,8 @@
       "example": "You short a stock at $100. It drops to $70. You buy it back, return the shares, pocket $30 per share. But if it rises to $200, you lose $100 per share.",
       "diagram": "up_down_arrows",
       "keyTakeaway": "Short selling is for professionals. If you're learning, stick to buying things you believe will go up.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-22"
     },
     {
       "id": 51,
