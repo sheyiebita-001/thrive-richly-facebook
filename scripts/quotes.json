@@ -6067,7 +6067,9 @@
       "category": "Leadership & Power",
       "author": "Theodore Roosevelt",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-23"
     },
     {
       "id": 717,
@@ -6075,7 +6077,9 @@
       "category": "Leadership & Power",
       "author": "Mahatma Gandhi",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-23"
     },
     {
       "id": 718,
@@ -6083,7 +6087,9 @@
       "category": "Leadership & Power",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-23"
     },
     {
       "id": 719,
