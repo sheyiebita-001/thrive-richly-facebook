@@ -559,7 +559,8 @@
       "example": "$1,000 invested today at 10% is worth $2,594 in 10 years. $1,000 received in 10 years is still just $1,000. Same amount, wildly different value.",
       "diagram": "timeline",
       "keyTakeaway": "Never delay investing or collecting money. Time is literally money.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-23"
     },
     {
       "id": 52,
