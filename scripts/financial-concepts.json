@@ -570,7 +570,8 @@
       "example": "You have $10K and borrow $10K on margin. Your $20K investment rises 20% = $4K profit (40% return on your money). But a 20% drop = $4K loss, and you still owe the $10K.",
       "diagram": "lever_fulcrum",
       "keyTakeaway": "Margin is a tool, not a strategy. Never use margin money you can't afford to lose.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-24"
     },
     {
       "id": 53,
