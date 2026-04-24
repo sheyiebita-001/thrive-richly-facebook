@@ -6048,7 +6048,9 @@
       "category": "Leadership & Power",
       "author": "Beyonce",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-24"
     },
     {
       "id": 714,
@@ -6056,7 +6058,9 @@
       "category": "Leadership & Power",
       "author": "Abraham Lincoln",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-24"
     },
     {
       "id": 715,
@@ -6064,7 +6068,9 @@
       "category": "Leadership & Power",
       "author": "John Quincy Adams",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-24"
     },
     {
       "id": 716,
