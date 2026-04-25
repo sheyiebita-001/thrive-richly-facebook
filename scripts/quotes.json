@@ -6029,7 +6029,9 @@
       "category": "Leadership & Power",
       "author": "Ronald Reagan",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-25"
     },
     {
       "id": 711,
@@ -6037,7 +6039,9 @@
       "category": "Leadership & Power",
       "author": "Simon Sinek",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-25"
     },
     {
       "id": 712,
@@ -6045,7 +6049,9 @@
       "category": "Leadership & Power",
       "author": "Margaret Thatcher",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-25"
     },
     {
       "id": 713,
