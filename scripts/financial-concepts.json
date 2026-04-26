@@ -592,7 +592,8 @@
       "example": "Salary hits your account on the 1st. By the 2nd, 20% has auto-transferred to investments. You budget the remaining 80% for everything else. Saving happens before spending.",
       "diagram": "flow_arrows",
       "keyTakeaway": "Automate your savings. If you wait until the end of the month, there's never anything left.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-26"
     },
     {
       "id": 55,
