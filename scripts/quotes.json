@@ -5991,7 +5991,9 @@
       "category": "Resilience & Grit",
       "author": "Billie Jean King",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-27"
     },
     {
       "id": 705,
@@ -5999,7 +6001,9 @@
       "category": "Resilience & Grit",
       "author": "Arnold Schwarzenegger",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-27"
     },
     {
       "id": 706,
@@ -6007,7 +6011,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-27"
     },
     {
       "id": 707,
