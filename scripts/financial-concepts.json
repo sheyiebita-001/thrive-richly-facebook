@@ -603,7 +603,8 @@
       "example": "You borrow $200K to buy a house. The house IS the collateral. If you stop paying, the bank takes the house through foreclosure.",
       "diagram": "shield",
       "keyTakeaway": "Only pledge collateral you understand. Losing your home over a bad business loan is devastating.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-28"
     },
     {
       "id": 56,
