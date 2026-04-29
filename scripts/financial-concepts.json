@@ -614,7 +614,8 @@
       "example": "During a crash, the market bounces 8% in a week. 'It's recovering!' people say. Then it drops another 15%. The bounce was just a pause in the decline.",
       "diagram": "dip_recovery",
       "keyTakeaway": "Don't confuse a bounce for a recovery. Zoom out and look at the trend before acting.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-29"
     },
     {
       "id": 57,
