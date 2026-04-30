@@ -5934,7 +5934,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-30"
     },
     {
       "id": 696,
@@ -5942,7 +5944,9 @@
       "category": "Resilience & Grit",
       "author": "Robert Kiyosaki",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-30"
     },
     {
       "id": 697,
@@ -5950,7 +5954,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-04-30"
     },
     {
       "id": 698,
