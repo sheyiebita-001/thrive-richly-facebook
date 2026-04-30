@@ -625,7 +625,8 @@
       "example": "Central bank raises interest rates to 5%. Your mortgage payment goes up $300/month. But your savings account now pays 4.5% instead of 0.5%.",
       "diagram": "balance_scale",
       "keyTakeaway": "High rates = save more, borrow less. Low rates = borrow strategically, invest aggressively.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-04-30"
     },
     {
       "id": 58,
