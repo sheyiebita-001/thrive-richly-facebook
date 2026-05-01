@@ -636,7 +636,8 @@
       "example": "You invest $100K for 30 years at 8%. With a 0.1% expense ratio: $932K. With a 1% expense ratio: $761K. That 0.9% difference cost you $171,000.",
       "diagram": "comparison_bars",
       "keyTakeaway": "Always check expense ratios. Anything over 0.5% should have a very good reason.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-01"
     },
     {
       "id": 59,
