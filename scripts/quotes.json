@@ -5915,7 +5915,9 @@
       "category": "Resilience & Grit",
       "author": "Henry Rollins",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-01"
     },
     {
       "id": 693,
@@ -5923,7 +5925,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-01"
     },
     {
       "id": 694,
@@ -5931,7 +5935,9 @@
       "category": "Resilience & Grit",
       "author": "Alexander Graham Bell",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-01"
     },
     {
       "id": 695,
