@@ -5896,7 +5896,9 @@
       "category": "Resilience & Grit",
       "author": "Aristotle",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-02"
     },
     {
       "id": 690,
@@ -5904,7 +5906,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-02"
     },
     {
       "id": 691,
@@ -5912,7 +5916,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-02"
     },
     {
       "id": 692,
