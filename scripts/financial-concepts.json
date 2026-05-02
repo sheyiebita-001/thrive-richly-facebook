@@ -647,7 +647,8 @@
       "example": "Borrow $300K at 6% for 30 years. Monthly payment: $1,799. Total paid over 30 years: $647,515. You paid $347K in interest — more than the house itself.",
       "diagram": "timeline",
       "keyTakeaway": "A 15-year mortgage saves you hundreds of thousands in interest vs a 30-year. Consider the trade-off.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-02"
     },
     {
       "id": 60,
