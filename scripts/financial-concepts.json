@@ -658,7 +658,8 @@
       "example": "After a medical emergency, you owe $150K with no way to repay. Bankruptcy can discharge most of that debt, giving you a fresh start — but your credit score drops to the 400s.",
       "diagram": "reset_button",
       "keyTakeaway": "Bankruptcy exists for genuine emergencies. Build an emergency fund so you never need it.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-03"
     },
     {
       "id": 61,
