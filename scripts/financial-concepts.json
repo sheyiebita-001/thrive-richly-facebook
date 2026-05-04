@@ -669,7 +669,8 @@
       "example": "Stock price: $100. Earnings per share: $5. P/E = 20. Investors are paying $20 for every $1 of earnings. The S&P 500 average is about 15-20.",
       "diagram": "gauge_meter",
       "keyTakeaway": "A low P/E isn't always a bargain and a high P/E isn't always expensive. Context matters.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-04"
     },
     {
       "id": 62,
