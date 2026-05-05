@@ -5839,7 +5839,9 @@
       "category": "Resilience & Grit",
       "author": "Jack Ma",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-05"
     },
     {
       "id": 681,
@@ -5847,7 +5849,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-05"
     },
     {
       "id": 682,
@@ -5855,7 +5859,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-05"
     },
     {
       "id": 683,
