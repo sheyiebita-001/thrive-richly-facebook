@@ -702,7 +702,8 @@
       "example": "Your mortgage is at 7%. Rates drop to 5%. Refinancing on a $300K loan saves you $400/month or $144K over the life of the loan.",
       "diagram": "comparison_bars",
       "keyTakeaway": "Check refinancing options whenever rates drop 1%+ below your current rate. The savings add up fast.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-07"
     },
     {
       "id": 65,
