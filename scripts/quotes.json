@@ -5782,7 +5782,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-09"
     },
     {
       "id": 672,
@@ -5790,7 +5792,9 @@
       "category": "Resilience & Grit",
       "author": "Robert F. Kennedy",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-09"
     },
     {
       "id": 673,
@@ -5798,7 +5802,9 @@
       "category": "Resilience & Grit",
       "author": "Mark Twain",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-09"
     },
     {
       "id": 674,
