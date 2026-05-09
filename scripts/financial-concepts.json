@@ -713,7 +713,8 @@
       "example": "A penny stock is promoted as 'the next big thing' and jumps from $0.10 to $0.50. You buy in. The promoter sells, and it crashes to $0.02. You lose 96%.",
       "diagram": "crash_line",
       "keyTakeaway": "If it sounds too good to be true, it is. Penny stocks are gambling, not investing.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-09"
     },
     {
       "id": 66,
