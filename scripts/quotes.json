@@ -5763,7 +5763,9 @@
       "category": "Resilience & Grit",
       "author": "C.S. Lewis",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-10"
     },
     {
       "id": 669,
@@ -5771,7 +5773,9 @@
       "category": "Resilience & Grit",
       "author": "Maya Angelou",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-10"
     },
     {
       "id": 670,
@@ -5779,7 +5783,9 @@
       "category": "Resilience & Grit",
       "author": "George Patton",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-10"
     },
     {
       "id": 671,
