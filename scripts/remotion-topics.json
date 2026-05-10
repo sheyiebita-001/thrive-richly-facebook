@@ -88,7 +88,8 @@
     {
       "slug": "social-security",
       "title": "Social Security: What You Need to Know Before Retirement",
-      "status": "pending"
+      "status": "complete",
+      "completedAt": "2026-05-10"
     },
     {
       "slug": "crypto-basics",
