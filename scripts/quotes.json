@@ -5744,7 +5744,9 @@
       "category": "Resilience & Grit",
       "author": "Banksy",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-11"
     },
     {
       "id": 666,
@@ -5752,7 +5754,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-11"
     },
     {
       "id": 667,
@@ -5760,7 +5764,9 @@
       "category": "Resilience & Grit",
       "author": "Ernest Hemingway",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-11"
     },
     {
       "id": 668,
