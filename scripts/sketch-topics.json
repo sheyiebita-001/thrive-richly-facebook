@@ -1337,7 +1337,8 @@
       "sketch": "flow",
       "takeaway": "A tax refund isn't a bonus. It's your own money returned late. Adjust your tax settings.",
       "category": "Money Myths",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-12"
     },
     {
       "id": 82,
