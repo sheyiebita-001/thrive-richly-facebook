@@ -5725,7 +5725,9 @@
       "category": "Resilience & Grit",
       "author": "Timber Hawkeye",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-12"
     },
     {
       "id": 663,
@@ -5733,7 +5735,9 @@
       "category": "Resilience & Grit",
       "author": "William Barclay",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-12"
     },
     {
       "id": 664,
@@ -5741,7 +5745,9 @@
       "category": "Resilience & Grit",
       "author": "Elvis Presley",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-12"
     },
     {
       "id": 665,
