@@ -746,7 +746,8 @@
       "example": "A tech startup grows to $5B valuation. They IPO at $50/share. Day one, the stock jumps to $75. Early investors celebrate. But many IPOs fall below their opening price within a year.",
       "diagram": "milestone_path",
       "keyTakeaway": "IPO hype often inflates prices. Wait 6-12 months after an IPO before buying. Let the dust settle.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-13"
     },
     {
       "id": 69,
