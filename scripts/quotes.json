@@ -5673,7 +5673,9 @@
       "category": "Resilience & Grit",
       "author": "Jeffrey Gitomer",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-16"
     },
     {
       "id": 654,
@@ -5681,7 +5683,9 @@
       "category": "Resilience & Grit",
       "author": "Victor Hugo",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-16"
     },
     {
       "id": 655,
@@ -5689,7 +5693,9 @@
       "category": "Resilience & Grit",
       "author": "Elizabeth Edwards",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-16"
     },
     {
       "id": 656,
