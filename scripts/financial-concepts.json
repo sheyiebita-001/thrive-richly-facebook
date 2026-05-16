@@ -768,7 +768,8 @@
       "example": "Your annual expenses: $48,000. Using the 4% rule: $48,000 ÷ 0.04 = $1,200,000. That's your financial freedom number. Every dollar invested brings you closer.",
       "diagram": "milestone_path",
       "keyTakeaway": "Calculate your number today. You can't hit a target you haven't defined.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-16"
     },
     {
       "id": 71,
