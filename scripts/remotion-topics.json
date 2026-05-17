@@ -94,7 +94,8 @@
     {
       "slug": "crypto-basics",
       "title": "Cryptocurrency Basics: Blockchain, Bitcoin, and Risk",
-      "status": "pending"
+      "status": "complete",
+      "completedAt": "2026-05-17"
     },
     {
       "slug": "mutual-fund-costs",
