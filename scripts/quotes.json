@@ -5616,7 +5616,9 @@
       "category": "Resilience & Grit",
       "author": "Christopher Reeve",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-19"
     },
     {
       "id": 645,
@@ -5624,7 +5626,9 @@
       "category": "Resilience & Grit",
       "author": "Confucius",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-19"
     },
     {
       "id": 646,
@@ -5632,7 +5636,9 @@
       "category": "Resilience & Grit",
       "author": "Marcus Aurelius",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-19"
     },
     {
       "id": 647,
