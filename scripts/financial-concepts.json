@@ -801,7 +801,8 @@
       "example": "You're buying a house. Your deposit goes into escrow. If the inspection fails, you get your money back. If everything checks out, the escrow releases funds to the seller.",
       "diagram": "flow_arrows",
       "keyTakeaway": "Escrow protects you in big transactions. Never wire money directly to sellers — use escrow.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-19"
     },
     {
       "id": 74,
