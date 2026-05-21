@@ -5575,7 +5575,9 @@
       "category": "Resilience & Grit",
       "author": "H.G. Wells",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-21"
     },
     {
       "id": 639,
@@ -5583,7 +5585,9 @@
       "category": "Resilience & Grit",
       "author": "Maya Angelou",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-21"
     },
     {
       "id": 640,
@@ -5591,7 +5595,9 @@
       "category": "Resilience & Grit",
       "author": "Elbert Hubbard",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-21"
     },
     {
       "id": 641,
