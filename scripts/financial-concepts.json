@@ -823,7 +823,8 @@
       "example": "A fiduciary advisor recommends a low-fee index fund because it's best for you. A non-fiduciary might recommend a high-commission product because it pays them more.",
       "diagram": "two_columns",
       "keyTakeaway": "Always ask: are you a fiduciary? If they say no or dodge the question, find someone else.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-21"
     },
     {
       "id": 76,
