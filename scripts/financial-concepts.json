@@ -834,7 +834,8 @@
       "example": "You own 10 shares at $1,000 each ($10,000 total). After a 10-for-1 split: you own 100 shares at $100 each. Still $10,000 — but easier for new investors to buy in.",
       "diagram": "splitting_blocks",
       "keyTakeaway": "Stock splits don't change value. They make expensive stocks more accessible to everyday investors.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-22"
     },
     {
       "id": 77,
