@@ -100,7 +100,8 @@
     {
       "slug": "mutual-fund-costs",
       "title": "The Hidden Costs of Mutual Funds: Expense Ratios Explained",
-      "status": "pending"
+      "status": "complete",
+      "completedAt": "2026-05-24"
     },
     {
       "slug": "central-banks",
