@@ -5518,7 +5518,9 @@
       "category": "Resilience & Grit",
       "author": "Robert Tew",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-24"
     },
     {
       "id": 630,
@@ -5526,7 +5528,9 @@
       "category": "Resilience & Grit",
       "author": "Friedrich Nietzsche",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-24"
     },
     {
       "id": 631,
@@ -5534,7 +5538,9 @@
       "category": "Resilience & Grit",
       "author": "Les Brown",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-24"
     },
     {
       "id": 632,
