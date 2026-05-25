@@ -5499,7 +5499,9 @@
       "category": "Resilience & Grit",
       "author": "Charlie Chaplin",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-25"
     },
     {
       "id": 627,
@@ -5507,7 +5509,9 @@
       "category": "Resilience & Grit",
       "author": "Confucius",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-25"
     },
     {
       "id": 628,
@@ -5515,7 +5519,9 @@
       "category": "Resilience & Grit",
       "author": "Roy T. Bennett",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-25"
     },
     {
       "id": 629,
