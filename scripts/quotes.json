@@ -5461,7 +5461,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-27"
     },
     {
       "id": 621,
@@ -5469,7 +5471,9 @@
       "category": "Resilience & Grit",
       "author": "Thomas Edison",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-27"
     },
     {
       "id": 622,
@@ -5477,7 +5481,9 @@
       "category": "Resilience & Grit",
       "author": "F. Scott Fitzgerald",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-27"
     },
     {
       "id": 623,
