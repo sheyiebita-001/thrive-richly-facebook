@@ -4319,40 +4319,45 @@
       "text": "Average minds discuss events. Great minds discuss ideas.",
       "category": "Mindset & Success",
       "author": "Eleanor Roosevelt",
-      "status": "pending",
-      "theme": "gold"
+      "status": "posted",
+      "theme": "gold",
+      "postedAt": "2026-05-27"
     },
     {
       "id": 479,
       "text": "You don't have to be great to start, but you have to start to be great.",
       "category": "Mindset & Success",
       "author": "Zig Ziglar",
-      "status": "pending",
-      "theme": "gold"
+      "status": "posted",
+      "theme": "gold",
+      "postedAt": "2026-05-27"
     },
     {
       "id": 480,
       "text": "Think different.",
       "category": "Mindset & Success",
       "author": "Steve Jobs",
-      "status": "pending",
-      "theme": "gold"
+      "status": "posted",
+      "theme": "gold",
+      "postedAt": "2026-05-27"
     },
     {
       "id": 481,
       "text": "If you want to fly, give up everything that weighs you down.",
       "category": "Mindset & Success",
       "author": "Toni Morrison",
-      "status": "pending",
-      "theme": "crimson"
+      "status": "posted",
+      "theme": "crimson",
+      "postedAt": "2026-05-27"
     },
     {
       "id": 482,
       "text": "A winner never stops trying.",
       "category": "Mindset & Success",
       "author": "Tom Landry",
-      "status": "pending",
-      "theme": "crimson"
+      "status": "posted",
+      "theme": "crimson",
+      "postedAt": "2026-05-27"
     },
     {
       "id": 483,
