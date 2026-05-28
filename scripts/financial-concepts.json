@@ -889,7 +889,8 @@
       "example": "You lock in 5.5% on a Monday. By closing day, rates have risen to 6%. You still get 5.5%. On a $300K mortgage, that saves you $100/month for 30 years.",
       "diagram": "gate_lock",
       "keyTakeaway": "Always lock your rate when you're happy with it. Waiting to see if rates drop is a gamble.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-28"
     },
     {
       "id": 82,
