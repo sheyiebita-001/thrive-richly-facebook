@@ -900,7 +900,8 @@
       "example": "Aggressive: 80% stocks, 15% bonds, 5% cash. Conservative: 40% stocks, 40% bonds, 20% cash. Your allocation should match your age, goals, and risk tolerance.",
       "diagram": "pie_chart",
       "keyTakeaway": "Get your asset allocation right first. Individual stock picking matters far less than most people think.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-05-29"
     },
     {
       "id": 83,
