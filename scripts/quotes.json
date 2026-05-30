@@ -5404,7 +5404,9 @@
       "category": "Resilience & Grit",
       "author": "Oprah Winfrey",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-30"
     },
     {
       "id": 612,
@@ -5412,7 +5414,9 @@
       "category": "Resilience & Grit",
       "author": "Romans 8:18",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-30"
     },
     {
       "id": 613,
@@ -5420,7 +5424,9 @@
       "category": "Resilience & Grit",
       "author": "Bruce Lee",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-05-30"
     },
     {
       "id": 614,
