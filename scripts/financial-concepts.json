@@ -922,7 +922,8 @@
       "example": "Bernie Madoff ran the biggest Ponzi scheme ever — $65 billion. Investors earned consistent 10-12% returns for decades. When the music stopped in 2008, everything vanished.",
       "diagram": "pyramid",
       "keyTakeaway": "If returns are consistently high with zero bad months, it's probably too good to be true. Always verify.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-06-01"
     },
     {
       "id": 85,
