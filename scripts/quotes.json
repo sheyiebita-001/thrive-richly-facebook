@@ -5385,7 +5385,9 @@
       "category": "Resilience & Grit",
       "author": "C.C. Scott",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-01"
     },
     {
       "id": 609,
@@ -5393,7 +5395,9 @@
       "category": "Resilience & Grit",
       "author": "Vince Lombardi",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-01"
     },
     {
       "id": 610,
@@ -5401,7 +5405,9 @@
       "category": "Resilience & Grit",
       "author": "Christine Caine",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-01"
     },
     {
       "id": 611,
