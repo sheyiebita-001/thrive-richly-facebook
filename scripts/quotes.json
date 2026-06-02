@@ -5366,7 +5366,9 @@
       "category": "Resilience & Grit",
       "author": "Winston Churchill",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-02"
     },
     {
       "id": 606,
@@ -5374,7 +5376,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-02"
     },
     {
       "id": 607,
@@ -5382,7 +5386,9 @@
       "category": "Resilience & Grit",
       "author": "Carl Jung",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-02"
     },
     {
       "id": 608,
