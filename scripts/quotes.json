@@ -5347,7 +5347,9 @@
       "category": "Resilience & Grit",
       "author": "Robert Jordan",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-03"
     },
     {
       "id": 603,
@@ -5355,7 +5357,9 @@
       "category": "Resilience & Grit",
       "author": "Friedrich Nietzsche",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-03"
     },
     {
       "id": 604,
@@ -5363,7 +5367,9 @@
       "category": "Resilience & Grit",
       "author": "Mary Anne Radmacher",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-03"
     },
     {
       "id": 605,
