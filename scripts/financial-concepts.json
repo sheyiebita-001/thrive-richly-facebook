@@ -933,7 +933,8 @@
       "example": "You bought a house for $350K. Market drops and it's now worth $280K. You still owe $320K. You're $40K underwater — you can't sell without paying the difference.",
       "diagram": "balance_scale",
       "keyTakeaway": "Avoid negative equity by making larger down payments and not overpaying for assets.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-06-03"
     },
     {
       "id": 86,
