@@ -5328,7 +5328,9 @@
       "category": "Resilience & Grit",
       "author": "Jean de La Bruyere",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-04"
     },
     {
       "id": 600,
@@ -5336,7 +5338,9 @@
       "category": "Resilience & Grit",
       "author": "Bruce Lee",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-04"
     },
     {
       "id": 601,
@@ -5344,7 +5348,9 @@
       "category": "Resilience & Grit",
       "author": "Napoleon Hill",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-04"
     },
     {
       "id": 602,
