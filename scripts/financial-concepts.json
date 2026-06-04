@@ -944,7 +944,8 @@
       "example": "Your home is worth $400K and you owe $200K. You have $200K in equity. A HELOC lets you borrow up to $160K of that for renovations, investments, or emergencies.",
       "diagram": "flow_arrows",
       "keyTakeaway": "Equity release can fund investments, but remember — you're adding debt secured against your home.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-06-04"
     },
     {
       "id": 87,
