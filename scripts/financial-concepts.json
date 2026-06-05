@@ -955,7 +955,8 @@
       "example": "You invest $20K of your money and borrow $80K. That's 4:1 gearing. A 10% gain on $100K = $10K profit = 50% return on YOUR $20K. But a 10% loss wipes out half your capital.",
       "diagram": "lever_fulcrum",
       "keyTakeaway": "Moderate gearing (2:1 to 3:1) can accelerate wealth. Excessive gearing can destroy it overnight.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-06-05"
     },
     {
       "id": 88,
