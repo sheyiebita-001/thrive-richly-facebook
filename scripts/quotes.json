@@ -5290,7 +5290,9 @@
       "category": "Resilience & Grit",
       "author": "Rumi",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-06"
     },
     {
       "id": 594,
@@ -5298,7 +5300,9 @@
       "category": "Resilience & Grit",
       "author": "Margaret Thatcher",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-06"
     },
     {
       "id": 595,
@@ -5306,7 +5310,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-06"
     },
     {
       "id": 596,
