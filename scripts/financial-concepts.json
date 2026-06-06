@@ -966,7 +966,8 @@
       "example": "You inherit $50K. Lump sum: invest it all today. Regular: invest $5K/month for 10 months. If the market drops right after a lump sum, regular investing would have saved you.",
       "diagram": "comparison_bars",
       "keyTakeaway": "If you have a lump sum and a long timeline, invest it now. If you're nervous, split it over 3-6 months.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-06-06"
     },
     {
       "id": 89,
