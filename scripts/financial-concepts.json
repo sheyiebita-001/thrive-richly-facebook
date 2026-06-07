@@ -977,7 +977,8 @@
       "example": "A property crowdfunding platform lets you invest $500 in a commercial building alongside 200 other investors. You earn rental income proportional to your share.",
       "diagram": "funnel",
       "keyTakeaway": "Crowdfunding opens doors to investments previously only available to the rich. Start small, diversify across projects.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-06-07"
     },
     {
       "id": 90,
