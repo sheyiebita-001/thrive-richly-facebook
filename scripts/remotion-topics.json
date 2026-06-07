@@ -106,7 +106,8 @@
     {
       "slug": "central-banks",
       "title": "How Central Banks Control the Economy",
-      "status": "pending"
+      "status": "complete",
+      "completedAt": "2026-06-07"
     },
     {
       "slug": "wealth-in-20s-vs-40s",
