@@ -5271,7 +5271,9 @@
       "category": "Resilience & Grit",
       "author": "Bob Marley",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-07"
     },
     {
       "id": 591,
@@ -5279,7 +5281,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-07"
     },
     {
       "id": 592,
@@ -5287,7 +5291,9 @@
       "category": "Resilience & Grit",
       "author": "Lance Armstrong",
       "status": "pending",
-      "theme": "emerald"
+      "theme": "emerald",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-07"
     },
     {
       "id": 593,
