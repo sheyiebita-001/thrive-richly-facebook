@@ -5233,7 +5233,9 @@
       "category": "Resilience & Grit",
       "author": "Eleanor Roosevelt",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-09"
     },
     {
       "id": 585,
@@ -5241,7 +5243,9 @@
       "category": "Resilience & Grit",
       "author": "John Wooden",
       "status": "pending",
-      "theme": "crimson"
+      "theme": "crimson",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-09"
     },
     {
       "id": 586,
@@ -5249,7 +5253,9 @@
       "category": "Resilience & Grit",
       "author": "Truman Capote",
       "status": "pending",
-      "theme": "electric_blue"
+      "theme": "electric_blue",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-09"
     },
     {
       "id": 587,
