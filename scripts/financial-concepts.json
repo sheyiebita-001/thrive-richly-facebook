@@ -1010,7 +1010,8 @@
       "example": "You earn $50K. The first $10K is taxed at 10%, next $30K at 22%, final $10K at 24%. Your EFFECTIVE tax rate is about 18% — not the 24% top bracket.",
       "diagram": "stacking_blocks",
       "keyTakeaway": "Never turn down a raise because of taxes. You always take home more money by earning more.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-06-10"
     },
     {
       "id": 93,
