@@ -5195,7 +5195,9 @@
       "category": "Mindset & Success",
       "author": "Antoine de Saint-Exupery",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-11"
     },
     {
       "id": 579,
@@ -5203,7 +5205,9 @@
       "category": "Resilience & Grit",
       "author": "Franklin D. Roosevelt",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-11"
     },
     {
       "id": 580,
@@ -5211,7 +5215,9 @@
       "category": "Resilience & Grit",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-11"
     },
     {
       "id": 581,
