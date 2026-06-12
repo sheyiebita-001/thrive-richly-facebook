@@ -5176,7 +5176,9 @@
       "category": "Mindset & Success",
       "author": "W.P. Kinsella",
       "status": "pending",
-      "theme": "violet"
+      "theme": "violet",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-12"
     },
     {
       "id": 576,
@@ -5184,7 +5186,9 @@
       "category": "Mindset & Success",
       "author": "",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-12"
     },
     {
       "id": 577,
@@ -5192,7 +5196,9 @@
       "category": "Mindset & Success",
       "author": "Shirley Chisholm",
       "status": "pending",
-      "theme": "gold"
+      "theme": "gold",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-12"
     },
     {
       "id": 578,
