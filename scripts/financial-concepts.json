@@ -1054,7 +1054,8 @@
       "example": "The central bank raises the reserve ratio from 10% to 15%. Banks now keep more cash and lend less. Fewer loans means less spending, which can slow inflation.",
       "diagram": "percentage_bar",
       "keyTakeaway": "Changes in reserve ratios signal where the economy is heading. They affect loan availability and interest rates.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-06-16"
     },
     {
       "id": 97,
