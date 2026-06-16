@@ -5086,7 +5086,9 @@
       "author": "Steve Jobs",
       "status": "posted",
       "theme": "electric_blue",
-      "postedAt": "2026-06-14"
+      "postedAt": "2026-06-14",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-16"
     },
     {
       "id": 564,
@@ -5095,7 +5097,9 @@
       "author": "Roy T. Bennett",
       "status": "posted",
       "theme": "electric_blue",
-      "postedAt": "2026-06-14"
+      "postedAt": "2026-06-14",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-16"
     },
     {
       "id": 565,
@@ -5104,7 +5108,9 @@
       "author": "",
       "status": "posted",
       "theme": "electric_blue",
-      "postedAt": "2026-06-14"
+      "postedAt": "2026-06-14",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-16"
     },
     {
       "id": 566,
