@@ -1076,7 +1076,8 @@
       "example": "$500/month invested + 10% returns + 3% annual contribution increase + reinvested dividends. After 30 years: not $180K (what you put in) but over $1.2 million.",
       "diagram": "growth_curve",
       "keyTakeaway": "Stack the compounding effects. Invest consistently, reinvest returns, increase contributions. Let time multiply everything.",
-      "status": "pending"
+      "status": "posted",
+      "postedAt": "2026-06-18"
     },
     {
       "id": 99,
