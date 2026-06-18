@@ -5032,7 +5032,9 @@
       "author": "",
       "status": "posted",
       "theme": "crimson",
-      "postedAt": "2026-06-12"
+      "postedAt": "2026-06-12",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-18"
     },
     {
       "id": 558,
@@ -5041,7 +5043,9 @@
       "author": "",
       "status": "posted",
       "theme": "crimson",
-      "postedAt": "2026-06-13"
+      "postedAt": "2026-06-13",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-18"
     },
     {
       "id": 559,
@@ -5050,7 +5054,9 @@
       "author": "Jim Collins",
       "status": "posted",
       "theme": "crimson",
-      "postedAt": "2026-06-13"
+      "postedAt": "2026-06-13",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-18"
     },
     {
       "id": 560,
