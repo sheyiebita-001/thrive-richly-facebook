@@ -5005,7 +5005,9 @@
       "author": "George Bernard Shaw",
       "status": "posted",
       "theme": "gold",
-      "postedAt": "2026-06-12"
+      "postedAt": "2026-06-12",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-19"
     },
     {
       "id": 555,
@@ -5014,7 +5016,9 @@
       "author": "",
       "status": "posted",
       "theme": "gold",
-      "postedAt": "2026-06-12"
+      "postedAt": "2026-06-12",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-19"
     },
     {
       "id": 556,
@@ -5023,7 +5027,9 @@
       "author": "",
       "status": "posted",
       "theme": "crimson",
-      "postedAt": "2026-06-12"
+      "postedAt": "2026-06-12",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-19"
     },
     {
       "id": 557,
