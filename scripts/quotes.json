@@ -4897,7 +4897,9 @@
       "author": "Sam Levenson",
       "status": "posted",
       "theme": "emerald",
-      "postedAt": "2026-06-09"
+      "postedAt": "2026-06-09",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-23"
     },
     {
       "id": 543,
@@ -4906,7 +4908,9 @@
       "author": "",
       "status": "posted",
       "theme": "emerald",
-      "postedAt": "2026-06-10"
+      "postedAt": "2026-06-10",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-23"
     },
     {
       "id": 544,
@@ -4915,7 +4919,9 @@
       "author": "",
       "status": "posted",
       "theme": "emerald",
-      "postedAt": "2026-06-10"
+      "postedAt": "2026-06-10",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-23"
     },
     {
       "id": 545,
