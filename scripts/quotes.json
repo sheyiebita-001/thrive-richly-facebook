@@ -4870,7 +4870,9 @@
       "author": "Washington Irving",
       "status": "posted",
       "theme": "electric_blue",
-      "postedAt": "2026-06-09"
+      "postedAt": "2026-06-09",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-24"
     },
     {
       "id": 540,
@@ -4879,7 +4881,9 @@
       "author": "",
       "status": "posted",
       "theme": "electric_blue",
-      "postedAt": "2026-06-09"
+      "postedAt": "2026-06-09",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-24"
     },
     {
       "id": 541,
@@ -4888,7 +4892,9 @@
       "author": "Albert Einstein",
       "status": "posted",
       "theme": "emerald",
-      "postedAt": "2026-06-09"
+      "postedAt": "2026-06-09",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-24"
     },
     {
       "id": 542,
