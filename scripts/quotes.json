@@ -4843,7 +4843,9 @@
       "author": "Seneca",
       "status": "posted",
       "theme": "electric_blue",
-      "postedAt": "2026-06-08"
+      "postedAt": "2026-06-08",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-25"
     },
     {
       "id": 537,
@@ -4852,7 +4854,9 @@
       "author": "",
       "status": "posted",
       "theme": "electric_blue",
-      "postedAt": "2026-06-08"
+      "postedAt": "2026-06-08",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-25"
     },
     {
       "id": 538,
@@ -4861,7 +4865,9 @@
       "author": "",
       "status": "posted",
       "theme": "electric_blue",
-      "postedAt": "2026-06-09"
+      "postedAt": "2026-06-09",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-25"
     },
     {
       "id": 539,
