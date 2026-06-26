@@ -4816,7 +4816,9 @@
       "author": "Charles Swindoll",
       "status": "posted",
       "theme": "crimson",
-      "postedAt": "2026-06-08"
+      "postedAt": "2026-06-08",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-26"
     },
     {
       "id": 534,
@@ -4825,7 +4827,9 @@
       "author": "John Assaraf",
       "status": "posted",
       "theme": "crimson",
-      "postedAt": "2026-06-08"
+      "postedAt": "2026-06-08",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-26"
     },
     {
       "id": 535,
@@ -4834,7 +4838,9 @@
       "author": "Colin Davis",
       "status": "posted",
       "theme": "crimson",
-      "postedAt": "2026-06-08"
+      "postedAt": "2026-06-08",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-26"
     },
     {
       "id": 536,
