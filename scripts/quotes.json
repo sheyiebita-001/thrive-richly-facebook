@@ -4762,7 +4762,9 @@
       "author": "",
       "status": "posted",
       "theme": "gold",
-      "postedAt": "2026-06-06"
+      "postedAt": "2026-06-06",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-28"
     },
     {
       "id": 528,
@@ -4771,7 +4773,9 @@
       "author": "Imam Ali",
       "status": "posted",
       "theme": "gold",
-      "postedAt": "2026-06-07"
+      "postedAt": "2026-06-07",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-28"
     },
     {
       "id": 529,
@@ -4780,7 +4784,9 @@
       "author": "Seth Godin",
       "status": "posted",
       "theme": "gold",
-      "postedAt": "2026-06-07"
+      "postedAt": "2026-06-07",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-28"
     },
     {
       "id": 530,
