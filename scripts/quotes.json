@@ -4708,7 +4708,9 @@
       "author": "Jordan Belfort",
       "status": "posted",
       "theme": "violet",
-      "postedAt": "2026-06-05"
+      "postedAt": "2026-06-05",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-30"
     },
     {
       "id": 522,
@@ -4717,7 +4719,9 @@
       "author": "",
       "status": "posted",
       "theme": "violet",
-      "postedAt": "2026-06-05"
+      "postedAt": "2026-06-05",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-30"
     },
     {
       "id": 523,
@@ -4726,7 +4730,9 @@
       "author": "",
       "status": "posted",
       "theme": "violet",
-      "postedAt": "2026-06-06"
+      "postedAt": "2026-06-06",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-06-30"
     },
     {
       "id": 524,
