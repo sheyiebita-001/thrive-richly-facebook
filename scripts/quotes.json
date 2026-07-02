@@ -4654,7 +4654,9 @@
       "author": "",
       "status": "posted",
       "theme": "electric_blue",
-      "postedAt": "2026-06-04"
+      "postedAt": "2026-06-04",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-07-02"
     },
     {
       "id": 516,
@@ -4663,7 +4665,9 @@
       "author": "",
       "status": "posted",
       "theme": "emerald",
-      "postedAt": "2026-06-04"
+      "postedAt": "2026-06-04",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-07-02"
     },
     {
       "id": 517,
@@ -4672,7 +4676,9 @@
       "author": "Blaise Pascal",
       "status": "posted",
       "theme": "emerald",
-      "postedAt": "2026-06-04"
+      "postedAt": "2026-06-04",
+      "reelStatus": "posted",
+      "reelPostedAt": "2026-07-02"
     },
     {
       "id": 518,
