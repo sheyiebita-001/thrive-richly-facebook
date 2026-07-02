@@ -29,10 +29,22 @@ async function generateReelVideo(entry) {
   const creationId = inner.id || inner.creationId;
   if (!creationId) throw new Error('No creation id in response: ' + JSON.stringify(created));
   console.log(`Video creation started: ${creationId}`);
+  let transientErrors = 0;
   for (let i = 0; i < 120; i++) {          // up to ~30 min
     await sleep(15000);
-    const raw = await api('GET', `/v2/videos/creations/${creationId}`);
-    const s = raw.item || raw;
+    let s;
+    try {
+      const raw = await api('GET', `/v2/videos/creations/${creationId}`);
+      s = raw.item || raw;
+      transientErrors = 0;
+    } catch (err) {
+      // Blotato occasionally 500s mid-render (e.g. storage bad gateway). Tolerate
+      // transient errors and keep polling; only give up if they persist.
+      transientErrors++;
+      console.log(`  [${new Date().toISOString()}] transient poll error (${transientErrors}/10): ${err.message}`);
+      if (transientErrors >= 10) throw err;
+      continue;
+    }
     console.log(`  [${new Date().toISOString()}] video status=${s.status}`);
     if (s.status === 'done') return s.mediaUrl;
     if (/failed/.test(s.status) || s.status === 'insufficient-credits') {
@@ -82,10 +94,19 @@ async function main() {
     const id = created.postSubmissionId || created.id;
     console.log(`Post submitted: postSubmissionId=${id}`);
 
-    let publicUrl = null, finalStatus = 'in-progress';
+    let publicUrl = null, finalStatus = 'in-progress', pollErrors = 0;
     for (let i = 0; i < 40; i++) {          // up to ~10 min
       await sleep(15000);
-      const s = await api('GET', `/v2/posts/${id}`);
+      let s;
+      try {
+        s = await api('GET', `/v2/posts/${id}`);
+        pollErrors = 0;
+      } catch (err) {
+        pollErrors++;
+        console.log(`  [${new Date().toISOString()}] transient poll error (${pollErrors}/10): ${err.message}`);
+        if (pollErrors >= 10) throw err;
+        continue;
+      }
       console.log(`  [${new Date().toISOString()}] post status=${s.status}`);
       if (s.status === 'published') { finalStatus = 'published'; publicUrl = s.publicUrl; break; }
       if (s.status === 'failed') throw new Error(`Publish failed: ${s.errorMessage || 'no error message'}`);

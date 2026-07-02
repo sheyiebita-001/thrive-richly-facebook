@@ -46,5 +46,8 @@ jobs:
           git config --local user.email "thrive-social-bot@thriverichly.com"
           git config --local user.name "Thrive Social Bot"
           git add published-log.jsonl scripts/thrive-social/post-queue.json
-          git diff --cached --quiet || git commit -m "Thrive Social: queue run $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "Thrive Social: queue run $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase origin main
+            git push
+          fi

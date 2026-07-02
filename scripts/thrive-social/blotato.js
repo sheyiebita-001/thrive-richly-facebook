@@ -53,9 +53,9 @@ async function api(method, route, body) {
   let json;
   try { json = JSON.parse(text); } catch { json = { raw: text }; }
   if (!res.ok) {
-    console.error(`Blotato API error ${res.status} on ${method} ${route}:`);
-    console.error(JSON.stringify(json, null, 2));
-    process.exit(1);
+    const err = new Error(`Blotato API error ${res.status} on ${method} ${route}: ${JSON.stringify(json)}`);
+    err.status = res.status;
+    throw err;
   }
   return json;
 }
