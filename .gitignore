@@ -7,3 +7,9 @@ temp-images/
 !.env.example
 *.key
 *.pem
+
+# Burst layer build artifacts
+remotion-burst/node_modules/
+remotion-burst/public/assets/
+remotion-burst/out/
+remotion-burst/props-*.json

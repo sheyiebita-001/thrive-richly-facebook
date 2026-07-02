@@ -1,0 +1,60 @@
+name: Burst Reels (fresh content, Remotion + Blotato)
+
+# Generates fresh Reels with Claude at run time, renders them with Remotion on the
+# runner (free), and schedules them via Blotato staggered across the day.
+# MANUAL TRIGGER ONLY — you decide when a burst happens.
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'How many reels to generate (5-10 recommended)'
+        default: '5'
+      mode:
+        description: 'draft = print scripts/captions only; publish = render + schedule via Blotato'
+        type: choice
+        options: [draft, publish]
+        default: draft
+
+permissions:
+  contents: write
+
+jobs:
+  burst:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Remotion dependencies
+        if: inputs.mode == 'publish'
+        working-directory: remotion-burst
+        run: npm install
+
+      - name: Generate burst
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          GOOGLE_TTS_API_KEY: ${{ secrets.GOOGLE_TTS_API_KEY }}
+          BLOTATO_API_KEY: ${{ secrets.BLOTATO_API_KEY }}
+        run: node scripts/burst/generate-burst.js --mode "${{ inputs.mode }}" --count "${{ inputs.count }}"
+
+      - name: Commit log updates
+        if: always()
+        run: |
+          git config --local user.email "burst-bot@thriverichly.com"
+          git config --local user.name "Burst Bot"
+          git add published-log.jsonl
+          if ! git diff --cached --quiet; then
+            git commit -m "Burst: reels scheduled $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase origin main
+            git push
+          fi

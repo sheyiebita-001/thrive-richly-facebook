@@ -16,3 +16,11 @@ A Claude Code skill that drafts on-brand content (Reels-first), generates video 
 **Log:** `published-log.jsonl` is append-only, one JSON line per published post: `timestamp`, `format`, `hook`, `caption`, `mediaUrl`, `postSubmissionId`, `publicUrl`, `status`.
 
 **Voice:** `brand-voice.md` is the single source of voice truth — edit it to change how every post sounds.
+
+## Burst Reels — fresh-content layer (Remotion + Blotato)
+
+On-demand batches of fresh Reels: Claude drafts scripts at run time (so content reflects the current date and recent posts), Pexels supplies licensed b-roll, Google TTS voices it, Remotion renders 1080x1920 video free on the GitHub runner, and Blotato schedules 5-10 posts staggered across the day (9:00/12:00/15:00/18:00/21:00 UTC).
+
+**Invoke:** Actions tab → "Burst Reels" → Run workflow. `mode: draft` prints the scripts and captions without rendering or publishing (review first); `mode: publish` runs the full pipeline. Locally: `node scripts/burst/generate-burst.js --mode draft --count 5`.
+
+**Secrets required:** `ANTHROPIC_API_KEY`, `PEXELS_API_KEY` (free at pexels.com/api), `GOOGLE_TTS_API_KEY`, `BLOTATO_API_KEY`. Scheduled posts are logged to `published-log.jsonl` with `status: "scheduled"`; Blotato publishes them at their slot times even with everything switched off.
