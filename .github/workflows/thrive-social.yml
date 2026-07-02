@@ -8,6 +8,11 @@ name: Thrive Social (Blotato queue runner)
 # After that, uncomment the schedule block to go autonomous (3x/week).
 on:
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run: show the next post without generating video or publishing'
+        type: boolean
+        default: false
   # schedule:
   #   - cron: '30 12 * * 1,3,5'   # Mon/Wed/Fri 12:30 UTC — enable only after the 10-post approval ramp
 
@@ -33,7 +38,7 @@ jobs:
       - name: Publish next approved post from queue
         env:
           BLOTATO_API_KEY: ${{ secrets.BLOTATO_API_KEY }}
-        run: node scripts/thrive-social/post-from-queue.js
+        run: node scripts/thrive-social/post-from-queue.js ${{ inputs.dry_run && '--dry-run' || '' }}
 
       - name: Commit queue and log updates
         if: always()
