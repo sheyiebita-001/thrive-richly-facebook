@@ -1,18 +1,13 @@
-name: Thrive Social (Blotato AI Manager)
+name: Thrive Social (Blotato queue runner)
 
+# Publishes the next APPROVED entry from scripts/thrive-social/post-queue.json.
+# No Claude in CI — the queue is drafted and human-approved locally with the
+# thrive-social skill; this job only needs BLOTATO_API_KEY.
+#
 # MANUAL TRIGGER ONLY until 10 posts have published cleanly (see published-log.jsonl).
-# After that, uncomment the schedule block below to go autonomous (3x/week).
+# After that, uncomment the schedule block to go autonomous (3x/week).
 on:
   workflow_dispatch:
-    inputs:
-      format:
-        description: 'Post format'
-        type: choice
-        options: [reel, image]
-        default: reel
-      approve_publish:
-        description: 'Type "yes" to publish live. Anything else = dry-run only (draft shown in run log, nothing posted).'
-        default: 'no'
   # schedule:
   #   - cron: '30 12 * * 1,3,5'   # Mon/Wed/Fri 12:30 UTC — enable only after the 10-post approval ramp
 
@@ -20,7 +15,7 @@ permissions:
   contents: write
 
 jobs:
-  thrive-social:
+  post-from-queue:
     runs-on: ubuntu-latest
     timeout-minutes: 45
 
@@ -35,29 +30,16 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Verify Blotato API key is configured
+      - name: Publish next approved post from queue
         env:
           BLOTATO_API_KEY: ${{ secrets.BLOTATO_API_KEY }}
-        run: node scripts/thrive-social/blotato.js check
+        run: node scripts/thrive-social/post-from-queue.js
 
-      - name: Install Claude Code
-        run: npm install -g @anthropic-ai/claude-code
-
-      - name: Run thrive-social skill
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          BLOTATO_API_KEY: ${{ secrets.BLOTATO_API_KEY }}
-          POST_FORMAT: ${{ inputs.format || 'reel' }}
-          APPROVE_PUBLISH: ${{ inputs.approve_publish || 'no' }}
-        run: |
-          claude -p "Invoke the thrive-social skill (.claude/skills/thrive-social/SKILL.md) and produce exactly one ${POST_FORMAT} post. Approval context: this is a non-interactive CI run; APPROVE_PUBLISH=${APPROVE_PUBLISH}. If APPROVE_PUBLISH is 'yes', that is the explicit human approval for this one post — publish it live. Otherwise run in dry-run mode only and print the full draft caption and media URL." \
-            --dangerously-skip-permissions \
-            --max-turns 60
-
-      - name: Commit published log
+      - name: Commit queue and log updates
+        if: always()
         run: |
           git config --local user.email "thrive-social-bot@thriverichly.com"
           git config --local user.name "Thrive Social Bot"
-          git add published-log.jsonl
-          git diff --cached --quiet || git commit -m "Thrive Social: post published $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git add published-log.jsonl scripts/thrive-social/post-queue.json
+          git diff --cached --quiet || git commit -m "Thrive Social: queue run $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push

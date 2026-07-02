@@ -7,9 +7,9 @@ A Claude Code skill that drafts on-brand content (Reels-first), generates video 
 
 **Invoke locally:** open a Claude Code session in this repo folder and run `/thrive-social` (skill lives at `.claude/skills/thrive-social/SKILL.md`).
 
-**Invoke via GitHub Actions:** Actions tab → "Thrive Social (Blotato AI Manager)" → Run workflow. Choose the format and type `yes` in `approve_publish` to publish live; anything else is a dry-run that prints the draft without posting. The cron schedule stays commented out in `.github/workflows/thrive-social.yml` until 10 posts have published cleanly.
+**Invoke via GitHub Actions (queue mode — no Claude in CI):** posts are pre-drafted and human-approved into `scripts/thrive-social/post-queue.json` during a local session. Actions tab → "Thrive Social (Blotato queue runner)" → Run workflow publishes the next approved entry (rendering the Reel video at publish time). The cron schedule stays commented out in `.github/workflows/thrive-social.yml` until 10 posts have published cleanly; then uncomment it for 3×/week autopilot.
 
-**API key:** set `BLOTATO_API_KEY` as an environment variable or in a local `.env` (never committed — see `.gitignore`). For Actions, add repo secrets `BLOTATO_API_KEY` and `ANTHROPIC_API_KEY`. A missing key fails loudly; the key value is never printed or logged.
+**API key:** set `BLOTATO_API_KEY` as an environment variable or in a local `.env` (never committed — see `.gitignore`). For Actions, add the repo secret `BLOTATO_API_KEY` (the only secret needed). A missing key fails loudly; the key value is never printed or logged.
 
 **Approval / dry-run flow:** every post is dry-run first (`scripts/thrive-social/blotato.js publish ... --dry-run` shows the exact payload). Until `published-log.jsonl` contains 10 published posts, every live publish requires explicit human approval of the exact caption + visual.
 

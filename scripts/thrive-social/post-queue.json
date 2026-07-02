@@ -1,0 +1,93 @@
+{
+  "description": "thrive-social post queue. Refilled locally with the Claude skill; drained by post-from-queue.js (GitHub Actions or local). Entries publish only when approved=true, oldest first. Append new entries; never edit posted ones.",
+  "posts": [
+    {
+      "id": 3,
+      "format": "reel",
+      "approved": false,
+      "status": "queued",
+      "templateId": "/base/v2/ai-story-video/5903fe43-514d-40ee-a060-0d6628c5f8fd/v1",
+      "caption": "Same salary. Same city. Wildly different futures.\n\nJames got a $300/month raise and upgraded his car.\nDavid got the same raise and automated it into an index fund.\n\n20 years later, at a 7% average annual return:\nJames has a 12-year-old car.\nDavid has about $156,000.\n\nThe raise was never the difference.\nThe system was.\n\n(Hypothetical illustration. Historical average return — not a guarantee.)\n\n#moneymindset #personalfinance #wealthbuilding",
+      "videoInputs": {
+        "scenes": [
+          {
+            "mediaSource": "Two similar suburban houses side by side at dusk, warm window lights, cinematic, photorealistic, no text in image",
+            "script": "Same salary. Same city. Wildly different futures. Meet James and David."
+          },
+          {
+            "mediaSource": "Split composition: a shiny new car on a driveway on one side, a phone showing an investing app with an automatic transfer on the other, photorealistic, no text in image",
+            "script": "James got a three hundred dollar a month raise and upgraded his car. David automated the same raise into a boring index fund."
+          },
+          {
+            "mediaSource": "Sunrise over a quiet suburban street, hopeful golden light, cinematic, photorealistic, no text in image",
+            "script": "Twenty years later, at a seven percent average annual return, David has about one hundred and fifty six thousand dollars. James has a twelve year old car."
+          },
+          {
+            "mediaSource": "A person walking confidently along a tree-lined street at dawn, back to camera, golden hour, cinematic, photorealistic, no text in image",
+            "script": "The raise was never the difference. The system was."
+          }
+        ],
+        "enableVoiceover": true,
+        "voiceName": "Brian (American, deep)",
+        "aiImageModel": "fal-ai/imagen4/preview/fast",
+        "animateAiImages": true,
+        "captionPosition": "center",
+        "highlightColor": "#FFD700",
+        "transition": "fade",
+        "aspectRatio": "9:16",
+        "trimToVoiceover": true
+      },
+      "postedAt": null,
+      "publicUrl": null
+    },
+    {
+      "id": 4,
+      "format": "reel",
+      "approved": false,
+      "status": "queued",
+      "templateId": "/base/v2/ai-story-video/5903fe43-514d-40ee-a060-0d6628c5f8fd/v1",
+      "caption": "7 money rules that quietly build wealth:\n\n1. Pay yourself first — automatically.\n2. Never finance a lifestyle. Only assets.\n3. If you can't buy it twice, you can't afford it.\n4. Invest before you feel ready. Time beats timing.\n5. Keep 3–6 months of expenses boring and liquid.\n6. Every raise: half to the future, half to today.\n7. Track your net worth, not your income.\n\nScreenshot this. Rule 4 pays for the rest.\n\n#personalfinance #moneyrules #wealthbuilding",
+      "videoInputs": {
+        "scenes": [
+          {
+            "mediaSource": "Minimalist desk with an open notebook, pen and morning coffee, soft window light, photorealistic, no text in image",
+            "script": "Seven money rules that quietly build wealth."
+          },
+          {
+            "mediaSource": "Close-up of hands setting up an automatic transfer on a phone banking app, warm light, photorealistic, no text in image",
+            "script": "Pay yourself first, automatically. Never finance a lifestyle, only assets. And if you can't buy it twice, you can't afford it."
+          },
+          {
+            "mediaSource": "A calm person drinking coffee by a window at sunrise, peaceful confident mood, photorealistic, no text in image",
+            "script": "Invest before you feel ready, because time beats timing. Keep three to six months of expenses liquid. And split every raise: half to the future, half to today."
+          },
+          {
+            "mediaSource": "Wide shot of a city skyline at dawn from a calm rooftop, hopeful mood, cinematic, photorealistic, no text in image",
+            "script": "Finally, track your net worth, not your income. That's the scoreboard that actually matters."
+          }
+        ],
+        "enableVoiceover": true,
+        "voiceName": "Brian (American, deep)",
+        "aiImageModel": "fal-ai/imagen4/preview/fast",
+        "animateAiImages": true,
+        "captionPosition": "center",
+        "highlightColor": "#FFD700",
+        "transition": "fade",
+        "aspectRatio": "9:16",
+        "trimToVoiceover": true
+      },
+      "postedAt": null,
+      "publicUrl": null
+    },
+    {
+      "id": 5,
+      "format": "link",
+      "approved": false,
+      "status": "queued",
+      "link": "https://thriverichly.gumroad.com/l/thriverichlymasterclass",
+      "caption": "You don't rise to your income. You fall to your system.\n\nA bigger salary with no system disappears.\nA modest salary with a system compounds.\n\nThat's why two people earning the same money can end up decades apart.\n\nIf you want the exact system — step by step, starting from zero — it's all in The Wealth Masterclass. Link below.\n\n#personalfinance #wealthbuilding",
+      "postedAt": null,
+      "publicUrl": null
+    }
+  ]
+}

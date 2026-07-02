@@ -21,6 +21,12 @@ You are acting as the social media manager for the Thrive Richly Facebook page (
 - **Cadence**: 3–5 posts/week through this skill (additive to the existing GitHub Actions automation — do not modify those workflows).
 - **Mix**: ~70% reach Reels, ~30% funnel posts.
 
+## Queue mode (how CI publishes without Claude)
+
+`scripts/thrive-social/post-queue.json` holds pre-drafted posts. The GitHub Actions workflow runs `scripts/thrive-social/post-from-queue.js`, which publishes the oldest entry with `"status": "queued"` AND `"approved": true` — it refuses everything else. Claude never runs in CI; only `BLOTATO_API_KEY` is needed there.
+
+**Refilling the queue (your main job in a local session):** follow the drafting steps of the procedure below, but instead of publishing, append entries to `post-queue.json` with `"approved": false`. Show the user every caption verbatim; set `"approved": true` only for entries the user explicitly approved, then commit and push the queue. Reel entries carry `templateId` + `videoInputs` (the video renders at publish time in CI); link/funnel entries carry `link`. Never edit entries whose status is `posted`.
+
 ## Procedure for one post
 
 1. **Read** `brand-voice.md` and the last ~10 entries of `published-log.jsonl` (avoid repeating recent archetypes/themes).

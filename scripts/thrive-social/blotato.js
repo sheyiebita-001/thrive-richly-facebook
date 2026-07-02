@@ -207,4 +207,8 @@ async function main() {
   process.exit(1);
 }
 
-main().catch(e => { console.error(e.message || e); process.exit(1); });
+if (require.main === module) {
+  main().catch(e => { console.error(e.message || e); process.exit(1); });
+}
+
+module.exports = { api, loadApiKey, appendLog, sleep, ACCOUNT_ID, PAGE_ID, LOG_FILE };
