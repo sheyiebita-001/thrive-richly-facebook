@@ -1,2 +1,9 @@
 node_modules/
 temp-images/
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.key
+*.pem
